@@ -1,0 +1,269 @@
+'Page number,'Layout,'Text,'Reading Order,'Confidence score % (Layout)
+'1,'Header 1,"'8/23/24, 10:34 AM",'0,'91.35742188
+'1,'Header 2,"'p4-editor",'1,'74.60937500
+'1,'Header 3,"'p4-editor",'2,'42.82226563
+'1,'Title 1,"'EECS 280 Project 4: Text Editor",'3,'43.57910156
+'1,'Text 1,"'Due 8:00pm Friday June 14, 2024. You may work alone or with a partner (partnership guidelines).",'4,'86.66992188
+'1,'Section header 1,"'Introduction",'5,'77.09960938
+'1,'Text 2,"'The learning goals of this project include Container ADTs, Dynamic Memory, The Big Three, Linked Lists, and Iterators. You will gain experience with new and delete , constructors and destructors, and the List data structure that is similar to std::list from the standard library.",'6,'92.23632813
+'1,'Text 3,"'When you're done, you'll have implemented the basic features of a text editor that is usable through a terminal-based visual editor, similar to other terminal editors such as Pico, nano, Emacs, and vi.",'7,'86.81640625
+'1,'Figure 1,"",'8,'45.33691406
+'1,'Figure 2,"",'9,'40.25878906
+'1,'Text 4,"'p4-editor - femto.exe femto.cpp - 80x24",'10,'69.53125000
+'1,'Section header 2,"'U-M FEMTO -- femto.cpp 0% (1,0) initial",'11,'80.37109375
+'1,'Table 1,"",'12,'26.53808594
+'1,'Section header 3,"'Setup",'13,'52.73437500
+'1,'Text 5,"'Set up your visual debugger and version control, then submit to the autograder.",'14,'68.75000000
+'1,'Footer 1,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.htm",'15,'90.82031250
+'1,'Page number 1,"'1/15",'16,'74.07226563
+'2,'Header 4,"'8/23/24, 10:34 AM",'17,'92.43164063
+'2,'Header 5,"'p4-editor",'18,'77.68554688
+'2,'Title 2,"'Visual debugger",'19,'75.48828125
+'2,'Text 6,"'During setup, name your project p4-editor . Use this starter files link: https://eecs280staff.github.io/p4-editor/starter-files.tar.gz",'20,'92.13867188
+'2,'Text 7,"'VS Code",'21,'96.14257813
+'2,'Text 8,"'Visual Studio",'22,'96.33789063
+'2,'Text 9,"'Xcode",'23,'94.62890625
+'2,'Text 10,"'You should end up with a folder with starter files that look like this. You may have already renamed files like List.hpp.starter to List.hpp",'24,'91.45507813
+'2,'Text 11,"'$ ls",'25,'65.03906250
+'2,'Text 12,"'List.hpp.starter e0.cpp List_compile_check.cpp femto.cpp List_public_tests.cpp line.cpp List_tests.cpp.starter line_test1.in Makefile line_test1.out.correct TextBuffer.hpp line_test2.in TextBuffer_public_tests.cpp line_test2.out.correct TextBuffer_tests.cpp.starter unit_test_framework.hpp",'26,'60.40039063
+'2,'Text 13,"'Here's a short description of each starter file.",'27,'80.90820313
+'2,'Table 2,"",'28,'92.77343750
+'2,'Footer 2,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.htm/",'29,'81.44531250
+'2,'Page number 2,"'2/15",'30,'85.40039063
+'3,'Header 6,"'8/23/24, 10:34 AM",'31,'69.58007813
+'3,'Header 7,"'p4-editor",'32,'58.20312500
+'3,'Table 3,"",'33,'74.21875000
+'3,'Section header 4,"'Version control",'34,'58.20312500
+'3,'Text 14,"'Set up version control using the Version control tutorial.",'35,'86.47460938
+'3,'Text 15,"'After you're done, you should have a local repository with a ""clean"" status and your local repository should be connected to a remote GitHub repository.",'36,'92.04101563
+'3,'Text 16,"'$ git status",'37,'56.10351563
+'3,'Text 17,"'On branch main Your branch is up-to-date with 'origin/main'",'38,'57.17773438
+'3,'Text 18,"'nothing to commit, working tree clean $ git remote -V origin https://github.com/awdeorio/p4-editor.gi (fetch) origin https://githubcom/awdeorio/p4-editor.git (push)",'39,'73.73046875
+'3,'Text 19,"'You should have a .gitignore file (instructions).",'40,'86.03515625
+'3,'Text 20,"'$ head gitignore # This is a sample gitignore file that's useful for C++ projects.",'41,'88.72070313
+'3,'Section header 5,"'Group registration",'42,'85.79101563
+'3,'Text 21,"'Register your partnership (or working alone) on the Autograder. Then, submit the code you have.",'43,'96.24023438
+'3,'Section header 6,"'Linked list",'44,'87.84179688
+'3,'Text 22,"'Implement your doubly-linked list in List.hpp . List.hpp.starter provides prototypes for each function. Because List is a templated container, function implementations go in List.hpp . There is no List.cpp .",'45,'95.21484375
+'3,'Text 23,"'While the List from lecture was singly linked, this List is doubly linked. This List also contains an iterator interface. The iterator keeps track of both the current node as well as the List to which it belongs - this allows us to go backwards from an end iterator by looking up the last node in the List",'46,'93.94531250
+'3,'Footer 3,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.htr",'47,'84.03320313
+'3,'Page number 3,"'3/15",'48,'75.68359375
+'4,'Text 24,"'8/23/24, 10:34 AM",'49,'50.29296875
+'4,'Text 25,"'p4-editor",'50,'37.35351563
+'4,'Text 26,"'Do not modify the public interface of the List class. Implement a doubly-linked list. No arrays or vectors, etc. Manage memory allocation so that there are no memory leaks (Leak checking tutorial).",'51,'96.28906250
+'4,'Text 27,"'Compile and run the provided compile check and List tests.",'52,'79.44335938
+'4,'List 1,"",'53,'38.86718750
+'4,'Text 28 - Part of List 1,"'$ make List_compile_check.exe",'54,'63.08593750
+'4,'Text 29 - Part of List 1,"'$ make List_public_tests.exe",'55,'61.23046875
+'4,'Text 30 - Part of List 1,"'$ ./List_public_tests.exe",'56,'52.34375000
+'4,'Text 31,"'Write tests for List in List_tests.cpp using the Unit Test Framework. You'll submit these tests to the autograder. See the Unit Test Grading section.",'57,'94.14062500
+'4,'List 2,"",'58,'48.73046875
+'4,'Text 32 - Part of List 2,"'$ make List_tests.exe",'59,'73.24218750
+'4,'Text 33 - Part of List 2,"'$ ./List_tests.exe",'60,'63.33007813
+'4,'Figure 3,"",'61,'71.87500000
+'4,'Text 34,"'Pro-tip: Getting an error about typename ? Take a look at our reference on Typename.",'62,'93.65234375
+'4,'Section header 7,"'Setup",'63,'75.34179688
+'4,'Text 35,"'Rename these files (VS Code (macOS), VS Code (Windows), Visual Studio, Xcode, CLI):",'64,'80.90820313
+'4,'List 3,"",'65,'80.37109375
+'4,'Text 36 - Part of List 3,"'List.hpp.starter -> List.hpp",'66,'89.99023438
+'4,'Text 37 - Part of List 3,"'List_tests.cpp.starter -> List_tests.cpp",'67,'95.16601563
+'4,'Text 38,"'Edit List.hpp , adding a function stub for each member function declared in List.hpp , either inside or outside the class definition: For example:",'68,'92.77343750
+'4,'Text 39,"'1",'69,'33.15429688
+'4,'Text 40,"'// Inside the class definition:",'70,'99.80639648
+'4,'Text 41,"'2",'71,'38.76953125
+'4,'Text 42,"'template <typename T>",'72,'99.47500610
+'4,'Text 43,"'class List {",'73,'97.85981750
+'4,'Text 44,"'{",'74,'78.55140686
+'4,'Text 45,"'assert (false);",'75,'99.90772247
+'4,'Text 46,"'}",'76,'31.51888466
+'4,'Text 47,"'13 1/ Or, outside the class definition: 14 template<typename T> 15 bool List<T>::empty() const { 16 assert (false), ;",'77,'26.63574219
+'4,'Text 48,"'3",'78,'41.87011719
+'4,'Text 49,"'4",'79,'56.68945313
+'4,'Text 50,"'5",'80,'59.91210938
+'4,'Text 51,"'bool empty ( ) const",'81,'99.15440369
+'4,'Footer 4,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.htm",'82,'66.99218750
+'4,'Text 52,"'6",'83,'62.45117188
+'4,'Text 53,"'7",'84,'69.28710938
+'4,'Text 54,"'8",'85,'68.99414063
+'4,'Text 55,"'9",'86,'71.67968750
+'4,'Text 56,"'10",'87,'62.35351563
+'4,'Page number 4,"'4/15",'88,'80.41992188
+'4,'Text 57,"'11",'89,'62.45117188
+'4,'Text 58,"'};",'90,'39.28222656
+'4,'Text 59,"'12",'91,'61.32812500
+'5,'Header 8,"'8/23/24, 10:34 AM",'92,'81.39648438
+'5,'Header 9,"'p4-editor",'93,'53.71093750
+'5,'Header 10,"'17 }",'94,'53.61328125
+'5,'Text 60,"'The List tests should compile and run. The public tests will fail until you implement the functions. The file for your test cases ( List_tests.cpp ) will pass because it initially only contains ASSERT_TRUE(true)",'95,'96.19140625
+'5,'List 4,"",'96,'76.85546875
+'5,'Text 61 - Part of List 4,"'$ make List_public_tests.exe",'97,'96.04492188
+'5,'Text 62 - Part of List 4,"'./List_public_tests.exe",'98,'95.11718750
+'5,'Text 63 - Part of List 4,"'$ make List_tests.exe",'99,'96.43554688
+'5,'Text 64 - Part of List 4,"'$ ./List_tests.exe",'100,'96.63085938
+'5,'Text 65,"'At this point, we haven't written the List Iterator, so List_compile_check.exe won't compile. You'll need to take a look at the lecture about iterators and write your own tests. After you do, use the provided compile check like this:",'101,'96.72851563
+'5,'Text 66,"'$ make List_compile_check.exe",'102,'91.35742188
+'5,'Text 67,"'Configure your IDE to debug either the public tests or your own tests.",'103,'91.55273438
+'5,'Table 4,"",'104,'88.91601563
+'5,'Footer 5,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.htm",'105,'89.20898438
+'5,'Page number 5,"'5/15",'106,'77.05078125
+'6,'Header 11,"'8/23/24, 10:34 AM",'107,'88.52539063
+'6,'Header 12,"'p4-editor",'108,'79.63867188
+'6,'Title 3,"'TextBuffer",'109,'77.68554688
+'6,'Text 68,"'A text buffer holds an editable sequence of characters and at the same time has the ability to report the current row and column (You can display this information in Pico/nano with Ctrl-C , or in Emacs by typing M-x line-number-mode and M-x column-number- mode .). The text buffer keeps track of the current cursor position where all edits are done and allows scrolling using the arrow keys to move the cursor through the text.",'110,'98.63281250
+'6,'Text 69,"'In this section, you will implement the TextBuffer class according the interface defined in the TextBuffer hpp file. The data representation of a TextBuffer is a doubly linked list of characters (either your implementation from part 1 or std::list from the C++ standard library). The TextBuffer also stores an iterator that indicates the current position of the cursor, the current row and column position, and the index of the cursor with respect to the entire buffer (i.e. how many characters from the start to the cursor).",'111,'97.60742188
+'6,'Text 70,"'The definition of the TextBuffer class is shown below:",'112,'91.50390625
+'6,'Table 5,"",'113,'68.75000000
+'6,'Text 71,"'We use CharList as a type alias for either List<char>, , or std::list<char> (your choice - the autograder will use std::list<char> to avoid any issues with your List implementation), representing a doubly-linked list of characters. The following list contains the text spaces",'114,'96.97265625
+'6,'Figure 4,"",'115,'44.75097656
+'6,'Text 72,"'To use a linked list as a text buffer, we need to keep track of the cursor, which represents the position where edits can be made in the buffer. In many visual text editors, the cursor appears as a colored rectangle, so that if the cursor was pointing to the node containing the character I c' , we'd see it displayed as",'116,'96.09375000
+'6,'Footer 6,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.htm",'117,'85.54687500
+'6,'Page number 6,"'6/15",'118,'69.28710938
+'7,'Header 13,"'8/23/24, 10:34 AM",'119,'84.47265625
+'7,'Header 14,"'p4-editor",'120,'75.14648438
+'7,'Figure 5,"",'121,'65.03906250
+'7,'Text 73,"'Pressing the left arrow key in a text editor moves the cursor one character backward (to the left).",'122,'95.16601563
+'7,'Figure 6,"",'123,'66.45507813
+'7,'Text 74,"'We can now draw the linked list corresponding to this text buffer along with the cursor:",'124,'93.99414063
+'7,'Figure 7,"",'125,'94.18945313
+'7,'Text 75,"'Deletions in a text buffer take place at the cursor. If we delete a character in the previous picture, it will remove the character at the cursor:",'126,'93.16406250
+'7,'Figure 8,"",'127,'93.79882813
+'7,'Text 76,"'Insertions happen to the left of the cursor. If we next typed the i key, that character would be entered in to the left of the cursor.",'128,'90.96679688
+'7,'Figure 9,"",'129,'94.72656250
+'7,'Footer 7,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.htm/",'130,'89.94140625
+'7,'Page number 7,"'7/15",'131,'87.89062500
+'8,'Header 15,"'8/23/24, 10:34 AM",'132,'79.49218750
+'8,'Header 16,"'p4-editor",'133,'43.57910156
+'8,'Text 77,"'One consequence of this design is that, in order for additions to be made to the end of the buffer, the cursor needs to be able to go to the right of all the text. In other words, it must be possible for the cursor member variable to be equal to the end iterator for the underlying list. Starting from the buffer above, we can see what that looks like from the editor's point of view:",'134,'97.70507813
+'8,'Key value 1,"",'135,'34.52148438
+'8,'Text 78,"'As a doubly-linked list, this final buffer looks like this:",'136,'87.93945313
+'8,'Figure 10,"",'137,'97.07031250
+'8,'Text 79,"'A new, empty text buffer containing no text starts with the cursor at the end iterator.",'138,'94.77539063
+'8,'Section header 8,"'Rows and Columns",'139,'81.10351563
+'8,'Text 80,"'One thing we care a great deal about in a text editor is which characters are newlines, because that is what lets us know our position in the document: the row and column. In Emacs (and the remaining tasks of this assignment), the first row is row 1, and the first column is column 0. In these Emacs buffers, you can see the (row, column) displayed in the lower-right corner:",'140,'97.70507813
+'8,'Figure 11,"",'141,'27.12402344
+'8,'Text 81,"'We can calculate the column of the cursor by working backwards until we find a newline, and we can calculate the row of the cursor by working backwards to the beginning of the buffer and counting the newlines. Note that in the middle example, the cursor is atop a cell containing a newline \n but , the cursor is at the end of row 1, not the beginning of row 2.",'142,'93.21289063
+'8,'Footer 8,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.htm",'143,'85.69335938
+'8,'Page number 8,"'8/15",'144,'83.05664063
+'9,'Header 17,"'8/23/24, 10:34 AM",'145,'76.26953125
+'9,'Header 18,"'p4-editor",'146,'68.40820313
+'9,'Text 82,"'By tracking the row and column in the data structure, we can report this information to the user without ever having to recalculate the row. It's good to avoid this, because calculating the row every time an edit is made can be expensive to run. You should also keep track of the column field but sometimes you might need to recalculate this field depending on the type of edit. Any single row is usually relatively short (80 columns maximum, if you're using good style), so this should be fast. Specifically, we only need to recalculate the column when we move left from the beginning of one line to the end of the previous line.",'147,'98.58398438
+'9,'Figure 12,"",'148,'88.03710938
+'9,'Text 83,"'i Pro-tip: The TextBuffer class has a private compute_column member function that is intended to be a helper function for backward . Implement compute_column before you start implementing backward .",'149,'94.77539063
+'9,'Text 84,"'In TextBuffer cpp efficiently implement the interface functions for manipulating editors given in the definition of the TextBuffer class in TextBuffer.hpp",'150,'93.06640625
+'9,'Section header 9,"'Setup",'151,'87.98828125
+'9,'Text 85,"'Rename these files (VS Code (macOS), VS Code (Windows), Visual Studio, Xcode, CLI):",'152,'90.52734375
+'9,'List 5,"",'153,'72.02148438
+'9,'Text 86 - Part of List 5,"'TextBuffer_tests.cpp.starter",'154,'28.85742188
+'9,'Text 87 - Part of List 5,"'-> TextBuffer_tests.cpp",'155,'31.20117188
+'9,'Text 88,"'Create a new file TextBuffer.cpp Add function stubs for all the functions in TextBuffer.hpp . Remember to #include ""TextBuffer.hpp""",'156,'85.49804688
+'9,'Section header 10,"'Testing the TextBuffer",'157,'93.01757813
+'9,'Text 89,"'The TextBuffer tests should compile and run once you have created TextBuffer. cpp and added function stubs. The public tests will fail until you implement the functions. The file for your test cases ( TextBuffer_tests.cpp) will pass because it initially only contains ASSERT_TRUE(true)",'158,'95.75195313
+'9,'List 6,"",'159,'87.15820313
+'9,'Text 90 - Part of List 6,"'$ make TextBuffer_public_tests.exe",'160,'95.99609375
+'9,'Text 91 - Part of List 6,"'$ /TextBuffer_public_tests.exe",'161,'95.01953125
+'9,'Text 92 - Part of List 6,"'$ make TextBuffer_tests.exe",'162,'94.87304688
+'9,'Text 93 - Part of List 6,"'$ ./TextBuffer_tests.exe",'163,'93.65234375
+'9,'Section header 11,"'Interactive Testing",'164,'90.91796875
+'9,'Text 94,"'You can also test your TextBuffer implementation interactively by compiling and running the provided line.cpp which visualizes the contents of a text buffer. Make sure your code passes the tests in TextBuffer_public_tests.cpp (see above) before using the interactive tests in line.cpp",'165,'93.65234375
+'9,'Footer 9,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.htm",'166,'78.90625000
+'9,'Page number 9,"'9/15",'167,'63.08593750
+'10,'Header 19,"'8/23/24, 10:34 AM",'168,'80.85937500
+'10,'Header 20,"'p4-editor",'169,'47.85156250
+'10,'Text 95,"'$ make line.exe",'170,'56.20117188
+'10,'Text 96,"'./line.exe",'171,'29.17480469
+'10,'Text 97,"'LINE IS Not an Editor - - it is a linear visualization of a TextBuffer. The '<' character mimics a call to backward( The '>' character mimics a call to forward( The ' # ' character mimics a call to remove( The '^' character mimics a call to up() The '!' character mimics a call to down( The 'I' character mimics a call to move_to_row_start() The 'l' character mimics a call to move_to_row_end() The '@' character mimics a call to insert() with a newline All other characters just mimic insert() with that character",'172,'61.86523438
+'10,'Text 98,"'Give initial input (empty line quits)",'173,'53.51562500
+'10,'Text 99,"'Try entering steady^<<<<^>>^>>^@<<@^^ as the initial input. Here are the first few lines of the result:",'174,'89.64843750
+'10,'Table 6,"",'175,'44.65332031
+'10,'Text 100,"'The special commands directly invoke the corresponding member functions in the TextBuffer class. If an operation cannot be performed (e.g., invoking the up ( ) member function to move the cursor up a line when it is already at the first row), the function should leave the text buffer unchanged instead of raising an error or assertion violation.",'176,'96.67968750
+'10,'Text 101,"'We have provided two test cases that use line.ex , which you can run as follows:",'177,'78.32031250
+'10,'List 7,"",'178,'57.27539063
+'10,'Text 102 - Part of List 7,"'$ /line.exe < line_test1.in > line_test1.out",'179,'65.33203125
+'10,'Text 103 - Part of List 7,"'$ diff -qB line_test1.out line_test1.out.correct",'180,'60.83984375
+'10,'Text 104 - Part of List 7,"'$ ./line.exe < line_test2.in > line_test2.out",'181,'43.57910156
+'10,'Text 105 - Part of List 7,"'$ diff -qB line_test2.out line_test2.out.correc",'182,'38.50097656
+'10,'Footer 10,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.htm",'183,'84.66796875
+'10,'Page number 10,"'10/15",'184,'78.51562500
+'11,'Header 21,"'8/23/24, 10:34 AM",'185,'75.48828125
+'11,'Header 22,"'p4-editor",'186,'67.38281250
+'11,'Header 23,"'Alternatively, use",'187,'49.70703125
+'11,'Text 106,"'$ make test",'188,'36.69433594
+'11,'Text 107,"'to run all List and TextBuffer tests.",'189,'25.95214844
+'11,'Section header 12,"'Visual Text Editors",'190,'80.41992188
+'11,'Text 108,"'The starter files include two visual frontends, eo and femto , that use your TextBuffer class to implement a fully functional, terminal-based editor. You may use these to stress test your TextBuffer implementation, but we recommend you ensure your code passes both the TextBuffer_public_tests and line interactive tests described above before testing with either editor.",'191,'94.18945313
+'11,'Figure 13,"",'192,'36.74316406
+'11,'Text 109,"'! You may need to install the incurses library before you can use the visual editors. On WSL, run:",'193,'87.64648438
+'11,'Text 110,"'$ sudo apt install libncurses5-dev",'194,'69.92187500
+'11,'Text 111,"'On macOS, run:",'195,'77.24609375
+'11,'Text 112,"'$ brew install incurses",'196,'78.41796875
+'11,'Text 113,"'Close your terminal and reopen your terminal.",'197,'90.38085938
+'11,'Text 114,"'The first visual editor is called E0, and you can compile and run it as follows:",'198,'92.52929688
+'11,'List 8,"",'199,'39.79492188
+'11,'Text 115 - Part of List 8,"'$ make e0. exe",'200,'88.86718750
+'11,'Text 116 - Part of List 8,"'$ ./e0.exe",'201,'84.08203125
+'11,'Text 117,"'This will launch a visual editor that will allow you to type text, use delete or backspace to remove characters, and use the arrow and home/end keys to navigate the text. The key combination Ctrl- exits the editor.",'202,'93.16406250
+'11,'Footer 11,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.htm",'203,'89.64843750
+'11,'Page number 11,"'11/15",'204,'79.83398438
+'12,'Header 24,"'8/23/24, 10:34 AM",'205,'75.48828125
+'12,'Header 25,"'p4-editor",'206,'70.41015625
+'12,'Figure 14,"",'207,'40.82031250
+'12,'Text 118,"'The second visual editor is called FEMTO, and it provides much of the functionality of terminal editors such as Pico. Use the following to compile and run it:",'208,'91.40625000
+'12,'List 9,"",'209,'25.26855469
+'12,'Text 119 - Part of List 9,"'$ make femto.exe",'210,'92.13867188
+'12,'Text 120 - Part of List 9,"'$ /femto.exe",'211,'89.45312500
+'12,'Text 121,"'You can also specify a filename at the command line. For instance, we can examine the visual editor's own source code with",'212,'95.55664063
+'12,'Text 122,"'$ ./femto.exe femto.cpp",'213,'89.74609375
+'12,'Text 123,"'You should see something like the following:",'214,'90.57617188
+'12,'Footer 12,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.html",'215,'83.74023438
+'12,'Page number 12,"'12/15",'216,'31.39648438
+'13,'Header 26,"'8/23/24, 10:34 AM",'217,'95.55664063
+'13,'Header 27,"'p4-editor",'218,'46.28906250
+'13,'Figure 15,"",'219,'72.50976563
+'13,'Header 28,"'p4-editor - femto.exe femto.cpp - 80x24",'220,'51.17187500
+'13,'Figure 16,"",'221,'47.94921875
+'13,'Section header 13,"'U-M FEMTO -- femto.cpp 0% (1,0) initial",'222,'39.69726563
+'13,'Table 7,"",'223,'45.33691406
+'13,'Text 124,"'You can scroll between pages with the page-up and page-down keys (or just the up and down keys at the top and bottom rows), and you can use the special commands listed at the bottom - for example, ^X means the combination Ctrl-X, , which you can use to exit.",'224,'86.08398438
+'13,'Section header 14,"'Submission and grading",'225,'73.04687500
+'13,'Text 125,"'Submit these files to the autograder.",'226,'81.93359375
+'13,'List 10,"",'227,'76.22070313
+'13,'Text 126 - Part of List 10,"'List.hpp",'228,'92.62695313
+'13,'Text 127 - Part of List 10,"'List_tests.cpp",'229,'92.72460938
+'13,'Text 128 - Part of List 10,"'TextBuffer.cpp",'230,'93.70117188
+'13,'Text 129,"'This project will be autograded for correctness, comprehensiveness of your test cases, and programming style. See the style checking tutorial for the criteria and how to check your style automatically on CAEN.",'231,'92.38281250
+'13,'Section header 15,"'Testing",'232,'67.23632813
+'13,'Text 130,"'Check for memory leaks using the Leak checking tutorial.",'233,'81.54296875
+'13,'Footer 13,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.htm",'234,'88.08593750
+'13,'Page number 13,"'13/15",'235,'64.69726563
+'14,'Header 29,"'8/23/24, 10:34 AM",'236,'70.26367188
+'14,'Header 30,"'p4-editor",'237,'64.35546875
+'14,'Text 131,"'Run all the unit tests and system tests. This includes the public tests we provided and the unit tests that you wrote.",'238,'91.21093750
+'14,'Text 132,"'$ make test",'239,'62.79296875
+'14,'Figure 17,"",'240,'43.87207031
+'14,'Text 133,"'i Pro-tip: Run commands in parallel with make -j .",'241,'72.50976563
+'14,'Text 134,"'$ make - j4 test",'242,'90.33203125
+'14,'Section header 16,"'Unit Test Grading",'243,'89.30664063
+'14,'Text 135,"'We will autograde your List unit tests. We will not grade your TextBuffer tests.",'244,'93.21289063
+'14,'Text 136,"'Your unit tests must use the unit test framework.",'245,'74.85351563
+'14,'Text 137,"'A test suite must complete less than 5 seconds and contain 50 or fewer TEST ) items. One test suite is one _tests.cpp file.",'246,'88.76953125
+'14,'Text 138,"'To grade your unit tests, we use a set of intentionally buggy instructor solutions. You get points for catching the bugs.",'247,'90.13671875
+'14,'List 11,"",'248,'83.64257813
+'14,'Text 139 - Part of List 11,"'1. We compile and run your unit tests with a correct solution.",'249,'94.62890625
+'14,'Text 140 - Part of List 11,"'Tests that pass are valid.",'250,'93.70117188
+'14,'Text 141 - Part of List 11,"'Tests that fail are invalid, they falsely report a bug.",'251,'96.53320313
+'14,'Text 142 - Part of List 11,"'2. We compile and run all of your valid tests against each buggy solution.",'252,'93.65234375
+'14,'Text 143 - Part of List 11,"'If any of your tests fail, you caught the bug.",'253,'94.58007813
+'14,'Text 144 - Part of List 11,"'You earn points for each bug that you catch.",'254,'96.38671875
+'14,'Section header 17,"'Requirements and restrictions",'255,'84.42382813
+'14,'Text 145,"'It is our goal for you to gain practice with good C++ code, classes, and dynamic memory.",'256,'92.23632813
+'14,'Table 8,"",'257,'86.42578125
+'14,'Footer 14,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.html",'258,'60.49804688
+'14,'Footer 15,"'14/15",'259,'42.43164063
+'15,'Header 31,"'8/23/24, 10:34 AM",'260,'41.47949219
+'15,'Header 32,"'p4-editor",'261,'43.01757813
+'15,'Table 9,"",'262,'93.01757813
+'15,'Section header 18,"'Acknowledgments",'263,'64.40429688
+'15,'Text 146,"'This project has been adapted from the course 15-122 (Principles of Imperative Computation) offered at Carnegie Mellon University, which is taught in a safe subset of C called CO. This project was ported to C++ by Saquib Razak.",'264,'95.16601563
+'15,'Text 147,"'This document is licensed under a Creative Commons Attribution-NonCommercial 4.0 License. You're free to copy and share this document, but not to sell it. You may not share source code provided with this document.",'265,'93.01757813
+'15,'Footer 16,"'file:///home/runner/work/p4-editor/p4-editor/_site/index.htm",'266,'94.48242188
+'15,'Page number 14,"'15/15",'267,'75.29296875

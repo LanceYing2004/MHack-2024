@@ -1,0 +1,657 @@
+'Page number,'Layout,'Text,'Reading Order,'Confidence score % (Layout)
+'1,'Header 1,"'9/28/24, 1:35 PM",'0,'94.23828125
+'1,'Header 2,"'p3-euchre",'1,'78.07617188
+'1,'Header 3,"'p3-euchre",'2,'55.66406250
+'1,'Title 1,"'EECS 280 Project 3: Euchre",'3,'62.06054688
+'1,'Text 1,"'Fall 2024 release.",'4,'89.11132813
+'1,'Text 2,"'Checkpoint due 8:00pm EST Wednesday October 9, 2024. See Submission and Grading / Checkpoint.",'5,'93.55468750
+'1,'Text 3,"'Full project due 8:00pm EST Wednesday October 23, 2024.",'6,'89.64843750
+'1,'Text 4,"'You may work alone or with a partner (partnership guidelines). If you work alone, you must work alone on both the checkpoint and the full project. If you work with a partner, you must work with the same partner on the checkpoint and the full project. You may not work alone on the checkpoint and then add a partner for the full project.",'7,'96.09375000
+'1,'Section header 1,"'Introduction",'8,'90.91796875
+'1,'Text 5,"'Euchre (pronounced ""YOO-kur"") is a card game popular in Michigan.",'9,'94.18945313
+'1,'Text 6,"'The learning goals of this project include Abstract Data Types in C++, Derived Classes, Inheritance, and Polymorphism. You'll gain practice with C++-style Object Oriented Programming (OOP) with classes and virtual functions.",'10,'96.09375000
+'1,'Text 7,"'When you're done, you'll have a program that simulates a game of Euchre, supporting a AI player and a Human player.",'11,'93.84765625
+'1,'Text 8,"'$ /euchre.exe pack. in noshuffle 3 Ivan Human Judea Simple Kunle Simple Liskov Simple Hand 0 Ivan deals Jack of Diamonds turned up Judea passes Kunle passes Liskov passes Human player Ivan's hand: [0] Nine of Diamonds Human player Ivan's hand: [1] Ten of Diamonds Human player Ivan's hand: [2] Jack of Hearts Human player Ivan's hand: [3] Queen of Hearts Human player Ivan's hand: [4] Ace of Clubs Human player Ivan, please enter a suit, or ""pass"":",'12,'52.53906250
+'1,'Footer 1,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'13,'73.63281250
+'1,'Page number 1,"'1/31",'14,'65.67382813
+'2,'Header 4,"'9/28/24, 1:35 PM",'15,'84.03320313
+'2,'Header 5,"'p3-euchre",'16,'69.58007813
+'2,'Header 6,"'Diamonds Ivan orders up Diamonds",'17,'68.01757813
+'2,'Title 2,"'Setup",'18,'46.48437500
+'2,'Text 9,"'Set up your visual debugger and version control, then submit to the autograder.",'19,'94.43359375
+'2,'Section header 2,"'Visual debugger",'20,'79.73632813
+'2,'Text 10,"'During setup, name your project p3-euchre. Use this starter files link: https://eecs280staff.github.io/p3-euchre/starter-files.tar.gz",'21,'93.84765625
+'2,'Text 11,"'VS Code",'22,'95.45898438
+'2,'Text 12,"'Visual Studio",'23,'95.89843750
+'2,'Text 13,"'Xcode",'24,'93.45703125
+'2,'Text 14,"'If you created a main.cpp while following the setup tutorial, rename it to euchre.cpp . Otherwise, create a new file euchre.cpp . You should end up with a folder with starter files that looks like this. You may have already renamed files like Card.cpp.starten to Card.cpp",'25,'95.89843750
+'2,'Text 15,"'$ ls",'26,'62.06054688
+'2,'List 1,"",'27,'28.90625000
+'2,'Text 16 - Part of List 1,"'Card.cpp.starter Card.hpp Card_public_tests.cpp Card_tests.cpp.starter Makefile Pack.hpp",'28,'87.30468750
+'2,'Text 17 - Part of List 1,"'Pack_public_tests.cpp Pack_tests.cpp.starter Player.hpp Player_public_tests.cpp Player_tests.cpp.starter euchre.cpp",'29,'91.25976563
+'2,'Text 18 - Part of List 1,"'euchre_testoo.out.correc euchre_test01.out.correct euchre_test50.in euchre_test50.out.correct pack.in unit_test_framework.hpp",'30,'94.97070313
+'2,'Text 19,"'Here's a short description of each starter file.",'31,'76.70898438
+'2,'Table 1,"",'32,'87.79296875
+'2,'Footer 2,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.html",'33,'79.58984375
+'2,'Page number 2,"'2/31",'34,'81.10351563
+'3,'Header 7,"'9/28/24, 1:35 PM",'35,'74.75585938
+'3,'Header 8,"'p3-euchre",'36,'50.48828125
+'3,'Table 2,"",'37,'96.58203125
+'3,'Section header 3,"'Version control",'38,'77.34375000
+'3,'Text 20,"'Set up version control using the Version control tutorial.",'39,'91.94335938
+'3,'Text 21,"'After you're done, you should have a local repository with a ""clean"" status and your local repository should be connected to a remote GitHub repository.",'40,'94.38476563
+'3,'List 2,"",'41,'89.45312500
+'3,'Text 22 - Part of List 2,"'1 $ git status",'42,'97.11914063
+'3,'Text 23 - Part of List 2,"'2 On branch main",'43,'96.77734375
+'3,'Text 24 - Part of List 2,"'3 Your branch is up-to-date with 'origin/main'",'44,'97.80273438
+'3,'Text 25 - Part of List 2,"'4",'45,'38.72070313
+'3,'Text 26 - Part of List 2,"'5 nothing to commit, working tree clean",'46,'96.04492188
+'3,'Text 27 - Part of List 2,"'6 $ git remote -V",'47,'87.10937500
+'3,'Text 28 - Part of List 2,"'7 origin https://github.com/awdeorio/p3-euchre.git (fetch)",'48,'92.67578125
+'3,'Text 29 - Part of List 2,"'8 origin https://githubcom/awdeorio/p3-euchre.git (push)",'49,'94.62890625
+'3,'Text 30,"'You should have a .gitignore file (instructions).",'50,'81.68945313
+'3,'List 3,"",'51,'84.27734375
+'3,'Text 31 - Part of List 3,"'1 $ head gitignore",'52,'79.44335938
+'3,'Text 32 - Part of List 3,"'2 # This is a sample gitignore file that's useful for C++ projects.",'53,'88.86718750
+'3,'Text 33,"'3",'54,'55.46875000
+'3,'Section header 4,"'Group registration",'55,'70.89843750
+'3,'Text 34,"'Register your partnership (or working alone) on the Autograder. Then, submit the code you have.",'56,'88.62304688
+'3,'Footer 3,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.html",'57,'86.52343750
+'3,'Page number 3,"'3/31",'58,'64.69726563
+'4,'Header 9,"'9/28/24, 1:35 PM",'59,'82.32421875
+'4,'Header 10,"'p3-euchre",'60,'67.91992188
+'4,'Title 3,"'EECS 280 Euchre Rules",'61,'87.45117188
+'4,'Text 35,"'There are many variants of Euchre. Our particular version is based on a variety commonly played in Michigan with a few changes to make it feasible as a coding project.",'62,'93.70117188
+'4,'Text 36,"'Our step-by-step explanation of a game of ""EECS 280 Euchre"" can be found in a You Tube video and a PDF.",'63,'81.98242188
+'4,'Figure 1,"",'64,'81.05468750
+'4,'Text 37,"'Pro-tip: Skim this section the first time through. Refer back to it while you're coding.",'65,'92.48046875
+'4,'Section header 5,"'Players",'66,'91.21093750
+'4,'Text 38,"'There are four players numbered 0-3. If the players sat around the table, it would look like this:",'67,'89.45312500
+'4,'Text 39,"'There are two teams: players 0 and 2 are partners, as are 1 and 3. Each player has left and right neighbors. For example, 1 is to the left of 0, and 3 is to the right of 0. That means 1 is 0's left neighbor, and 3 is 0's right neighbor.",'68,'93.89648438
+'4,'Section header 6,"'The Cards",'69,'89.74609375
+'4,'Text 40,"'Euchre uses a deck of 24 playing cards, each of which has two properties: a rank and a suit. The ranks are 9, 10, Jack, Queen, King, and Ace, and the suits are Spades, Hearts, Clubs, and Diamonds. Each card is unique - there are no duplicates. Throughout this document, we sometimes refer to ranks or suits using only the first letter of their name. Farther below, we describe how to determine the ordering of the cards.",'70,'96.19140625
+'4,'Section header 7,"'Playing the Game",'71,'90.86914063
+'4,'Text 41,"'At a high level, a game of Euchre involves several rounds, which are called hands. Each hand consists of the following phases.",'72,'92.72460938
+'4,'Section header 8,"'Each hand:",'73,'37.47558594
+'4,'Section header 9,"'1. Setup table",'74,'35.52246094
+'4,'Text 42,"'i. Shuffle ii. Deal 2. Making Trump i. Round One ii. Round Two",'75,'25.87890625
+'4,'Footer 4,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'76,'82.42187500
+'4,'Page number 4,"'4/31",'77,'73.92578125
+'5,'Header 11,"'9/28/24, 1:35 PM",'78,'90.28320313
+'5,'Header 12,"'p3-euchre",'79,'68.26171875
+'5,'List 4,"",'80,'51.17187500
+'5,'Text 43 - Part of List 4,"'3. Trick Taking",'81,'51.85546875
+'5,'Text 44 - Part of List 4,"'4. Scoring",'82,'76.70898438
+'5,'Text 45,"'We describe each in more detail below.",'83,'70.50781250
+'5,'Title 4,"'Setup table",'84,'69.33593750
+'5,'Section header 10,"'Shuffle",'85,'93.65234375
+'5,'Text 46,"'The dealer shuffles the deck at the beginning of each hand. The algorithm you will implement for shuffling is a variant of a riffle shuffle called an ""in shuffle"" (https://en.wikipedia.org/wiki/In_shuffle). Cut the deck exactly in half and then interleave the two halves, starting with the second half. Thus, the card originally at position 12 goes to position 0, the one originally at position 0 goes to position 1, the one originally at position 13 goes to position 2, and so on. Do this in-shuffle process 7 times.",'86,'94.82421875
+'5,'Text 47,"'You will also implement an option to run the game with shuffling disabled - when this option is chosen, just reset the pack any time shuffling would be called for. This may make for easier testing and debugging.",'87,'91.94335938
+'5,'Section header 11,"'Deal",'88,'94.09179688
+'5,'Text 48,"'In each hand, one player is designated as the dealer (if humans were playing the game, the one who passes out the cards). In our game, player 0 deals during the first hand. Each subsequent hand, the role of dealer moves one player to the left.",'89,'95.16601563
+'5,'Text 49,"'Each player receives five cards, dealt in alternating batches of 3 and 2. That is, deal 3-2-3-2 cards then 2-3-2-3 cards, for a total of 5 cards each. The player to the left of the dealer receives the first batch, and dealing continues to the left until 8 batches have been dealt.",'90,'95.41015625
+'5,'Text 50,"'Four cards remain in the deck after the deal. The next card in the pack is called the upcard (it is turned face up, while the other cards are all face down). It plays a special role in the next phase. The three remaining cards are not used for the current hand.",'91,'94.23828125
+'5,'Section header 12,"'Making Trump",'92,'91.06445313
+'5,'Text 51,"'During this phase, the trump suit is determined by whichever player chooses to order up.",'93,'95.31250000
+'5,'Section header 13,"'Round One",'94,'89.40429688
+'5,'Text 52,"'The suit of the upcard is used to propose a trump suit whose cards become more valuable during the upcoming hand. Players are given the opportunity to order up (i.e. select the suit of the upcard to be the trump suit) or pass, starting with the player to the dealer's left (also known as the eldest",'95,'94.87304688
+'5,'Footer 5,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'96,'87.45117188
+'5,'Page number 5,"'5/31",'97,'61.96289063
+'6,'Header 13,"'9/28/24, 1:35 PM",'98,'86.03515625
+'6,'Header 14,"'p3-euchre",'99,'65.47851563
+'6,'Text 53,"'hand) and progressing once around the circle to the left. If any player orders up, the upcard's suit becomes trump and the dealer is given the option to replace one of their cards with the upcard.",'100,'93.06640625
+'6,'Section header 14,"'Round Two",'101,'86.08398438
+'6,'Text 54,"'If all players pass during the first round, there is a second round of making, again beginning with the eldest hand. The upcard's suit is rejected and cannot be ordered up. Instead, the players may order up any suit other than the upcard's suit. The dealer does not have the opportunity to pick up the upcard during round two.",'102,'96.58203125
+'6,'Text 55,"'If making reaches the dealer during the second round, a variant called screw the dealer is invoked: the dealer must order up a suit other than the rejected suit.",'103,'92.87109375
+'6,'Text 56,"'(Note for pro Euchre players: for simplicity, we have omitted ""going alone"" in this version.)",'104,'91.74804688
+'6,'Section header 15,"'Trick Taking",'105,'93.11523438
+'6,'Text 57,"'Once the trump has been determined, five tricks are played. For each trick, players take turns laying down cards, and whoever played the highest card takes the trick.",'106,'95.55664063
+'6,'Text 58,"'During each trick, the player who plays first is called the leader. For the first trick, the eldest hand leads.",'107,'92.43164063
+'6,'Text 59,"'At the beginning of each trick, the leader leads a card, which affects which cards other players are allowed to play, as well as the value of each card played (see below). Each other player must follow suit (play a card with the same suit as the led card) if they are able, and otherwise may play any card (it is removed from their hand). Play moves to the left around the table, with each player playing one card.",'108,'96.28906250
+'6,'Text 60,"'A trick is won by the player who played the highest valued card (see below to determine comparative values). The winner of the trick leads the next one.",'109,'92.52929688
+'6,'Section header 16,"'Scoring",'110,'88.62304688
+'6,'Text 61,"'The team that takes the majority of tricks receives points for that hand.",'111,'94.28710938
+'6,'List 5,"",'112,'87.84179688
+'6,'Text 62 - Part of List 5,"'If the team that ordered up the trump suit takes 3 or 4 tricks, they get 1 point.",'113,'97.02148438
+'6,'Text 63 - Part of List 5,"'If the team that ordered up the trump suit takes all 5 tricks, they get 2 points. This is called a march.",'114,'96.77734375
+'6,'Text 64 - Part of List 5,"'If the team that did not order up takes 3, 4, or 5 tricks, they receive 2 points. This is called euchred.",'115,'96.04492188
+'6,'Footer 6,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'116,'88.72070313
+'6,'Page number 6,"'6/31",'117,'69.82421875
+'7,'Header 15,"'9/28/24, 1:35 PM",'118,'80.56640625
+'7,'Header 16,"'p3-euchre",'119,'60.10742188
+'7,'Text 65,"'Traditionally, the first side to reach 10 points wins the game. In this project, the number of points needed to win is specified when the program is run.",'120,'95.41015625
+'7,'Section header 17,"'Value of cards",'121,'76.56250000
+'7,'Text 66,"'In order to determine which of two cards is better, you must pay attention to the context in which they are being compared. There are three separate contexts, which depend on whether or not a trump or led suit is present.",'122,'95.36132813
+'7,'Text 67,"'In the simplest case, cards are ordered by rank A>K>Q>J>10>9),with ties broken by suit (D >C>H>S).",'123,'89.59960938
+'7,'Text 68,"'If a trump suit is present, all trump cards are more valuable than non-trump cards. That means a 9 of the trump suit will beat an Ace of a non-trump suit. Additionally, two special cards called bowers take on different values than normal.",'124,'93.45703125
+'7,'List 6,"",'125,'94.67773438
+'7,'Text 69 - Part of List 6,"'Right Bower: The Jack of the trump suit. This is the most valuable card in the game.",'126,'97.41210938
+'7,'Text 70 - Part of List 6,"'Left Bower: The Jack of the ""same color"" suit as trump is considered to be a trump (regardless of the suit printed on the card) and is the second most valuable card.",'127,'97.16796875
+'7,'Text 71,"'The suit of the left bower is called next, while the two suits of the opposite color are called cross suits.",'128,'95.21484375
+'7,'Text 72,"'If a led suit is present as well as a trump suit, the ordering is the same except that all cards of the led suit are considered more valuable than all non-trump-suit, non-led-suit cards. Note that it is possible for the trump suit and led suit to be the same.",'129,'96.58203125
+'7,'Figure 2,"",'130,'55.27343750
+'7,'Text 73,"'! Pitfall: The left bower is always considered the trump suit. For example, if Diamonds is trump, the Jack of Hearts is also considered a Diamond, not a Heart.",'131,'93.99414063
+'7,'Text 74,"'The above shows card orderings in the possible contexts. Cards in higher rows are greater than those in lower rows. Within rows, cards farther to the left are greater. Note the right bower (blue outline) and left bower (red outline).",'132,'94.38476563
+'7,'Section header 18,"'Euchre Glossary",'133,'73.87695313
+'7,'Text 75,"'Trump: A suit whose cards are elevated above their normal rank during play.",'134,'92.18750000
+'7,'Text 76,"'Right Bower: The Jack card of the Trump suit, which is considered the highest-valued card in Euchre.",'135,'90.77148438
+'7,'Footer 7,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.html",'136,'85.00976563
+'7,'Page number 7,"'7/31",'137,'75.78125000
+'8,'Header 17,"'9/28/24, 1:35 PM",'138,'89.11132813
+'8,'Header 18,"'p3-euchre",'139,'72.31445313
+'8,'Text 77,"'Left Bower: The Jack from the other suit of the same color as the Trump suit, considered the second highest-valued card in Euchre. The Left Bower is also considered a Trump card.",'140,'98.09570313
+'8,'Text 78,"'Face or Ace: The Jack, Queen, and King cards are generally pictured with people on them and are called ""face"" cards. These and the ace cards are more powerful than the 9 or 10 and factor into the simple player's strategy.",'141,'97.36328125
+'8,'Text 79,"'Next Suit: The suit of the same color as trump.",'142,'97.02148438
+'8,'Text 80,"'Cross Suits: The two suits of the opposite color as trump.",'143,'97.21679688
+'8,'Text 81,"'Making: The process in which a trump card is chosen, consists of two rounds.",'144,'97.75390625
+'8,'Text 82,"'Eldest: Player to the left of the dealer.",'145,'96.92382813
+'8,'Text 83,"'Upcard: The up-facing card in front of the dealer that proposes the trump suit.",'146,'97.85156250
+'8,'Text 84,"'Order Up: Accepts the Upcard suit.",'147,'96.97265625
+'8,'Text 85,"'Pass: Player rejects the suit and passes on the decision to the next player.",'148,'97.65625000
+'8,'Text 86,"'Screw the Dealer: When making* reaches the dealer on round two, the dealer must *order up a suit other than the rejected one.",'149,'97.41210938
+'8,'Text 87,"'Lead: The first card played by the eldest* hand, regardless of who *is the maker.",'150,'97.94921875
+'8,'Text 88,"'Leader: Person playing the lead* card in a trick, allowed to lead* *any card.",'151,'97.70507813
+'8,'Text 89,"'March: When the side that made trump* wins all 5 tricks.",'152,'97.85156250
+'8,'Text 90,"'Euchred: When the side that didn't make trump* wins 3, 4, or 5 *tricks.",'153,'97.46093750
+'8,'Section header 19,"'Card",'154,'88.62304688
+'8,'Text 91,"'Write an abstract data type (ADT) for a playing card. Refer back to the Value of cards section while you're working on the card ADT.",'155,'96.04492188
+'8,'Text 92,"'Before getting started, take a look at the Operator Overloading Tutorial. That will help you understand functions like:",'156,'94.18945313
+'8,'Text 93,"'bool operator< const Card &lhs, const Card &rhs) ;",'157,'77.44140625
+'8,'Text 94,"'Next, see the short Enumerated Type Tutorial. It explains code like this from Card.hpp",'158,'91.94335938
+'8,'List 7,"",'159,'44.84863281
+'8,'Text 95 - Part of List 7,"'1 enum Suit {",'160,'90.33203125
+'8,'Text 96 - Part of List 7,"'2 SPADES",'161,'50.29296875
+'8,'Figure 3,"",'162,'29.95605469
+'8,'Figure 4,"",'163,'34.25292969
+'8,'Footer 8,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'164,'84.81445313
+'8,'Page number 8,"'8/31",'165,'70.16601563
+'9,'Header 19,"'9/28/24, 1:35 PM",'166,'92.77343750
+'9,'Page number 9,"'p3-euchre",'167,'53.02734375
+'9,'Header 20,"'3 HEARTS = 1, 4 CLUBS =2, 5 DIAMONDS = 3, 6 };",'168,'54.78515625
+'9,'Text 97,"'Write implementations in Card.cpp for the functions declared in Card.hpp .",'169,'64.69726563
+'9,'Text 98,"'Run the public Card tests.",'170,'51.85546875
+'9,'List 8,"",'171,'86.81640625
+'9,'Text 99 - Part of List 8,"'1 $ make Card_public_tests.exe",'172,'95.41015625
+'9,'Text 100 - Part of List 8,"'2 $ ./Card_public_tests.exe",'173,'93.94531250
+'9,'Text 101,"'Write tests for Card in Card_tests.cpp using the Unit Test Framework. You'll submit these tests to the autograder. See the Unit Test Grading section.",'174,'92.77343750
+'9,'List 9,"",'175,'85.49804688
+'9,'Text 102 - Part of List 9,"'1 $ make Card_tests.exe",'176,'94.23828125
+'9,'Text 103 - Part of List 9,"'2 $ ./Card_tests.exe",'177,'93.31054688
+'9,'Text 104,"'Submit Card.cpp and Card_tests.cpp to the autograder.",'178,'89.50195313
+'9,'Figure 5,"",'179,'61.13281250
+'9,'List 10,"",'180,'47.55859375
+'9,'Text 105 - Part of List 10,"'Pro-tip: Compare the underlying numeric representation of an enum",'181,'89.35546875
+'9,'Text 106 - Part of List 10,"'1 Rank r = JACK;",'182,'92.87109375
+'9,'Text 107 - Part of List 10,"'2 r == JACK; // true",'183,'94.04296875
+'9,'Text 108 - Part of List 10,"'3",'184,'65.47851563
+'9,'Text 109 - Part of List 10,"'4 Suit S1 = SPADES;",'185,'87.93945313
+'9,'Text 110 - Part of List 10,"'5 Suit s2 = DIAMONDS;",'186,'91.79687500
+'9,'Text 111 - Part of List 10,"'6 S1 V s2; // true",'187,'89.06250000
+'9,'Section header 20,"'Setup",'188,'78.41796875
+'9,'Text 112,"'Rename these files (VS Code (macOS), VS Code (Windows), Visual Studio, Xcode, CLI):",'189,'84.66796875
+'9,'List 11,"",'190,'81.15234375
+'9,'Text 113 - Part of List 11,"'Card.cpp.starter -> Card.cpp",'191,'82.66601563
+'9,'Text 114 - Part of List 11,"'Card_tests.cpp.starter -> Card_tests.cpp",'192,'63.72070313
+'9,'Text 115,"'Edit Card.cpp , adding a function stub for each of the Card member functions in Card.hpp .",'193,'89.11132813
+'9,'Text 116,"'Card.cpp",'194,'49.90234375
+'9,'List 12,"",'195,'42.62695313
+'9,'Text 117 - Part of List 12,"'1 Card: : Card( {",'196,'57.47070313
+'9,'Text 118 - Part of List 12,"'2 assert (false)",'197,'65.33203125
+'9,'Text 119 - Part of List 12,"'3 }",'198,'74.70703125
+'9,'Footer 9,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.html",'199,'82.61718750
+'9,'Page number 10,"'9/31",'200,'60.93750000
+'10,'Header 21,"'9/28/24, 1:35 PM",'201,'70.01953125
+'10,'Header 22,"'p3-euchre",'202,'55.90820313
+'10,'Text 120,"'Edit Card.cpp , , adding function stubs for each of the non-member non-operator functions in Card.hpp Here are a few examples.",'203,'80.02929688
+'10,'Section header 21,"'Card.cpp",'204,'53.71093750
+'10,'List 13,"",'205,'54.78515625
+'10,'Text 121 - Part of List 13,"'1 Suit Suit_next(Suit suit) {",'206,'66.11328125
+'10,'Text 122 - Part of List 13,"'2",'207,'99.93977356
+'10,'Text 123 - Part of List 13,"'assert(false);",'208,'53.51562500
+'10,'Text 124 - Part of List 13,"'3 }",'209,'60.59570313
+'10,'Text 125 - Part of List 13,"'4",'210,'53.02734375
+'10,'Text 126 - Part of List 13,"'5 bool Card_less(const Card &a, const Card &b, Suit trump) { 6 assert(false) 7 }",'211,'26.80664063
+'10,'Text 127,"'Edit Card.cpp , adding function stubs for each of the overloaded operators in Card.hpp . Here are a few examples.",'212,'88.91601563
+'10,'Section header 22,"'Card.cpp",'213,'39.03808594
+'10,'Table 3,"",'214,'29.49218750
+'10,'Text 128,"'The Card tests should compile and run. Expect them to fail at this point because the Card.cpp starter code contains function stubs.",'215,'73.38867188
+'10,'List 14,"",'216,'76.41601563
+'10,'Text 129 - Part of List 14,"'1 $ make Card_public_tests.exe",'217,'91.01562500
+'10,'Text 130 - Part of List 14,"'2 $ /Card_public_tests.exe",'218,'86.91406250
+'10,'Text 131 - Part of List 14,"'3 $ make Card_tests.exe",'219,'85.40039063
+'10,'Text 132 - Part of List 14,"'4 ./Card_tests.exe",'220,'88.67187500
+'10,'Text 133,"'Configure your IDE to debug either the public tests or your own tests.",'221,'83.69140625
+'10,'Table 4,"",'222,'87.01171875
+'10,'Footer 10,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.html",'223,'79.63867188
+'10,'Footer 11,"'10/31",'224,'51.17187500
+'11,'Header 23,"'9/28/24, 1:35 PM",'225,'87.15820313
+'11,'Header 24,"'p3-euchre",'226,'54.39453125
+'11,'Table 5,"",'227,'92.72460938
+'11,'Section header 23,"'Testing",'228,'87.20703125
+'11,'Text 134,"'This section contains a few tips for writing your own tests in Card_tests.cpp",'229,'91.35742188
+'11,'Text 135,"'Here's how to create a Card and check its rank and suit.",'230,'90.13671875
+'11,'List 15,"",'231,'96.14257813
+'11,'Text 136 - Part of List 15,"'1 Card ace_hearts (ACE, HEARTS);",'232,'97.70507813
+'11,'Text 137 - Part of List 15,"'2 ASSERT_EQUAL(ace_hearts.get_rank(), ACE);",'233,'97.55859375
+'11,'Text 138 - Part of List 15,"'3 SSERT_EQUAL(ace_hearts.get_suit() HEARTS);",'234,'98.09570313
+'11,'Text 139,"'In this example, the overloaded less-than operator runs: bool operator<(const Card &lhs, const Card &rhs); . Notice that the suits are ordered to break ties (see the Value of Cards section).",'235,'94.77539063
+'11,'List 16,"",'236,'96.04492188
+'11,'Text 140 - Part of List 16,"'1 Card ace_hearts (ACE, HEARTS);",'237,'97.21679688
+'11,'Text 141 - Part of List 16,"'2 Card ace_diamonds(ACE DIAMONDS),",'238,'96.48437500
+'11,'Text 142 - Part of List 16,"'3 ASSERT_TRUE(ace_hearts < ace_diamonds),",'239,'97.31445313
+'11,'Section header 24,"'Pack",'240,'85.74218750
+'11,'Text 143,"'Write an abstract data type (ADT) for a pack of playing cards. Write implementations in Pack.cpp for the functions declared in Pack. hpp . Run the public Pack tests.",'241,'25.26855469
+'11,'List 17,"",'242,'54.68750000
+'11,'Text 144 - Part of List 17,"'1 $ make Pack_public_tests.exe",'243,'62.15820313
+'11,'Text 145 - Part of List 17,"'2 $ /Pack_public_tests.exe",'244,'46.38671875
+'11,'Footer 12,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.html",'245,'83.88671875
+'11,'Page number 11,"'11/31",'246,'70.41015625
+'12,'Header 25,"'9/28/24, 1:35 PM",'247,'54.68750000
+'12,'Header 26,"'p3-euchre",'248,'49.12109375
+'12,'Text 146,"'Write tests for Pack in Pack_tests.cpp using the unit test framework. While you should write your own tests for Pack to ensure that your implementation is correct, you do not have to submit your tests to the autograder.",'249,'98.04687500
+'12,'List 18,"",'250,'86.57226563
+'12,'Text 147 - Part of List 18,"'1 $ make Pack_tests.exe",'251,'95.55664063
+'12,'Text 148 - Part of List 18,"'2 $ /Pack_tests.exe",'252,'88.42773438
+'12,'Text 149,"'Submit Pack.cpp to the autograder. Don't forget to include the code you finished earlier, Card.cpp and Card_tests.cpp",'253,'95.01953125
+'12,'Section header 25,"'Default constructor",'254,'75.19531250
+'12,'Text 150,"'The default Pack constructor initializes a full pack with cards in order from lowest to highest.",'255,'93.99414063
+'12,'Text 151,"'Pack() ;",'256,'54.00390625
+'12,'Text 152,"'You can take advantage of an enum 's underlying integer representation to loop over all its values.",'257,'92.23632813
+'12,'List 19,"",'258,'84.76562500
+'12,'Text 153 - Part of List 19,"'1 for (int S = SPADES; S <= DIAMONDS; ++s) {",'259,'89.89257813
+'12,'Text 154 - Part of List 19,"'2 Suit suit = static_cast<Suit>(s);",'260,'88.03710938
+'12,'Text 155 - Part of List 19,"'3 }",'261,'46.28906250
+'12,'Section header 26,"'Stream input constructor",'262,'87.20703125
+'12,'Text 156,"'A second Pack constructor reads a pack from stream input. Later, your main function will open an input file and then call this constructor on the input stream.",'263,'95.65429688
+'12,'Section header 27,"'Setup",'264,'82.37304688
+'12,'Text 157,"'Rename these files (VS Code (macOS), VS Code (Windows), Visual Studio, Xcode, CLI):",'265,'90.91796875
+'12,'Text 158,"'Pack_tests.cpp.starter -> Pack_tests.cpp",'266,'88.37890625
+'12,'Text 159,"'Create a new file Pack.cpp Add a function stub for every function prototype in Pack. hpp . Remember to #include ""Pack. hpp"" .",'267,'91.94335938
+'12,'Text 160,"'For example:",'268,'54.49218750
+'12,'Text 161,"'Pack.cpp",'269,'59.17968750
+'12,'Text 162,"'1 #include ""Pack.hpp"" 2 void Pack: reset() { 3 assert (false) 4 assert (next) ; // DELETEME: avoid error ""private field is not used"" 5 }",'270,'35.52246094
+'12,'Footer 13,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.html",'271,'87.01171875
+'12,'Page number 12,"'12/31",'272,'54.49218750
+'13,'Header 27,"'9/28/24, 1:35 PM",'273,'49.12109375
+'13,'Header 28,"'p3-euchre",'274,'49.70703125
+'13,'Text 163,"'The Pack tests should compile and run. Expect them to fail at this point because the Pack.cpp contains function stubs.",'275,'99.07226563
+'13,'List 20,"",'276,'77.88085938
+'13,'Text 164 - Part of List 20,"'1 $ make Pack_public_tests.exe",'277,'96.24023438
+'13,'Text 165 - Part of List 20,"'2 $ ./Pack_public_tests.exe",'278,'95.36132813
+'13,'Text 166 - Part of List 20,"'3 $ make Pack_tests.exe",'279,'94.58007813
+'13,'Text 167 - Part of List 20,"'4 $ ./Pack_tests.exe",'280,'93.01757813
+'13,'Text 168,"'Configure your IDE to debug either the public tests or your own tests.",'281,'91.06445313
+'13,'Table 6,"",'282,'93.50585938
+'13,'Section header 28,"'Reading the Pack",'283,'76.26953125
+'13,'Text 169,"'One of the Pack constructors reads a pack from stream input. Later, your main function will open an input file and then call this constructor on the input stream.",'284,'93.21289063
+'13,'Text 170,"'Pack.hpp",'285,'73.33984375
+'13,'Text 171,"'Pack(std::istream& pack_input);",'286,'50.19531250
+'13,'Footer 14,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.html",'287,'87.84179688
+'13,'Page number 13,"'13/31",'288,'82.08007813
+'14,'Header 29,"'9/28/24, 1:35 PM",'289,'76.75781250
+'14,'Header 30,"'p3-euchre",'290,'59.81445313
+'14,'Text 172,"'The pack. in file provided with the project contains an example of the input format, with cards listed in ""new pack"" order:",'291,'97.07031250
+'14,'Text 173,"'pack.in",'292,'79.73632813
+'14,'Text 174,"'Nine of Spades Ten of Spades Jack of Spades Queen of Diamonds King of Diamonds Ace of Diamonds",'293,'83.49609375
+'14,'Text 175,"'Your implementation may assume any pack input is formatted correctly, with exactly 24 unique and correctly formatted cards.",'294,'93.60351563
+'14,'Section header 29,"'Player",'295,'69.43359375
+'14,'Text 176,"'We'll implement two players: a simple Al player and a human-controlled player that reads instructions from standard input (cin). We have provided an abstract base class in Player . hpp",'296,'96.58203125
+'14,'Section header 30,"'Setup",'297,'87.20703125
+'14,'Text 177,"'Rename these files (VS Code (macOS), VS Code (Windows), Visual Studio, Xcode, CLI):",'298,'91.11328125
+'14,'Text 178,"'Player_tests.cpp.starter -> Player_tests.cpp",'299,'91.94335938
+'14,'Text 179,"'Create a new file Player.cpp . Add function stubs for the two ""vanilla"" functions in Player . hpp . Remember to #include ""Player.hpp"" . Later, you'll add new classes and member functions using derived classes, which you can ignore for now.",'300,'96.28906250
+'14,'Section header 31,"'Player.cpp",'301,'56.49414063
+'14,'List 21,"",'302,'47.36328125
+'14,'Text 180 - Part of List 21,"'1 #include ""Player.hpp""",'303,'63.08593750
+'14,'Text 181 - Part of List 21,"'2 Player * Player_factory(const std::string &name, const std::string &strategy) {",'304,'61.03515625
+'14,'Text 182 - Part of List 21,"'3",'305,'81.59179688
+'14,'Text 183 - Part of List 21,"'assert (false);",'306,'42.91992188
+'14,'Text 184 - Part of List 21,"'4",'307,'71.63085938
+'14,'Text 185 - Part of List 21,"'}",'308,'60.00976563
+'14,'Text 186 - Part of List 21,"'5",'309,'77.97851563
+'14,'Text 187 - Part of List 21,"'std::ostream & operator<<(std::ostream &os, const Player &p) { assert (false)",'310,'51.07421875
+'14,'Text 188 - Part of List 21,"'6",'311,'68.50585938
+'14,'Text 189 - Part of List 21,"'7",'312,'71.87500000
+'14,'Text 190 - Part of List 21,"'8 }",'313,'79.95314026
+'14,'Footer 15,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'314,'83.93554688
+'14,'Page number 14,"'14/31",'315,'54.78515625
+'15,'Header 31,"'9/28/24, 1:35 PM",'316,'49.02343750
+'15,'Header 32,"'p3-euchre",'317,'53.22265625
+'15,'Text 191,"'The Player tests should compile and run. Expect them to fail at this point because the Player contains function stubs.",'318,'99.02343750
+'15,'List 22,"",'319,'93.70117188
+'15,'Text 192 - Part of List 22,"'1 $ make Player_public_tests.exe",'320,'97.70507813
+'15,'Text 193 - Part of List 22,"'2 ./Player_public_tests.exe",'321,'97.36328125
+'15,'Text 194 - Part of List 22,"'3 $ make Player_tests.exe",'322,'97.31445313
+'15,'Text 195 - Part of List 22,"'4 ./Player_tests.exe",'323,'97.36328125
+'15,'Text 196,"'Configure your IDE to debug either the public tests or your own tests.",'324,'91.79687500
+'15,'Table 7,"",'325,'92.28515625
+'15,'Section header 32,"'Player factory",'326,'80.32226563
+'15,'Text 197,"'Since the specific types of Players are hidden inside Player.cpp , we need to write a factory function that returns a pointer to a Player with the correct dynamic type. We also need the pointed-to objects to stick around after the factory function finishes, so we'll create the players using dynamically allocated memory. The prototype for Player_factory can be found in Player.hpp and the implementation will go in Player.cpp",'327,'94.38476563
+'15,'Footer 16,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.html",'328,'88.81835938
+'15,'Page number 15,"'15/31",'329,'45.99609375
+'16,'Header 33,"'9/28/24, 1:35 PM",'330,'90.38085938
+'16,'Header 34,"'p3-euchre",'331,'54.68750000
+'16,'Text 198,"'Player.cpp",'332,'39.42871094
+'16,'Text 199,"'1 Player * Player_factory(const std: : string &name, 2 const std::string &strategy) { 3 // We need to check the value of strategy and return 4 // the corresponding player type. 5 if (strategy == ""Simple"") { 6 // The ""new"" keyword dynamically allocates an object. 7 return new SimplePlayer (name); 8 } 9 // Repeat for each other type of Player 10 ... 11 // Invalid strategy if we get here 12 assert (false); 13 return nullptr; 14 }",'333,'33.86230469
+'16,'Section header 33,"'Simple Player",'334,'52.83203125
+'16,'Text 200,"'Implement the Simple Player in Player cpp by creating a class that derives from our Player abstract base class. Override each Player function in Player.cpp for the functions declared in Player.hpp .",'335,'94.77539063
+'16,'Text 201,"'Much of the strategy for our Simple Player can be implemented using the comparison functions provided by the Card interface.",'336,'95.11718750
+'16,'Text 202,"'The Simple Player should not print any output.",'337,'86.08398438
+'16,'Text 203,"'Run the public Simple Player tests.",'338,'86.66992188
+'16,'List 23,"",'339,'93.94531250
+'16,'Text 204 - Part of List 23,"'1 $ make Player_public_tests.exe",'340,'97.55859375
+'16,'Text 205 - Part of List 23,"'2 $ ./Player_public_tests.exe",'341,'97.41210938
+'16,'Text 206,"'Write tests for the Simple Player in Player_tests.cpp using the Unit Test Framework. You'll submit these tests to the autograder. See the Unit Test Grading section.",'342,'94.58007813
+'16,'List 24,"",'343,'92.62695313
+'16,'Text 207 - Part of List 24,"'1 $ make Player_tests.exe",'344,'96.48437500
+'16,'Text 208 - Part of List 24,"'2 $ ./Player_tests.exe",'345,'94.28710938
+'16,'Text 209,"'Submit Player.cpp and Player_tests.cpp to the autograder. Don't forget to include the code you finished earlier, Card.cpp , Card_tests.cpp , and Pack.cpp",'346,'92.33398438
+'16,'Section header 34,"'Making",'347,'64.06250000
+'16,'Footer 17,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'348,'89.01367188
+'16,'Page number 16,"'16/31",'349,'53.90625000
+'17,'Header 35,"'9/28/24, 1:35 PM",'350,'86.76757813
+'17,'Header 36,"'p3-euchre",'351,'53.51562500
+'17,'Text 210,"'In making trump, a Simple Player considers the upcard, which player dealt, and whether it is the first or second round of making trump. A more comprehensive strategy would consider the other players' responses, but we will keep it simple.",'352,'97.99804688
+'17,'Text 211,"'During round one, a Simple Player considers ordering up the suit of the upcard, which would make that suit trump. They will order up if that would mean they have two or more cards that are either face or ace cards of the trump suit (the right and left bowers, and Q, K, A of the trump suit, which is the suit proposed by the upcard). (A Simple Player does not consider whether they are the dealer and could gain an additional trump by picking up the upcard.)",'353,'97.46093750
+'17,'Text 212,"'During round two, a Simple Player considers ordering up the suit with the same color as the upcard, which would make that suit trump. They will order up if that would mean they have one or more cards that are either face or ace cards of the trump suit in their hand (the right and left bowers, and Q, K, A of the order-up suit). For example, if the upcard is a Heart and the player has the King of Diamonds in their hand, they will order up Diamonds. The Simple Player will not order up any other suit. If making reaches the dealer during the second round, we invoke screw the dealer, where the dealer is forced to order up. In the case of screw the dealer, the dealer will always order up the suit with the same color as the upcard.",'354,'96.38671875
+'17,'Section header 35,"'Adding the Upcard and Discarding a Card",'355,'86.37695313
+'17,'Text 213,"'If the trump suit is ordered up during round one, the dealer picks up the upcard. The dealer then discards the lowest card in their hand, even if this is the upcard, for a final total of five cards. (Note that at this point, the trump suit is the suit of the upcard.)",'356,'96.72851563
+'17,'Section header 36,"'Leading Tricks",'357,'90.23437500
+'17,'Text 214,"'When a Simple Player leads a trick, they play the highest non-trump card in their hand. If they have only trump cards, they play the highest trump card in their hand.",'358,'96.38671875
+'17,'Section header 37,"'Playing Tricks",'359,'89.25781250
+'17,'Text 215,"'When playing a card, Simple Players use a simple strategy that considers only the suit that was led. A more complex strategy would also consider the cards on the table.",'360,'93.99414063
+'17,'Text 216,"'If a Simple Player can follow suit, they play the highest card that follows suit. Otherwise, they play the lowest card in their hand.",'361,'91.79687500
+'17,'Figure 6,"",'362,'58.88671875
+'17,'List 25,"",'363,'42.62695313
+'17,'Text 217 - Part of List 25,"'Pro-tip: Here's a nice way to remove a Card from a vector using vector erase",'364,'92.82226563
+'17,'Text 218 - Part of List 25,"'1 vector<Card> hand; // Assume hand is full of cards",'365,'90.77148438
+'17,'Text 219 - Part of List 25,"'2 hand. erase (hand. begin + i) ; // Remove card i",'366,'91.06445313
+'17,'Footer 18,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'367,'84.81445313
+'17,'Page number 17,"'17/31",'368,'64.89257813
+'18,'Header 37,"'9/28/24, 1:35 PM",'369,'90.91796875
+'18,'Header 38,"'p3-euchre",'370,'67.48046875
+'18,'Title 5,"'Human Player",'371,'63.33007813
+'18,'Text 220,"'The Human Player reads input from the human user. You may assume all user input is correctly formatted and has correct values. You may also assume the user will follow the rules of the game and not try to cheat. See Example With Human Players for exact output for a game with a human player.",'372,'96.92382813
+'18,'Text 221,"'Implement the Human Player in Player cpp by creating a class that derives from our Player abstract base class. Override each Player function in Player.cpp for the functions declared in Player. hpp",'373,'87.59765625
+'18,'Text 222,"'The tests in Player_tests.cpp and Player_public_tests.cpp test only the Simple Player. You'll have to wait until you have a working Euchre game driver to test the Human player.",'374,'91.65039063
+'18,'Text 223,"'Submit Player. cpp again to the autograder. Don't forget to include the code you finished earlier, Card.cpp , Card_tests.cpp Pack.cpp, and Player_tests.cpp",'375,'92.96875000
+'18,'Section header 38,"'Making Trump",'376,'89.69726563
+'18,'Text 224,"'When making trump reaches a Human Player, first print the Player's hand. Then, prompt the user for their decision to pass or order up. The user will then enter one of the following: ""Spades"", ""Hearts"", ""Clubs"", ""Diamonds"", or ""pass"" to either order up the specified suit or pass. This procedure is the same for both rounds of making trump.",'377,'97.16796875
+'18,'Section header 39,"'Sample output code:",'378,'59.57031250
+'18,'List 26,"",'379,'83.30078125
+'18,'Text 225 - Part of List 26,"'1 print_hand();",'380,'96.33789063
+'18,'Text 226 - Part of List 26,"'2 cout << ""Human player "" << name << "", please enter a suit, or """"pass"""":\n"";",'381,'91.06445313
+'18,'List 27,"",'382,'43.96972656
+'18,'Text 227 - Part of List 27,"'i Pro-tip: Add a private member function that prints out the human player's hand.",'383,'80.02929688
+'18,'Text 228 - Part of List 27,"'1 void print_hand() const {",'384,'41.40625000
+'18,'Text 229 - Part of List 27,"'2 for (size_t i=0; i < hand.size(); ++i) 3 cout << ""Human player "" << name << "" Is hand: "" 4 << << ""] << hand[i << ""\n""; 5 }",'385,'55.07812500
+'18,'List 28,"",'386,'33.81347656
+'18,'Text 230 - Part of List 28,"'Pro-tip: Use the string_to_suit() function provided with the starter code.",'387,'72.31445313
+'18,'Text 231 - Part of List 28,"'1 string decision;",'388,'79.63867188
+'18,'Text 232 - Part of List 28,"'2 cin >> decision;",'389,'79.29687500
+'18,'Text 233 - Part of List 28,"'3",'390,'57.08007813
+'18,'Figure 7,"",'391,'32.86132813
+'18,'Footer 19,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'392,'88.28125000
+'18,'Page number 18,"'18/31",'393,'58.78906250
+'19,'Header 39,"'9/28/24, 1:35 PM",'394,'90.72265625
+'19,'Header 40,"'p3-euchre",'395,'64.06250000
+'19,'Header 41,"'4 if (decision != ""pass"") {",'396,'33.44726563
+'19,'Text 234,"'5 6 7 } 8 else { 9 10 }",'397,'25.48828125
+'19,'Header 42,"'Suit ordered_up = string_to_suit(decision),",'398,'31.07910156
+'19,'Section header 40,"'Adding the Upcard and Discarding",'399,'44.94628906
+'19,'Text 235,"'If a Human Player is the dealer and someone orders up during the first round of making, the Human Player will pick up the upcard and discard a card of their choice. Print the Player's hand and an option to discard the upcard. Then, prompt the user to select a card to discard. The user will then enter the number corresponding to the card they want to discard (or -1 if they want to discard the upcard).",'400,'94.77539063
+'19,'Section header 41,"'Sample output code:",'401,'38.40332031
+'19,'List 29,"",'402,'69.77539063
+'19,'Text 236 - Part of List 29,"'1 print_hand();",'403,'88.52539063
+'19,'Text 237 - Part of List 29,"'2 cout << ""Discard upcard: [-1]\n"";",'404,'83.05664063
+'19,'Text 238 - Part of List 29,"'3 cout << ""Human player "" << name <<"", please select a card to discard: \n"";",'405,'92.87109375
+'19,'Figure 8,"",'406,'46.58203125
+'19,'Text 239,"'i Pro-tip: Make ""sorted card ordering"" a representation invariant of your Human Player class and ensure that the hand is always kept in sorted order. For consistency with autograder test cases, the cards in a human player's hand must always be printed in ascending order, as defined by the < operator in Card.hpp",'407,'93.31054688
+'19,'Text 240,"'Use the STL to sort a vector<Card> hand",'408,'65.38085938
+'19,'Text 241,"'#include <algorithm> std: : sort (hand. begin(), hand.end());",'409,'60.59570313
+'19,'Text 242,"'Pitfall: Using sort on a member variable in a const member function leads to a confusing error, no matching function for call to 'swap' Instead, call sort when adding a card to the hand",'410,'93.55468750
+'19,'List 30,"",'411,'46.77734375
+'19,'Text 243 - Part of List 30,"'1 void Human::print_hand() const {",'412,'53.32031250
+'19,'Text 244 - Part of List 30,"'2 std::sort(hand.begin(), hand.end( ; // Error!",'413,'61.96289063
+'19,'Text 245 - Part of List 30,"'3",'414,'53.32031250
+'19,'Text 246 - Part of List 30,"'4 }",'415,'71.67968750
+'19,'Footer 20,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'416,'87.93945313
+'19,'Page number 19,"'19/31",'417,'60.93750000
+'20,'Header 43,"'9/28/24, 1:35 PM",'418,'91.16210938
+'20,'Header 44,"'p3-euchre",'419,'43.31054688
+'20,'Section header 42,"'Playing and Leading Tricks",'420,'48.43750000
+'20,'Text 247,"'When it is the Human Player's turn to lead or play a trick, first print the Player's hand. Then, prompt the user to select a card. The user will then enter the number corresponding to the card they want to play.",'421,'97.07031250
+'20,'Text 248,"'Sample output code:",'422,'70.65429688
+'20,'List 31,"",'423,'86.37695313
+'20,'Text 249 - Part of List 31,"'1 print_hand();",'424,'88.42773438
+'20,'Text 250 - Part of List 31,"'2 cout << ""Human player "" << name <<"", please select a card: \n"";",'425,'74.02343750
+'20,'Section header 43,"'Euchre Game",'426,'77.73437500
+'20,'Text 251,"'Write the Euchre Game in euchre. cpp following the EECS 280 Euchre Rules.",'427,'95.36132813
+'20,'Text 252,"'Run a Euchre game with four players.",'428,'84.76562500
+'20,'List 32,"",'429,'92.08984375
+'20,'Text 253 - Part of List 32,"'1 $ make euchre.exe",'430,'93.75000000
+'20,'Text 254 - Part of List 32,"'2 $ ./euchre.exe pack. in noshuffle 1 Adi Simple Barbara Simple Chi-Chih Simple Dabbala Simple",'431,'94.48242188
+'20,'Section header 44,"'Setup",'432,'85.93750000
+'20,'Text 255,"'Make sure you have created euchre.cpp (VS Code (macOS), VS Code (Windows), Visual Studio, Xcode, CLI).",'433,'95.80078125
+'20,'Text 256,"'Add ""hello world"" code if you haven't already.",'434,'82.51953125
+'20,'List 33,"",'435,'27.31933594
+'20,'Text 257 - Part of List 33,"'1 #include <iostream> 2 using namespace std;",'436,'29.49218750
+'20,'Text 258 - Part of List 33,"'int main() {",'437,'35.40039063
+'20,'Text 259 - Part of List 33,"'5 cout << ""Hello World!\n""; 6 }",'438,'28.49121094
+'20,'Text 260 - Part of List 33,"'3",'439,'47.75390625
+'20,'Text 261 - Part of List 33,"'4",'440,'38.08593750
+'20,'Text 262,"'The euchre program should compile and run.",'441,'73.33984375
+'20,'List 34,"",'442,'80.81054688
+'20,'Text 263 - Part of List 34,"'1 $ make euchre.exe",'443,'83.10546875
+'20,'Text 264 - Part of List 34,"'2 $ ./euchre.exe",'444,'80.37109375
+'20,'Text 265 - Part of List 34,"'3 Hello World!",'445,'87.15820313
+'20,'Text 266,"'Configure your IDE to debug the euchre program.",'446,'81.64062500
+'20,'Footer 21,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'447,'91.50390625
+'20,'Page number 20,"'20/31",'448,'65.33203125
+'21,'Header 45,"'9/28/24, 1:35 PM",'449,'67.13867188
+'21,'Header 46,"'p3-euchre",'450,'39.59960938
+'21,'Table 8,"",'451,'97.11914063
+'21,'Text 267,"'Configure command line arguments (VS Code (macOS), VS Code (Windows), Xcode, Visual Studio). We recommend starting with the euchre test 00: pack. in noshuffle 1 Adi Simple Barbara Simple Chi-Chih Simple Dabbala Simple",'452,'92.82226563
+'21,'Text 268,"'To compile and run a Euchre game with four players.",'453,'88.33007813
+'21,'List 35,"",'454,'91.30859375
+'21,'Text 269 - Part of List 35,"'1 $ make euchre.exe",'455,'93.79882813
+'21,'Text 270 - Part of List 35,"'2 $ ./euchre.exe pack. in noshuffle 1 Adi Simple Barbara Simple Chi-Chih Simple Dabbala Simple",'456,'96.04492188
+'21,'Section header 45,"'Interface",'457,'88.08593750
+'21,'Text 271,"'The Euchre game driver takes several command line arguments, for example:",'458,'95.65429688
+'21,'Text 272,"'$ ./euchre.exe pack. in noshuffle 1 Adi Simple Barbara Simple Chi-Chih Simple Dabbala Simple",'459,'88.28125000
+'21,'Text 273,"'Here's a short description of each command line argument.",'460,'90.03906250
+'21,'Table 9,"",'461,'52.05078125
+'21,'Footer 22,"'le:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'462,'78.61328125
+'21,'Page number 21,"'21/31",'463,'66.65039063
+'22,'Header 47,"'9/28/24, 1:35 PM",'464,'80.37109375
+'22,'Header 48,"'p3-euchre",'465,'65.38085938
+'22,'Table 10,"",'466,'97.46093750
+'22,'Text 274,"'Check for each of these errors:",'467,'74.70703125
+'22,'List 36,"",'468,'95.65429688
+'22,'Text 275 - Part of List 36,"'There are exactly 12 arguments, including the executable name.",'469,'98.09570313
+'22,'Text 276 - Part of List 36,"'Points to win the game is between 1 and 100, inclusive.",'470,'98.04687500
+'22,'Text 277 - Part of List 36,"'The shuffle argument is either shuffle or noshuffle",'471,'98.09570313
+'22,'Text 278 - Part of List 36,"'The types of each of the players are either Simple or Human",'472,'98.24218750
+'22,'Text 279,"'If there is an error print this message and no other output. Exit returning a non-zero value from main",'473,'96.43554688
+'22,'List 37,"",'474,'91.01562500
+'22,'Text 280 - Part of List 37,"'1 cout << ""Usage: euchre. exe PACK_FILENAME [shuffle|noshuffle] """,'475,'97.16796875
+'22,'Text 281 - Part of List 37,"'2 << ""POINTS_TO_WIN NAME1 TYPE1 NAME2 TYPE2 NAME3 TYPE3",'476,'97.21679688
+'22,'Text 282 - Part of List 37,"'""",'477,'73.08489990
+'22,'Text 283 - Part of List 37,"'3 << ""NAME4 TYPE4"" << endl;",'478,'95.99609375
+'22,'Text 284,"'You must also verify the pack input file opens successfully. If it does not, print this error message and exit returning a non-zero value from main",'479,'96.09375000
+'22,'Text 285,"'// Assume pack_filename is a variable containing // the specified pack filename from argv cout << ""Error opening "" << pack_filename << endl;",'480,'92.43164063
+'22,'Text 286,"'If the file opens successfully, you may assume it is formatted correctly.",'481,'92.67578125
+'22,'Section header 46,"'Design",'482,'71.63085938
+'22,'Text 287,"'The Euchre game driver coordinates all the actions in the game. Take some time to design this complex piece of code before beginning.",'483,'93.84765625
+'22,'Text 288,"'We recommend writing a Game ADT. It should have a constructor that takes in details like the players, points to win, etc. and a public play ( ) function. The Game and its helper functions do the",'484,'90.18554688
+'22,'Footer 23,"'ile:///home/runner/work/p3-euchre/p3-euchre/_site/index.html",'485,'76.36718750
+'22,'Footer 24,"'22/31",'486,'44.94628906
+'23,'Header 49,"'9/28/24, 1:35 PM",'487,'59.61914063
+'23,'Header 50,"'p3-euchre",'488,'50.00000000
+'23,'Title 6,"'hard work, and the main() function is simple.",'489,'37.93945313
+'23,'Table 11,"",'490,'30.61523438
+'23,'Text 289,"'Next, consider which member data you'll need. Examples include player pointers, pack of cards, etc.",'491,'76.61132813
+'23,'Figure 9,"",'492,'39.42871094
+'23,'Text 290,"'Which helper functions would help simplify the play ( ) function? Add these as private member functions. Functions that shuffle, deal, make trump, and play a hand are a good starting point.",'493,'90.86914063
+'23,'Table 12,"",'494,'52.73437500
+'23,'Page number 22,"'23/31",'495,'58.69140625
+'23,'Footer 25,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.html)",'496,'68.50585938
+'24,'Header 51,"'9/28/24, 1:35 PM",'497,'80.66406250
+'24,'Header 52,"'16 };",'498,'30.02929688
+'24,'Header 53,"'p3-euchre",'499,'54.00390625
+'24,'Section header 47,"'End of game",'500,'63.18359375
+'24,'Text 291,"'At the end of a game, delete the Player objects created by the Player_factory . .",'501,'92.43164063
+'24,'List 38,"",'502,'45.89843750
+'24,'Text 292 - Part of List 38,"'1 for ( (size_t = i V players. .size(); ++i) {",'503,'88.18359375
+'24,'Text 293 - Part of List 38,"'2 delete players[i];",'504,'53.80859375
+'24,'Text 294 - Part of List 38,"'3 }",'505,'41.01562500
+'24,'Section header 48,"'Example With Simple Players",'506,'81.00585938
+'24,'Text 295,"'We've provided full example output for a game with four simple players in euchre_test00.out.correct . This section explains the output line by line.",'507,'90.47851563
+'24,'Text 296,"'As a reminder, all the output in this example is produced by the Euchre Game driver, not by the simple player code in Player.cpp",'508,'87.35351563
+'24,'Figure 10,"",'509,'45.60546875
+'24,'List 39,"",'510,'63.86718750
+'24,'Text 297 - Part of List 39,"'i Pro-tip: Debug differences in game output using diff -y -B , which shows differences side-by-side and ignores whitespace. We'll use the less pager so we can scroll through the long terminal output. Press q to quit.",'511,'93.21289063
+'24,'Text 298 - Part of List 39,"'1 $ make euchre.exe",'512,'88.18359375
+'24,'Text 299 - Part of List 39,"'2 $ ./euchre.exe pack. in noshuffle 1 Adi Simple Barbara Simple Chi-Chih Simple Dabbala Simple > euchre_test00.out",'513,'93.65234375
+'24,'Text 300 - Part of List 39,"'3 $ diff -y -B euchre_test00.out.correct euchre_test00.ou I less # to quit",'514,'90.18554688
+'24,'Text 301,"'Run the example.",'515,'43.96972656
+'24,'List 40,"",'516,'78.66210938
+'24,'Text 302 - Part of List 40,"'1 $ make euchre.exe",'517,'78.41796875
+'24,'Text 303 - Part of List 40,"'2 $ /euchre.exe pack. in noshuffle 1 Adi Simple Barbara Simple Chi-Chih Simple Dabbala Simple",'518,'86.71875000
+'24,'Text 304,"'First, print the executable and all arguments on the first line. Print a single space at the end, which makes it easier to print an array.",'519,'89.25781250
+'24,'Text 305,"'/euchre.exe pack. in noshuffle 1 Adi Simple Barbara Simple Chi-Chih Simple Dabbala Simple",'520,'62.89062500
+'24,'Text 306,"'At the beginning of each hand, announce the hand, starting at zero, followed by the dealer and the upcard.",'521,'66.79687500
+'24,'Footer 26,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'522,'87.30468750
+'24,'Footer 27,"'24/31",'523,'41.57714844
+'25,'Header 54,"'9/28/24, 1:35 PM",'524,'94.62890625
+'25,'Title 7,"'p3-euchre",'525,'36.93847656
+'25,'Text 307,"'Hand O Adi deals Jack of Diamonds turned up",'526,'54.78515625
+'25,'Text 308,"'Print the decision of each player during the making procedure. Print an extra newline when making, adding, and discarding is complete.",'527,'95.65429688
+'25,'Text 309,"'Barbara passes Chi-Chih passes Dabbala passes Adi passes Barbara orders up Hearts",'528,'93.06640625
+'25,'Text 310,"'Each of the five tricks is announced, including the lead, cards played and the player that took the trick. Print an extra newline at the end of each trick.",'529,'95.31250000
+'25,'Text 311,"'Jack of Spades led by Barbara King of Spades played by Chi-Chih Ace of Spades played by Dabbala Nine of Diamonds played by Adi Dabbala takes the trick",'530,'95.89843750
+'25,'Text 312,"'At the end of the hand, print the winners of the hand. When printing the names of a partnership, print the player with the lower index first. For example, Adi was specified on the command line before Chi-Chih, so he goes first.",'531,'96.53320313
+'25,'Text 313,"'Adi and Chi - -Chih win the hand",'532,'92.57812500
+'25,'Text 314,"'If a march occurs, print march! followed by a newline. If euchre occurs, print euchred! followed by a newline. If neither occurs, print nothing.",'533,'96.33789063
+'25,'Text 315,"'euchred!",'534,'91.35742188
+'25,'Text 316,"'Print the score, followed by an extra newline.",'535,'95.16601563
+'25,'Text 317,"'Adi and Chi-Chih have 2 points Barbara and Dabbala have O points",'536,'93.99414063
+'25,'Footer 28,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'537,'88.52539063
+'25,'Page number 23,"'25/31",'538,'75.29296875
+'26,'Header 55,"'9/28/24, 1:35 PM",'539,'65.03906250
+'26,'Header 56,"'p3-euchre",'540,'68.35937500
+'26,'Text 318,"'When the game is over, print the winners of the game.",'541,'41.30859375
+'26,'Text 319,"'Adi and Chi-Chih win!",'542,'40.40527344
+'26,'Text 320,"'The output for a much longer game with four simple players is in euchre_test01.out.correct See the Euchre Test 01 Explanation for an explanation of the output.",'543,'77.58789063
+'26,'Section header 49,"'Example With Human Players",'544,'44.84863281
+'26,'Text 321,"'We've provided full example output for a game with four human players in euchre_test50.out.correct The input is in euchre_test50.in This section explains the output line by line.",'545,'94.33593750
+'26,'Text 322,"'Output that is specific to the Human Player should be printed by the Human Player code in ( Player.cpp ). All other output that is common to both Simple and Human Players should be printed by the Euchre Game driver.",'546,'92.82226563
+'26,'Text 323,"'Set up input redirection (VS Code (macOS), VS Code (Windows), Xcode, Visual Studio) to read euchre_test50.in .",'547,'91.55273438
+'26,'Text 324,"'Configure command line arguments (VS Code (macOS), VS Code (Windows), Xcode, Visual Studio) for euchre test 50: noshuffle 3 Ivan Human Judea Human Kunle Human Liskov Human",'548,'93.94531250
+'26,'Figure 11,"",'549,'44.36035156
+'26,'List 41,"",'550,'40.35644531
+'26,'Text 325 - Part of List 41,"'i Pro-tip: Similar to the simple player, you can debug differences in game output using diff -y -B Press q to quit.",'551,'89.89257813
+'26,'Text 326 - Part of List 41,"'1 $ make euchre.exe",'552,'92.82226563
+'26,'Text 327 - Part of List 41,"'2 $ ./euchre.exe pack. in noshuffle 3 Ivan Human Judea Human Kunle Human Liskov Human < euchre_test50.in > euchre_test50.out",'553,'94.62890625
+'26,'Text 328 - Part of List 41,"'3 $ diff -y -B euchre_test50.out.correct euchre_test50.out less # q to quit",'554,'91.89453125
+'26,'Figure 12,"",'555,'26.36718750
+'26,'Text 329,"'Run the example, redirecting the input file euchre_test50.in to stdin.",'556,'91.16210938
+'26,'List 42,"",'557,'64.59960938
+'26,'Text 330 - Part of List 42,"'1 $ make euchre.exe",'558,'85.59570313
+'26,'Text 331 - Part of List 42,"'2 $ ./euchre.exe pack. in noshuffle 3 Ivan Human Judea Human Kunle Human Liskov Human < euchre_test50.in",'559,'89.30664063
+'26,'Text 332,"'First, print the executable and all arguments on the first line. Print a single space at the end, which makes it easier to print an array.",'560,'90.96679688
+'26,'Footer 29,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'561,'88.28125000
+'26,'Footer 30,"'26/31",'562,'41.40625000
+'27,'Header 57,"'9/28/24, 1:35 PM",'563,'92.04101563
+'27,'Header 58,"'p3-euchre",'564,'56.20117188
+'27,'Text 333,"'./euchre.exe pack. in noshuffle 3 Ivan Human Judea Human Kunle Human Liskov Human",'565,'55.46875000
+'27,'Text 334,"'At the beginning of each hand, announce the hand, starting at zero, followed by the dealer and the upcard.",'566,'93.99414063
+'27,'Text 335,"'Hand 0 Ivan deals Jack of Diamonds turned up",'567,'91.79687500
+'27,'Text 336,"'Print the hand of each player during the making procedure, followed by a prompt for their making decision. End the prompt with a newline immediately after the colon.",'568,'94.82421875
+'27,'Text 337,"'Human player Judea's hand: [ ] ] Nine of Spades Human player Judea's hand: [1] Ten of Spades Human player Judea's hand: [2] Jack of Spades Human player Judea's hand: [3] King of Hearts Human player Judea's hand: [4] Ace of Hearts Human player Judea, please enter a suit, or ""pass"":",'569,'93.79882813
+'27,'Text 338,"'Print the decision of each player during the making procedure.",'570,'95.50781250
+'27,'Text 339,"'Judea passes Judea orders up Hearts",'571,'93.79882813
+'27,'Text 340,"'Print the dealer's hand if a player orders up during the first round, as well as an option to discard the upcard. Prompt the dealer to select a card to discard, ending the prompt with a newline immediately after the colon. Print an extra newline when making, adding, and discarding is done.",'572,'97.31445313
+'27,'Text 341,"'Human player Ivan's hand: [0] Nine of Diamonds Human player Ivan's hand: [4] Ace of Clubs Discard upcard: [-1] Human player Ivan, please select a card to discard:",'573,'92.91992188
+'27,'Text 342,"'For each trick, print the Human Player's hand and prompt them to select a card.",'574,'91.74804688
+'27,'Text 343,"'Human player Judea's hand: [ 0] Nine of Spades",'575,'91.65039063
+'27,'Footer 31,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'576,'87.54882813
+'27,'Page number 24,"'27/31",'577,'77.68554688
+'28,'Header 59,"'9/28/24, 1:35 PM",'578,'76.95312500
+'28,'Header 60,"'p3-euchre",'579,'62.45117188
+'28,'Text 344,"'Human player Judea's hand: [4] Ace of Hearts Human player Judea, please select a card:",'580,'64.40429688
+'28,'Text 345,"'Then print the card played or lead.",'581,'74.07226563
+'28,'Text 346,"'Nine of Spades led by Judea",'582,'92.33398438
+'28,'Text 347,"'At the end of each trick, print the player who took the trick as well as an extra newline.",'583,'95.84960938
+'28,'Text 348,"'Liskov takes the trick",'584,'92.62695313
+'28,'Text 349,"'At the end of the hand, print the winners of the hand. When printing the names of a partnership, print the player with the lower index first. For example, Ivan was specified on the command line before Kunle, so he goes first.",'585,'96.53320313
+'28,'Text 350,"'Ivan and Kunle win the hand",'586,'94.28710938
+'28,'Text 351,"'If a march occurs, print march! followed by a newline. If euchre occurs, print euchred! followed by a newline. If neither occurs, print nothing.",'587,'95.89843750
+'28,'Text 352,"'euchred!",'588,'91.25976563
+'28,'Text 353,"'Print the score, followed by an extra newline.",'589,'95.01953125
+'28,'Text 354,"'Ivan and Kunle have 2 points Judea and Liskov have O points",'590,'96.19140625
+'28,'Text 355,"'When the game is over, print the winners of the game.",'591,'94.82421875
+'28,'Text 356,"'Ivan and Kunle win!",'592,'91.94335938
+'28,'Section header 50,"'Submission and Grading",'593,'76.61132813
+'28,'Text 357,"'Submit these files to the autograder.",'594,'93.01757813
+'28,'List 43,"",'595,'81.39648438
+'28,'Text 358 - Part of List 43,"'Card.cpp",'596,'96.92382813
+'28,'Text 359 - Part of List 43,"'Card_tests.cpp",'597,'96.48437500
+'28,'Text 360 - Part of List 43,"'Pack.cpp",'598,'95.50781250
+'28,'Footer 32,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'599,'79.93164063
+'28,'Page number 25,"'28/31",'600,'73.09570313
+'29,'Header 61,"'9/28/24, 1:35 PM",'601,'82.37304688
+'29,'Header 62,"'p3-euchre",'602,'52.63671875
+'29,'List 44,"",'603,'89.20898438
+'29,'Text 361 - Part of List 44,"'Player.cpp",'604,'95.70312500
+'29,'Text 362 - Part of List 44,"'Player_tests.cpp",'605,'96.24023438
+'29,'Text 363 - Part of List 44,"'euchre.cpp",'606,'98.14453125
+'29,'Text 364,"'You do not have to submit Pack_tests.cpp to the autograder.",'607,'88.18359375
+'29,'Text 365,"'This project will be autograded for correctness, comprehensiveness of your test cases, and programming style. See the style checking tutorial for the criteria and how to check your style automatically on CAEN.",'608,'94.23828125
+'29,'Section header 51,"'Checkpoint",'609,'76.46484375
+'29,'Text 366,"'Project 3 is graded on an early checkpoint as well as the full submission. The checkpoint submission is worth 0.5% of your overall course grade. The full submission is worth 9.5% of your overall course grade.",'610,'96.33789063
+'29,'Text 367,"'The checkpoint consists of everything except the Euchre Game driver.",'611,'90.47851563
+'29,'Text 368,"'Submit these files to the autograder:",'612,'82.66601563
+'29,'List 45,"",'613,'89.30664063
+'29,'Text 369 - Part of List 45,"'Card.cpp",'614,'96.33789063
+'29,'Text 370 - Part of List 45,"'Card_tests.cpp",'615,'96.92382813
+'29,'Text 371 - Part of List 45,"'Pack.cpp",'616,'96.38671875
+'29,'Text 372 - Part of List 45,"'Player.cpp",'617,'96.04492188
+'29,'Text 373 - Part of List 45,"'Player_tests.cpp",'618,'95.01953125
+'29,'Text 374,"'There are no private tests and no style grading at the checkpoint.",'619,'93.01757813
+'29,'Text 375,"'Your checkpoint score does not change after the checkpoint deadline, even though we run the same public tests and mutation tests at both the checkpoint and full submission.",'620,'94.04296875
+'29,'Text 376,"'After the checkpoint autograder closes, the full submission autograder will open.",'621,'86.71875000
+'29,'Section header 52,"'Testing",'622,'83.93554688
+'29,'Text 377,"'Run all the unit tests and system tests. This includes the public tests we provided and the unit tests that you wrote.",'623,'95.94726563
+'29,'Text 378,"'$ make test",'624,'82.22656250
+'29,'Figure 13,"",'625,'55.71289063
+'29,'Text 379,"'Pro-tip: Run commands in parallel with make - -j .",'626,'75.48828125
+'29,'Footer 33,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'627,'85.98632813
+'29,'Page number 26,"'29/31",'628,'40.25878906
+'30,'Header 63,"'9/28/24, 1:35 PM",'629,'93.11523438
+'30,'Header 64,"'p3-euchre",'630,'60.00976563
+'30,'Header 65,"'$ make - j4 test",'631,'63.33007813
+'30,'Section header 53,"'Unit Test Grading",'632,'61.76757813
+'30,'Text 380,"'We will autograde your Card_tests.cpp and Player_tests.cpp unit tests. Note that your player tests should only test the ""simple player"", not the ""human player"".",'633,'95.26367188
+'30,'Text 381,"'Your unit tests must use the unit test framework.",'634,'78.51562500
+'30,'Text 382,"'A test suite must run in less than 5 seconds and contain 50 or fewer TEST ( ) functions. One test suite is one _tests.cpp file.",'635,'90.57617188
+'30,'Text 383,"'To grade your unit tests, we use a set of intentionally buggy instructor solutions. You get points for catching the bugs.",'636,'91.50390625
+'30,'List 46,"",'637,'84.22851563
+'30,'Text 384 - Part of List 46,"'1. We compile and run your unit tests with a correct solution.",'638,'93.11523438
+'30,'Text 385 - Part of List 46,"'Tests that pass are valid.",'639,'94.38476563
+'30,'Text 386 - Part of List 46,"'Tests that fail are invalid, they falsely report a bug.",'640,'97.16796875
+'30,'Text 387 - Part of List 46,"'2. We compile and run all of your valid tests against each buggy solution.",'641,'95.06835938
+'30,'Text 388 - Part of List 46,"'If any of your tests fail, you caught the bug.",'642,'96.14257813
+'30,'Text 389 - Part of List 46,"'You earn points for each bug that you catch.",'643,'97.46093750
+'30,'Section header 54,"'Requirements and Restrictions",'644,'84.91210938
+'30,'Text 390,"'It is our goal for you to gain practice with good C++ code, classes, and polymorphism.",'645,'94.58007813
+'30,'Table 13,"",'646,'91.16210938
+'30,'Footer 34,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htr",'647,'84.57031250
+'30,'Page number 27,"'30/31",'648,'60.10742188
+'31,'Header 66,"'9/28/24, 1:35 PM",'649,'61.66992188
+'31,'Text 391,"'p3-euchre",'650,'51.75781250
+'31,'Table 14,"",'651,'96.72851563
+'31,'Section header 55,"'Acknowledgments",'652,'70.01953125
+'31,'Text 392,"'The original project was written by Andrew DeOrio, Fall 2013. The project was modified to use C++ style object oriented programming and the specification updated by the Fall 2015 staff.",'653,'95.55664063
+'31,'Footer 35,"'file:///home/runner/work/p3-euchre/p3-euchre/_site/index.htm",'654,'89.30664063
+'31,'Page number 28,"'31/31",'655,'78.07617188

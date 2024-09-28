@@ -1,0 +1,517 @@
+'Page number,'Layout,'Text,'Reading Order,'Confidence score % (Layout)
+'1,'Header 1,"'8/23/24, 10:34 AM",'0,'90.13671875
+'1,'Header 2,"'p5-ml",'1,'60.69335938
+'1,'Header 3,"'p5-ml",'2,'34.30175781
+'1,'Title 1,"'EECS 280 Project 5: Machine Learning",'3,'52.53906250
+'1,'Text 1,"'Spring 2024 release.",'4,'78.80859375
+'1,'Text 2,"'Project due 8:00pm EST Monday June 24, 2024.",'5,'80.32226563
+'1,'Text 3,"'You may work alone or with a partner (partnership guidelines). If you work alone, you must work alone on both the checkpoint and the full project. If you work with a partner, you must work with the same partner on the checkpoint and the full project. You may not work alone on the checkpoint and then add a partner for the full project.",'6,'93.99414063
+'1,'Section header 1,"'Introduction",'7,'89.01367188
+'1,'Text 4,"'Automatically identify the subject of posts from the EECS 280 Piazza using natural language processing and machine learning techniques.",'8,'88.86718750
+'1,'Text 5,"'The learning goals of this project include Function Objects and Recursion. We'll reinforce learning goals from project 4: Container ADTs, Dynamic Memory, The Big Three, Linked Lists, and Iterators. You will gain experience with recursion, binary trees, templates, comparators, and the map data structure.",'9,'93.26171875
+'1,'Text 6,"'For example, your program will be able to read a Piazza post like this and figure out that it's about Project 3: Euchre.",'10,'91.69921875
+'1,'Figure 1,"",'11,'47.65625000
+'1,'Text 7,"'question",'12,'76.70898438
+'1,'Figure 2,"",'13,'63.08593750
+'1,'Text 8,"'stop following",'14,'86.81640625
+'1,'Text 9,"'34 views",'15,'37.47558594
+'1,'Text 10,"'Understanding Bob's choices in life",'16,'48.43750000
+'1,'Text 11,"'In hand 1 of test 01, Bob is the dealer and Cathy orders up Clubs when the upcard is a Jack of Spades. According to the correct solution, Bob discards the Jack of Spades. However, surely he shouldn't do that because the Jack of Spades is left bower and he has several lower cards?",'17,'94.04296875
+'1,'Text 12,"'edit",'18,'49.31640625
+'1,'Figure 3,"",'19,'58.30078125
+'1,'Text 13,"'good question",'20,'88.72070313
+'1,'Text 14,"'0",'21,'63.18359375
+'1,'Section header 2,"'Setup",'22,'78.46679688
+'1,'Text 15,"'Set up your visual debugger and version control, then submit to the autograder.",'23,'85.59570313
+'1,'Footer 1,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'24,'87.84179688
+'1,'Page number 1,"'1/25",'25,'64.69726563
+'2,'Header 4,"'8/23/24, 10:34 AM",'26,'78.22265625
+'2,'Header 5,"'p5-ml",'27,'46.48437500
+'2,'Title 2,"'Visual debugger",'28,'72.55859375
+'2,'Text 16,"'During setup, name your project p5-ml Use this starter files link: https://eecs280staff.github.io/p5-ml/starter-files.tar.gz",'29,'91.74804688
+'2,'Text 17,"'VS Code",'30,'91.89453125
+'2,'Text 18,"'Visual Studio",'31,'93.31054688
+'2,'Text 19,"'Xcode",'32,'91.25976563
+'2,'Text 20,"'You should end up with a folder with starter files that look like this. You may have already renamed files like hpp.starter to Map. hpp . You may also have a main.cpp file after following the setup tutorial. If not, you will create a main.cpp file in the Classifier section.",'33,'94.48242188
+'2,'Text 21,"'$ ls",'34,'67.23632813
+'2,'Text 22,"'BinarySearchTree.hpp BinarySearchTree_compile_check.cpp BinarySearchTree_public_tests.cpp BinarySearchTree_tests.cpp.starter Makefile",'35,'61.86523438
+'2,'Text 23,"'Map.hpp",'36,'31.32324219
+'2,'Text 24,"'Map_compile_check.cpp Map_public_tests.cpp Map_tests.cpp.starter TreePrint.hpp csvstream.hpp",'37,'35.52246094
+'2,'Text 25,"'instructor_student.out.correc projects_exam.out.correct sp16_projects_exam.csv test_small.csv test_small.out.correct test_small_debug.out.correct train_small.csv unit_test_framework.hpp W14-f15_instructor_student.csv w16_instructor_student.csv w16_projects_exam.csv",'38,'58.15429688
+'2,'Text 26,"'Here's a short description of each starter file.",'39,'72.02148438
+'2,'Table 1,"",'40,'77.05078125
+'2,'Footer 2,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.html",'41,'87.01171875
+'2,'Page number 2,"'2/25",'42,'78.51562500
+'3,'Header 6,"'8/23/24, 10:34 AM",'43,'75.00000000
+'3,'Header 7,"'p5-ml",'44,'46.28906250
+'3,'Table 2,"",'45,'97.11914063
+'3,'Section header 3,"'Version control",'46,'73.38867188
+'3,'Text 27,"'Set up version control using the Version control tutorial.",'47,'89.30664063
+'3,'Text 28,"'After you're done, you should have a local repository with a ""clean"" status and your local repository should be connected to a remote GitHub repository.",'48,'92.18750000
+'3,'List 1,"",'49,'90.38085938
+'3,'Text 29 - Part of List 1,"'1 $ git status",'50,'96.72851563
+'3,'Text 30 - Part of List 1,"'2 On branch main",'51,'95.94726563
+'3,'Text 31 - Part of List 1,"'3 Your branch is up-to-date with 'origin/main'.",'52,'97.36328125
+'3,'Text 32 - Part of List 1,"'4",'53,'99.94145966
+'3,'Text 33 - Part of List 1,"'5 nothing to commit, working tree clean",'54,'95.16601563
+'3,'Text 34 - Part of List 1,"'6 $ git remote -V",'55,'92.43164063
+'3,'Text 35 - Part of List 1,"'7 origin ttps://github.com/awdeorio/p5-ml.git (fetch)",'56,'92.23632813
+'3,'Text 36 - Part of List 1,"'8 origin :tps://githubcom/awdeorio/p5-ml.git (push)",'57,'91.79687500
+'3,'Text 37,"'You should have a .gitignore file (instructions).",'58,'58.30078125
+'3,'List 2,"",'59,'82.27539063
+'3,'Text 38 - Part of List 2,"'1 $ head .gitignore",'60,'47.75390625
+'3,'Text 39 - Part of List 2,"'2 # This is a sample gitignore file that's useful for C++ projects. 3",'61,'34.91210938
+'3,'Section header 4,"'Group registration",'62,'65.57617188
+'3,'Footer 3,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.html",'63,'89.11132813
+'3,'Page number 3,"'3/25",'64,'74.90234375
+'4,'Header 8,"'8/23/24, 10:34 AM",'65,'85.74218750
+'4,'Header 9,"'p5-ml",'66,'66.79687500
+'4,'Header 10,"'Register your partnership (or working alone) on the Autograder. Then, submit the code you have.",'67,'51.36718750
+'4,'Title 3,"'BinarySearchTree",'68,'66.11328125
+'4,'Text 40,"'A binary search tree supports efficiently storing and searching for elements.",'69,'90.33203125
+'4,'Text 41,"'Write implementations in BinarySearchTree.hpp for each _impl function. The file already contains function stubs and you should replace the assert (false) with your code. For example:",'70,'93.65234375
+'4,'Section header 5,"'BinarySearchTree.hpp",'71,'82.37304688
+'4,'List 3,"",'72,'95.45898438
+'4,'Text 42 - Part of List 3,"'1 static bool empty_impl(const Node *node) {",'73,'96.77734375
+'4,'Text 43 - Part of List 3,"'2 assert(false); // Replace with your code",'74,'96.28906250
+'4,'Text 44 - Part of List 3,"'3 }",'75,'67.82226563
+'4,'Text 45,"'Run the public Binary Search Tree tests.",'76,'62.69531250
+'4,'List 4,"",'77,'93.99414063
+'4,'Text 46 - Part of List 4,"'1 $ make BinarySearchTree_compile_check.exe",'78,'97.50976563
+'4,'Text 47 - Part of List 4,"'2 $ make BinarySearchTree_public_tests.exe",'79,'96.82617188
+'4,'Text 48 - Part of List 4,"'3 $ ./BinarySearchTree_public_tests.exe",'80,'96.67968750
+'4,'Text 49,"'Write tests for BinarySearchTree in BinarySearchTree_tests.cpp using the Unit Test Framework. You'll submit these tests to the autograder. See the Unit Test Grading section.",'81,'95.60546875
+'4,'List 5,"",'82,'88.08593750
+'4,'Text 50 - Part of List 5,"'1 $ make BinarySearchTree_tests.exe",'83,'96.97265625
+'4,'Text 51 - Part of List 5,"'2 $ ./BinarySearchTree_tests.exe",'84,'97.02148438
+'4,'Text 52,"'Submit BinarySearchTree.hpp and BinarySearchTree_tests.cpp to the autograder.",'85,'94.28710938
+'4,'Section header 6,"'Setup",'86,'91.40625000
+'4,'Text 53,"'Rename these files (VS Code (macOS), VS Code (Windows), Visual Studio, Xcode, CLI):",'87,'91.35742188
+'4,'List 6,"",'88,'88.52539063
+'4,'Text 54 - Part of List 6,"'BinarySearchTree.hpp.starter -> BinarySearchTree.hpp",'89,'88.67187500
+'4,'Text 55 - Part of List 6,"'BinarySearchTree_tests.cpp.starte -> BinarySearchTree_tests.cpp",'90,'80.90820313
+'4,'Text 56,"'The BinarySearchTree tests should compile and run. The public tests and compile check will fail until you implement the functions. The test you write ( BinarySearchTree_tests.cpp) will pass because the starter file only contains ASSERT_TRUE(true) .",'91,'93.35937500
+'4,'List 7,"",'92,'88.23242188
+'4,'Text 57 - Part of List 7,"'1 $ make BinarySearchTree_compile_check.exe",'93,'96.24023438
+'4,'Text 58 - Part of List 7,"'2 $ make BinarySearchTree_public_tests.exe",'94,'95.11718750
+'4,'Text 59 - Part of List 7,"'3 BinarySearchTree_public_tests.exe",'95,'95.41015625
+'4,'Text 60 - Part of List 7,"'4 $ make BinarySearchTree_tests.exe",'96,'94.77539063
+'4,'Text 61 - Part of List 7,"'5 $ ./BinarySearchTree_tests.exe",'97,'92.18750000
+'4,'Footer 4,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.html",'98,'80.27343750
+'4,'Page number 4,"'4/25",'99,'77.53906250
+'5,'Header 11,"'8/23/24, 10:34 AM",'100,'78.61328125
+'5,'Header 12,"'p5-ml",'101,'50.39062500
+'5,'Text 62,"'Configure your IDE to debug either the public tests or your own tests.",'102,'87.89062500
+'5,'Table 3,"",'103,'96.19140625
+'5,'Section header 7,"'Template Parameters",'104,'86.86523438
+'5,'Text 63,"'BinarySearchTree has two template parameters:",'105,'90.62500000
+'5,'Text 64,"'T - The type of elements stored within the tree.",'106,'97.55859375
+'5,'Text 65,"'Compare - The type of comparator object (a functor) that should be used to determine whether one element is less than another. The default type is std: less<T> , which compares two T objects with the < operator. To compare elements in a different fashion, a custom comparator type must be specified.",'107,'97.80273438
+'5,'Section header 8,"'No Duplicates Invariant",'108,'90.57617188
+'5,'Text 66,"'In the context of this project, duplicate values are NOT allowed in a BST. This does not need to be the case, but it avoids some distracting complications.",'109,'96.72851563
+'5,'Section header 9,"'Sorting Invariant",'110,'90.38085938
+'5,'Text 67,"'A binary search tree is special in that the structure of the tree corresponds to a sorted ordering of elements and allows efficient searches (i.e. in logarithmic time).",'111,'94.77539063
+'5,'Text 68,"'Every node in a well-formed binary search tree must obey this sorting invariant:",'112,'89.01367188
+'5,'Footer 5,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.html",'113,'87.89062500
+'5,'Page number 5,"'5/25",'114,'79.93164063
+'6,'Header 13,"'8/23/24, 10:34 AM",'115,'89.50195313
+'6,'Header 14,"'p5-ml",'116,'69.92187500
+'6,'List 8,"",'117,'32.81250000
+'6,'Text 69 - Part of List 8,"'It represents an empty tree (i.e. a null Node * ).",'118,'94.38476563
+'6,'Text 70 - Part of List 8,"'- OR -",'119,'92.62695313
+'6,'Text 71 - Part of List 8,"'The left subtree obeys the sorting invariant, and every element in the left subtree is less than the root element (i.e. this node).",'120,'95.65429688
+'6,'Text 72 - Part of List 8,"'- AND -",'121,'93.65234375
+'6,'Text 73 - Part of List 8,"'The right subtree obeys the sorting invariant, and the root element (i.e. this node) is less than every element in the right subtree.",'122,'93.70117188
+'6,'Text 74,"'Put briefly, go left and you'll find smaller elements. Go right and you'll find bigger ones. For example, the following are all well-formed sorted binary trees:",'123,'93.65234375
+'6,'Figure 4,"",'124,'46.48437500
+'6,'Figure 5,"",'125,'45.04394531
+'6,'Text 75,"'While the following are not:",'126,'74.16992188
+'6,'Figure 6,"",'127,'78.27148438
+'6,'Text 76,"'ProTip: When writing tests for check_sorting_invariant ( ) , you can use an iterator to break the invariant. For example:",'128,'92.91992188
+'6,'List 9,"",'129,'64.35546875
+'6,'Text 77 - Part of List 9,"'1 BinarySearchTree<int> b;",'130,'94.43359375
+'6,'Text 78 - Part of List 9,"'2 b.insert (1) ;",'131,'91.35742188
+'6,'Text 79 - Part of List 9,"'3 b.insert( (0) ;",'132,'82.37304688
+'6,'Text 80 - Part of List 9,"'4 // change first datum to 2, resulting in the first broken tree above",'133,'69.43359375
+'6,'Text 81 - Part of List 9,"'5 begin() = 2;",'134,'51.26953125
+'6,'Text 82 - Part of List 9,"'6 ASSERT_FALSE(b.check_sorting_invariant()); -",'135,'64.40429688
+'6,'Footer 6,"'le:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'136,'85.88867188
+'6,'Page number 6,"'6/25",'137,'73.09570313
+'7,'Header 15,"'8/23/24, 10:34 AM",'138,'87.40234375
+'7,'Header 16,"'p5-ml",'139,'55.46875000
+'7,'Title 4,"'Data Representation",'140,'47.36328125
+'7,'Text 83,"'The data representation for BinarySearchTree is a tree-like structure of nodes similar to that described in lecture. Each Node contains an element and pointers to left and right subtrees. The structure is self-similar. A null pointer indicates an empty tree. You must use this data representation. Do not add member variables to BinarySearchTree or Node",'141,'95.45898438
+'7,'Section header 10,"'Public Member Functions and Iterator Interface",'142,'88.28125000
+'7,'Text 84,"'The public member functions and iterator interface for BinarySearchTree are already implemented in the starter code. DO NOT modify the code for any of these functions. They delegate the work to private, static implementation functions, which you will write.",'143,'94.04296875
+'7,'Section header 11,"'Implementation Functions",'144,'93.60351563
+'7,'Text 85,"'The core of the implementation for BinarySearchTree is a collection of private, static member functions that operate on tree-like structures of nodes. You are responsible for writing the implementation of several of these functions.",'145,'93.35937500
+'7,'Text 86,"'To disambiguate these implementation functions from the public interface functions, we have used names ending with _impl (This is not strictly necessary, because the compiler can differentiate them based on the Node* parameter.)",'146,'92.87109375
+'7,'Text 87,"'There are a few keys to thinking about the implementation of these functions:",'147,'87.25585938
+'7,'List 10,"",'148,'84.57031250
+'7,'Text 88 - Part of List 10,"'The functions have no idea that such a thing as the BinarySearchTree class exists, and they shouldn't. A ""tree"" is not a class, but simply a tree-shaped structure of Node S. The parameter node points to the root of these nodes.",'149,'97.07031250
+'7,'Text 89 - Part of List 10,"'A recursive implementation depends on the idea of similar subproblems, so a ""subtree"" is just as much a tree as the ""whole tree"". That means you shouldn't need to think about ""where you came from"" in your implementation.",'150,'97.55859375
+'7,'Text 90 - Part of List 10,"'Every function should have a base case! Start by writing this part.",'151,'95.50781250
+'7,'Text 91 - Part of List 10,"'You only need to think about one ""level"" of recursion at a time. Avoid thinking about the contents of subtrees and take the recursive leap of faith.",'152,'94.43359375
+'7,'Text 92,"'We've structured the starter code so that the first bullet point above is actually enforced by the language. Because they are static member functions, they do not have access to a receiver object (i.e. there's no this pointer). That means it's actually impossible for these functions to try to do something bad with the BinarySearchTree object (e.g. trying to access the root member variable).",'153,'95.89843750
+'7,'Footer 7,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'154,'88.96484375
+'7,'Page number 7,"'7/25",'155,'80.76171875
+'8,'Header 17,"'8/23/24, 10:34 AM",'156,'89.20898438
+'8,'Header 18,"'p5-ml",'157,'63.18359375
+'8,'Text 93,"'Instead, the implementation functions are called from the regular member functions to perform specific operations on the underlying nodes and tree structure, and are passed only a pointer to the root Node of the tree/subtree they should work with.",'158,'97.16796875
+'8,'Text 94,"'The empty_impl function must run in constant time. It must must be able to determine and return its result immediately, without using either iteration or recursion. The rest of the implementation functions must be recursive. There are additional requirements on the kind of recursion that must be used for some functions. See comments in the starter code for details. Iteration (i.e. using loops) is not allowed in any of the _impl functions.",'159,'96.24023438
+'8,'Section header 12,"'Using the Comparator",'160,'80.56640625
+'8,'Text 95,"'The _impl functions that need to compare data take in a comparator parameter called less . Make sure to use less rather than the < operator to compare elements!",'161,'94.67773438
+'8,'Section header 13,"'The insert_impl Function",'162,'93.06640625
+'8,'Text 96,"'The key to properly maintaining the sorting invariant lies in the implementation of the insert_impl function - this is essentially where the tree is built, and this function will make or break the whole ADT. Your insert_impl function should follow this procedure:",'163,'96.28906250
+'8,'List 11,"",'164,'96.77734375
+'8,'Text 97 - Part of List 11,"'1. Handle an originally empty tree as a special case.",'165,'96.72851563
+'8,'Text 98 - Part of List 11,"'2. Insert the element into the appropriate place in the tree, keeping in mind the sorting invariant. You'll need to compare elements for this, and to do so make sure to use the less comparator passed in as a parameter.",'166,'97.21679688
+'8,'Text 99 - Part of List 11,"'3. Use the recursive leap of faith and call insert_impl itself on the left or right subtree. Hint: You do need to use the return value of the recursive call. (Why?)",'167,'96.48437500
+'8,'Figure 7,"",'168,'46.48437500
+'8,'Text 100,"'! Important: When recursively inserting an item into the left or right subtree, be sure to replace the old left or right pointer of the current node with the result from the recursive call. This is essential, because in some cases the old tree structure (i.e. the nodes pointed to by the old left or right pointer) is not reused. Specifically, if the subtree is empty, the only way to get the current node to ""know"" about the newly allocated node is to use the pointer returned from the recursive call.",'169,'96.43554688
+'8,'Figure 8,"",'170,'41.57714844
+'8,'Text 101,"'i Technicality: In some cases, the tree structure may become unbalanced (i.e. too many nodes on one side of the tree, causing it to be much deeper than necessary) and prevent efficient operation for large trees. You don't have to worry about this.",'171,'91.35742188
+'8,'Footer 8,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.html",'172,'86.13281250
+'8,'Page number 8,"'8/25",'173,'76.26953125
+'9,'Header 19,"'8/23/24, 10:34 AM",'174,'71.48437500
+'9,'Header 20,"'p5-ml",'175,'73.33984375
+'9,'Title 5,"'Testing",'176,'38.76953125
+'9,'Figure 9,"",'177,'83.74023438
+'9,'List 12,"",'178,'26.58691406
+'9,'Text 102 - Part of List 12,"'i Pro-tip: When writing tests for functions that return a size_t (which is an unsigned integer type), compare against an unsigned literal. For example:",'179,'94.23828125
+'9,'Text 103 - Part of List 12,"'1 BinarySearchTree<int> b;",'180,'96.14257813
+'9,'Text 104 - Part of List 12,"'2 ASSERT_EQUAL(b.height(), ou) ;",'181,'97.70507813
+'9,'Section header 14,"'Map",'182,'86.18164063
+'9,'Text 105,"'Write a map abstract data type (ADT). Map is an associative container, and works just like std: : map .",'183,'93.35937500
+'9,'Text 106,"'Write implementations at the end of Map hpp for the functions declared at the beginning of Map. hpp . The most important functions are find , insert , and the [] operator.",'184,'89.16015625
+'9,'Text 107,"'Your implementations should not require much code. Reuse the functionality provided by BinarySearchTree .",'185,'87.20703125
+'9,'Text 108,"'Run the public Map tests.",'186,'71.04492188
+'9,'List 13,"",'187,'82.66601563
+'9,'Text 109 - Part of List 13,"'1 $ make Map_compile_check.exe",'188,'95.75195313
+'9,'Text 110 - Part of List 13,"'2 $ make Map_public_tests.exe",'189,'93.11523438
+'9,'Text 111 - Part of List 13,"'3 $ /Map_public_tests.exe",'190,'91.25976563
+'9,'Text 112,"'Write tests for Map in Map_tests.cpp using the Unit Test Framework. While you should write your own tests for Map to ensure that your implementation is correct, you do not have to submit your tests to the autograder.",'191,'96.53320313
+'9,'List 14,"",'192,'80.56640625
+'9,'Text 113 - Part of List 14,"'1 $ make Map_tests.exe",'193,'98.29101563
+'9,'Text 114 - Part of List 14,"'2 $ ./Map_tests.exe",'194,'97.36328125
+'9,'Text 115,"'Submit Map. hpp to the autograder. Don't forget to include the code you finished earlier, BinarySearchTree.hpp and BinarySearchTree_tests.cpp",'195,'93.65234375
+'9,'Section header 15,"'Setup",'196,'84.17968750
+'9,'Text 116,"'Rename these files (VS Code (macOS), VS Code (Windows), Visual Studio, Xcode, CLI):",'197,'91.74804688
+'9,'List 15,"",'198,'84.27734375
+'9,'Text 117 - Part of List 15,"'Map.hpp.starter -> Map.hpp",'199,'94.14062500
+'9,'Text 118 - Part of List 15,"'Map_tests.cpp.starter -> Map_tests.cpp",'200,'92.48046875
+'9,'Footer 9,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'201,'90.13671875
+'9,'Page number 9,"'9/25",'202,'66.89453125
+'10,'Header 21,"'8/23/24, 10:34 AM",'203,'61.96289063
+'10,'Header 22,"'p5-ml",'204,'60.93750000
+'10,'Text 119,"'Edit Map. hpp , adding a function stub for every function prototype in Map . Here are a few examples to get you started. We're using K , V, and C as shorthands for Key_type , Value_type and Key_compare",'205,'97.60742188
+'10,'Figure 10,"",'206,'30.39550781
+'10,'Text 120,"'Now you should be able to compile and run the Map unit tests. The public tests will fail until you implement the functions.",'207,'92.43164063
+'10,'List 16,"",'208,'96.38671875
+'10,'Text 121 - Part of List 16,"'1 $ make Map_compile_check.exe",'209,'98.19335938
+'10,'Text 122 - Part of List 16,"'2 $ make Map_public_tests.exe",'210,'98.29101563
+'10,'Text 123 - Part of List 16,"'3 $ ./Map_public_tests.exe",'211,'98.04687500
+'10,'Text 124,"'Configure your IDE to debug either the public tests or your own tests. Writing your own tests for Map is optional.",'212,'94.28710938
+'10,'Table 4,"",'213,'94.72656250
+'10,'Footer 10,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'214,'90.23437500
+'10,'Page number 10,"'10/25",'215,'78.22265625
+'11,'Header 23,"'8/23/24, 10:34 AM",'216,'50.97656250
+'11,'Text 125,"'p5-ml",'217,'49.70703125
+'11,'Table 5,"",'218,'94.18945313
+'11,'Section header 16,"'Map Examples",'219,'76.85546875
+'11,'Text 126,"'A map is an associative container. It stores two types, key and value. Our map works just like std: : map. .",'220,'94.43359375
+'11,'Text 127,"'Map<string, double> words; std: : map<string, double> words;",'221,'67.23632813
+'11,'Text 128,"'One way to use a map is a lot like an array. A",'222,'50.68359375
+'11,'Text 129,"'words [""hello""] = 1;",'223,'45.89843750
+'11,'Figure 11,"",'224,'27.27050781
+'11,'Text 130,"'Maps store a std::pair type, which ""glues"" one key to one value. The computer science term is Tuple, a fixed-size heterogeneous container.",'225,'96.09375000
+'11,'Text 131,"'pair<string, double> tuple; tuple. first = ""world""; tuple. second = 2; words. insert (tuple) ;",'226,'80.76171875
+'11,'Text 132,"'Here's a more compact way to insert a pair.",'227,'91.65039063
+'11,'Text 133,"'words.insert ({""pi"", ..44159})",'228,'93.26171875
+'11,'Text 134,"'The range-for loop makes it easier to iterate over a map.",'229,'93.65234375
+'11,'Text 135,"'for (const auto &kv : words) { const auto &word = kv. first; //key auto number = kv. second; //value cout << word << "" "" << number << endl; }",'230,'91.79687500
+'11,'Footer 11,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.html",'231,'91.35742188
+'11,'Page number 11,"'11/25",'232,'79.58984375
+'12,'Header 24,"'8/23/24, 10:34 AM",'233,'77.34375000
+'12,'Header 25,"'p5-ml",'234,'37.93945313
+'12,'Text 136,"'You can check if a key is in the map. The find() function returns an iterator.",'235,'84.76562500
+'12,'Text 137,"'auto found_it = words. find (""pi""); if (found_it != words.end( { const auto &word = (*found_it).first; //key auto number = (*found_it).second;//value cout << ""found << word <<"" << number << endl; }",'236,'76.12304688
+'12,'Text 138,"'When using the [] notation, an element not found is automatically created. If the value type of the map is numeric, it will always be O by default.",'237,'87.10937500
+'12,'Text 139,"'cout << ""bleh: ""<<words[""bleh""]<< endl;",'238,'98.94432068
+'12,'Figure 12,"",'239,'29.41894531
+'12,'Figure 13,"",'240,'36.42578125
+'12,'Section header 17,"'Building on the BST",'241,'87.89062500
+'12,'Text 140,"'The operation of a map is quite similar to that of a BST. The additional consideration for a map is that we want to store key-value pairs instead of single elements, but also have any comparisons (e.g. for searching) only depend on the key and be able to freely change the stored values without messing up the BST sorting invariant. We can employ the has-a pattern using a BinarySearchTree as the data representation for Map:",'242,'96.87500000
+'12,'List 17,"",'243,'57.76367188
+'12,'Text 141 - Part of List 17,"'BST template parameter: T",'244,'88.57421875
+'12,'Text 142 - Part of List 17,"'Instantiate with: Pair_type",'245,'81.83593750
+'12,'Text 143 - Part of List 17,"'We've provided a using declaration in the starter code for Pair_type",'246,'81.25000000
+'12,'Text 144 - Part of List 17,"'using Pair_type = std::pair<Key_type, Value_type>;",'247,'70.06835938
+'12,'Text 145 - Part of List 17,"'std::pair is basically like a struct that stores two objects together. Key_type and Value_type are whatever template parameters were used to instantiate Map",'248,'84.86328125
+'12,'Text 146 - Part of List 17,"'BST template parameter: Compare",'249,'82.03125000
+'12,'Text 147 - Part of List 17,"'Instantiate with: PairComp",'250,'66.25976563
+'12,'Text 148,"'You'll need to define your own comparator by declaring a functor type called PairComp (or whatever you want to call it) in your Map class. The overloaded ( ) operator should accept two objects of Pair_type and return whether the key of the LHS is less than the key of the RHS (according to Key_compare ).",'251,'91.01562500
+'12,'Text 149,"'Finally, we can even reuse the iterators from the BST class, since the interface we want (based on std: : map ) calls for iterators to yield a key-value pair when dereferenced. Since the element type T of the BST is our Pair_type BST iterators will yield pairs and will work just fine. We've",'252,'86.23046875
+'12,'Footer 12,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'253,'89.01367188
+'12,'Page number 12,"'12/25",'254,'70.16601563
+'13,'Header 26,"'8/23/24, 10:34 AM",'255,'78.71093750
+'13,'Header 27,"'p5-ml",'256,'48.82812500
+'13,'Header 28,"'provided this using declaration with the starter code to make Map: : Iterator simply an alias for iterators from the corresponding BST:",'257,'46.58203125
+'13,'Header 29,"'using Iterator = typename BinarySearchTree<Pair_type, PairComp> Iterator;",'258,'50.09765625
+'13,'Title 6,"'ML and NLP Background",'259,'46.28906250
+'13,'Figure 14,"",'260,'85.05859375
+'13,'Text 150,"'i Pro-tip: Skim this section the first time through. Refer back to it while you're coding the Classifier.",'261,'92.87109375
+'13,'Section header 18,"'Machine Learning and Classification",'262,'89.01367188
+'13,'Text 151,"'The goal for this project is to write an intelligent program that can classify Piazza posts according to topic. This task is easy for humans - we simply read and understand the content of the post, and the topic is intuitively clear. But how do we compose an algorithm to do the same? We can't just tell the computer to ""look at it"" and understand. This is typical of problems in artificial intelligence and natural language processing.",'263,'97.26562500
+'13,'Text 152,"'We know this is about Euchre, but how can we write an algorithm that ""knows"" that?",'264,'85.69335938
+'13,'Text 153,"'With a bit of introspection, we might realize each individual word is a bit of evidence for the topic about which the post was written. Seeing a word like ""card"" or ""spades"" leads us toward the Euchre project. We judge a potential label for a post based on how likely it is given all the evidence. Along these lines, information about how common each word is for each topic essentially constitutes our classification algorithm.",'265,'96.58203125
+'13,'Text 154,"'But we don't have that information (i.e. that algorithm). You could try to sit down and write out a list of common words for each project, but there's no way you'll get them all. For example, the word ""lecture"" appears much more frequently in posts about exam preparation. This makes sense, but we probably wouldn't come up with it on our own. And what if the projects change? We don't want to have to put in all that work again.",'266,'95.75195313
+'13,'Text 155,"'Instead, let's write a program to comb through Piazza posts from previous terms (which are already tagged according to topic) and learn which words go with which topics. Essentially, the result of our program is an algorithm! This approach is called (supervised) machine learning. Once we've trained the classifier on some set of Piazza posts, we can apply it to new ones written in the future.",'267,'95.21484375
+'13,'Footer 13,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'268,'88.96484375
+'13,'Page number 13,"'13/25",'269,'70.50781250
+'14,'Header 30,"'8/23/24, 10:34 AM",'270,'78.22265625
+'14,'Header 31,"'p5-ml",'271,'70.89843750
+'14,'Text 156,"'At a high level, the classifier we'll implement works by assuming a probabilistic model of how Piazza posts are composed, and then finding which label (e.g. our categories of ""euchre"", ""exam"", etc.) is the most probable source of a particular post.",'272,'97.60742188
+'14,'Text 157,"'All the details of natural language processing (NLP) and machine learning (ML) techniques you need to implement the project are described here. You are welcome to consult other resources, but there are many kinds of classifiers that have subtle differences. The classifier we describe here is a simplified version of a ""Multi-Variate Bernoulli Naive Bayes Classifier"". If you find other resources, but you're not sure they apply, make sure to check them against this specification.",'273,'96.04492188
+'14,'Text 158,"'This document provides a more complete description of the way the classifier works, in case you're interested in the math behind the formulas here.",'274,'92.28515625
+'14,'Section header 19,"'Piazza Dataset",'275,'87.45117188
+'14,'Text 159,"'For this project, we retrieved archived Piazza posts from EECS 280 in past terms. We will focus on two different ways to divide Piazza posts into labels (i.e. categories).",'276,'95.84960938
+'14,'Text 160,"'By topic. Labels: ""exam"", ""calculator"", ""euchre"", ""image"", ""recursion"", ""statistics""",'277,'95.70312500
+'14,'Text 161,"'Example: Posts extracted from w16_projects_exam.csv",'278,'87.45117188
+'14,'Table 6,"",'279,'94.67773438
+'14,'Text 162,"'By author. Labels: ""instructor"", ""student""",'280,'94.77539063
+'14,'Text 163,"'Example: Posts extracted from w14-f15_instructor_student.csv",'281,'90.62500000
+'14,'Table 7,"",'282,'93.55468750
+'14,'Footer 14,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'283,'90.33203125
+'14,'Page number 14,"'14/25",'284,'83.69140625
+'15,'Header 32,"'8/23/24, 10:34 AM",'285,'79.93164063
+'15,'Header 33,"'p5-ml",'286,'70.99609375
+'15,'Table 8,"",'287,'97.07031250
+'15,'Text 164,"'The Piazza datasets are Comma Separated Value (CSV) files. The label for each post is found in the ""tag"" column, and the content in the ""content"" column. There may be other columns in the CSV file; your code should ignore all but the ""tag"" and ""content"" columns. You may assume all Piazza files are formatted correctly, and that post content and labels only contain lowercase characters, numbers, and no punctuation. You must use the csvstream. hpp library (see https://github.com/awdeorio/csvstream for documentation) to read CSV files in your application. The csvstream. hpp file itself is included with the starter code.",'288,'97.41210938
+'15,'Text 165,"'Your classifier should not hardcode any labels. Instead, it should use the exact set of labels that appear in the training data.",'289,'79.10156250
+'15,'Figure 15,"",'290,'73.09570313
+'15,'List 18,"",'291,'69.43359375
+'15,'Text 166 - Part of List 18,"'Pro-tip: Here's how to split a string into words. You may use this code as given.",'292,'97.21679688
+'15,'Text 167 - Part of List 18,"'1 // EFFECTS: Return a set of unique whitespace delimited words",'293,'98.14453125
+'15,'Text 168 - Part of List 18,"'2 set<string> unique_words(const string &str) {",'294,'97.07031250
+'15,'Text 169 - Part of List 18,"'3 istringstream source(str)",'295,'96.97265625
+'15,'Text 170 - Part of List 18,"'4 set<string> words;",'296,'96.43554688
+'15,'Text 171 - Part of List 18,"'5 string word;",'297,'96.28906250
+'15,'Text 172 - Part of List 18,"'6 while (source >> word) {",'298,'94.77539063
+'15,'Text 173 - Part of List 18,"'7 words. .insert(word)",'299,'83.59375000
+'15,'Text 174 - Part of List 18,"'8 }",'300,'72.16796875
+'15,'Text 175 - Part of List 18,"'9 return words; 10 }",'301,'37.74414063
+'15,'Text 176,"'We have included several Piazza datasets with the project:",'302,'88.37890625
+'15,'List 19,"",'303,'88.86718750
+'15,'Text 177 - Part of List 19,"'train_small.csv - Made up training data intended for small-scale testing.",'304,'97.36328125
+'15,'Text 178 - Part of List 19,"'test_small.csv - Made up test data intended for small-scale testing.",'305,'95.65429688
+'15,'Text 179 - Part of List 19,"'w16_projects_exam.csv - (Train) Real posts from W16 labeled by topic.",'306,'94.43359375
+'15,'Text 180 - Part of List 19,"'sp16_projects_exam.csv - (Test) Real posts from Sp16 labeled by topic.",'307,'94.14062500
+'15,'Text 181 - Part of List 19,"'w14-f15_instructor_student.csv - (Train) Real posts from four terms labeled by author.",'308,'94.18945313
+'15,'Text 182 - Part of List 19,"'w16_instructor_student.csv - (Test) Real posts from W16 Piazza labeled by author.",'309,'89.89257813
+'15,'Footer 15,"'For the real datasets, we have indicated which are intended for training VS. testing.",'310,'40.45410156
+'15,'Footer 16,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.html",'311,'75.48828125
+'15,'Page number 15,"'15/25",'312,'45.50781250
+'16,'Header 34,"'8/23/24, 10:34 AM",'313,'84.03320313
+'16,'Header 35,"'p5-ml",'314,'43.21289063
+'16,'Section header 20,"'Bag of Words Model",'315,'56.29882813
+'16,'Text 183,"'We will treat a Piazza post as a ""bag of words"" - each post is simply characterized by which words it includes. The ordering of words is ignored, as are multiple occurrences of the same word. These two posts would be considered equivalent:",'316,'98.04687500
+'16,'List 20,"",'317,'94.62890625
+'16,'Text 184 - Part of List 20,"'""the left bower took the trick""",'318,'97.21679688
+'16,'Text 185 - Part of List 20,"'""took took trick the left bower bower""",'319,'97.26562500
+'16,'Text 186,"'Thus, we could imagine the post-generation process as a person sitting down and going through every possible word and deciding which to toss into a bag.",'320,'95.31250000
+'16,'Section header 21,"'Conditional Probability",'321,'93.55468750
+'16,'Text 187,"'We write P(A) to denote the probability (a number between 0 and 1) that some event A will occur. P(A B) denotes the probability that event A will occur given that we already know event B has occurred. For example, P(bower | euchre) 22 0.007. This means that if a Piazza post is about the euchre project, there is a 0.7% chance it will contain the word bower (we should say ""at least once"", technically, because of the bag of words model).",'322,'95.16601563
+'16,'Section header 22,"'Training",'323,'89.69726563
+'16,'Text 188,"'Before the classifier can make predictions, it needs to be trained on a set of previously labeled Piazza posts (e.g. train_small.csv or w16_projects_exam.csv Your application should process each post in the training set, and record the following information:",'324,'95.31250000
+'16,'List 21,"",'325,'92.43164063
+'16,'Text 189 - Part of List 21,"'The total number of posts in the entire training set.",'326,'97.07031250
+'16,'Text 190 - Part of List 21,"'The number of unique words in the entire training set. (The vocabulary size.)",'327,'97.21679688
+'16,'Text 191 - Part of List 21,"'For each word W, the number of posts in the entire training set that contain W.",'328,'97.16796875
+'16,'Text 192 - Part of List 21,"'For each label C, the number of posts with that label.",'329,'96.67968750
+'16,'Text 193 - Part of List 21,"'For each label C and word W, the number of posts with label C that contain W.",'330,'97.02148438
+'16,'Section header 23,"'Prediction",'331,'89.16015625
+'16,'Text 194,"'How do we predict a label for a new post?",'332,'77.97851563
+'16,'Text 195,"'Given a new Piazza post X, we must determine the most probable label C, based on what the classifier has learned from the training set. A measure of the likelihood of C is the log-probability score given the post:",'333,'90.13671875
+'16,'Footer 17,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'334,'77.58789063
+'16,'Footer 18,"'16/25",'335,'66.65039063
+'17,'Header 36,"'8/23/24, 10:34 AM",'336,'88.13476563
+'17,'Key value 1,"",'337,'40.64941406
+'17,'Text 196,"'Important: Because we're using the bag-of-words model, the words W1, W2, , Wn in this formula are only the unique words in the post, not including duplicates! To ensure consistent results, make sure to add the contributions from each word in alphabetic order.",'338,'84.13085938
+'17,'Text 197,"'The classifier should predict whichever label has the highest log-probability score for the post. If multiple labels are tied, predict whichever comes first alphabetically.",'339,'62.59765625
+'17,'Key value 2,"",'340,'38.57421875
+'17,'Section header 24,"'Classifier",'341,'56.59179688
+'17,'Text 198,"'Write the classifier in main. cpp using the bag of words model.",'342,'47.07031250
+'17,'Text 199,"'Run the classifier on a small dataset.",'343,'37.93945313
+'17,'Text 200,"'$ ./main.exe train_small.csv test_small.csv",'344,'25.04882813
+'17,'Footer 19,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'345,'62.79296875
+'17,'Page number 16,"'17/25",'346,'62.45117188
+'18,'Header 37,"'8/23/24, 10:34 AM",'347,'84.76562500
+'18,'Header 38,"'p5-ml",'348,'64.25781250
+'18,'Title 7,"'Setup",'349,'60.49804688
+'18,'Text 201,"'If you created a main. cpp while following the setup tutorial, you'll use it in this section. Otherwise, create a new file main.cpp (VS Code (macOS), VS Code (Windows), Visual Studio, Xcode, CLI).",'350,'96.04492188
+'18,'Text 202,"'Add ""hello world"" code if you haven't already.",'351,'75.97656250
+'18,'Figure 16,"",'352,'34.52148438
+'18,'Text 203,"'The main program should compile and run.",'353,'89.74609375
+'18,'List 22,"",'354,'90.18554688
+'18,'Text 204 - Part of List 22,"'1 $ make main.exe",'355,'91.89453125
+'18,'Text 205 - Part of List 22,"'2 $ ./main.exe",'356,'90.52734375
+'18,'Text 206 - Part of List 22,"'3 Hello World!",'357,'95.26367188
+'18,'Text 207,"'Configure your IDE to debug the main program.",'358,'79.29687500
+'18,'Table 9,"",'359,'94.62890625
+'18,'Text 208,"'Configure command line arguments (VS Code (macOS), VS Code (Windows), Xcode, Visual Studio). We recommend starting with the smallest input and enabling debug output, train_small.csv test_small.csv debug .",'360,'92.77343750
+'18,'Text 209,"'To compile and run the smallest input at the command line:",'361,'84.96093750
+'18,'Footer 20,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'362,'92.23632813
+'18,'Footer 21,"'18/25",'363,'43.21289063
+'19,'Header 39,"'8/23/24, 10:34 AM",'364,'89.50195313
+'19,'Page number 17,"'p5-ml",'365,'48.24218750
+'19,'List 23,"",'366,'85.15625000
+'19,'Text 210 - Part of List 23,"'1 $ make main. exe",'367,'85.74218750
+'19,'Text 211 - Part of List 23,"'2 $ ./main.exe train_small.csv test_small.csv debug",'368,'86.91406250
+'19,'Title 8,"'Command Line Interface",'369,'47.65625000
+'19,'Text 212,"'Here is the usage message for the top-level application:",'370,'90.82031250
+'19,'List 24,"",'371,'95.89843750
+'19,'Text 213 - Part of List 24,"'1 $ ./main.exe",'372,'93.31054688
+'19,'Text 214 - Part of List 24,"'2 Usage: main.exe TRAIN_FILE TEST_FILE [--debug]",'373,'94.18945313
+'19,'Text 215,"'The main application always requires files for both training and testing. The training file must have at least one post, but the test file may have no posts. You may assume all files are in the correct format, with a header that has at least the ""tag"" and ""content"" columns.",'374,'96.24023438
+'19,'Text 216,"'Use the provided small-scale files for initial testing and to check your output formatting:",'375,'85.54687500
+'19,'List 25,"",'376,'94.43359375
+'19,'Text 217 - Part of List 25,"'1 $ ./main.exe train_small.csv test_small.csv",'377,'95.99609375
+'19,'Text 218 - Part of List 25,"'2 $ ./main.exe train_small.csv test_small.csv debug",'378,'95.80078125
+'19,'Text 219,"'Correct output is in test_small.out.correct and test_small_debug.out.correct The output format is discussed in detail below.",'379,'95.01953125
+'19,'Section header 25,"'Error Checking",'380,'89.20898438
+'19,'Text 220,"'The program checks that the command line arguments obey the following rules:",'381,'93.94531250
+'19,'List 26,"",'382,'89.50195313
+'19,'Text 221 - Part of List 26,"'There are 3 or 4 arguments, including the executable name itself (i.e. argv[0]).",'383,'97.26562500
+'19,'Text 222 - Part of List 26,"'The fourth argument (i.e. argv[3]), if provided, must be -debug",'384,'96.92382813
+'19,'Text 223,"'If any of these are violated, print out the usage message and then quit by returning a non-zero value from main . Do not use the exit library function, as this fails to clean up local objects.",'385,'95.41015625
+'19,'Text 224,"'cout << ""Usage: main. exe TRAIN_FILE TEST_FILE [--debug]"" << endl;",'386,'82.32421875
+'19,'Text 225,"'If any file cannot be opened, print out the following message, where filename is the name of the file that could not be opened, and quit by returning a non-zero value from main.",'387,'95.70312500
+'19,'Text 226,"'cout << ""Error opening file: << filename << endl;",'388,'35.66894531
+'19,'Figure 17,"",'389,'33.59375000
+'19,'Text 227,"'You do not need to do any error checking for command-line arguments or file I/O other than what is described on this page. However, you must use precisely the error messages given here in order to receive credit. (Just literally use the code given here to print them.)",'390,'94.72656250
+'19,'Text 228,"'As mentioned earlier, you may assume all Piazza data files are in the correct format.",'391,'86.52343750
+'19,'Footer 22,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'392,'87.10937500
+'19,'Page number 18,"'19/25",'393,'63.96484375
+'20,'Header 40,"'8/23/24, 10:34 AM",'394,'90.03906250
+'20,'Header 41,"'p5-ml",'395,'54.78515625
+'20,'Title 9,"'Design",'396,'38.57421875
+'20,'Text 229,"'Here is some high-level guidance:",'397,'93.50585938
+'20,'List 27,"",'398,'90.72265625
+'20,'Text 230 - Part of List 27,"'1. First, your application should read posts from a file (e.g. train_small.csv and use them to train the classifier. After training, your classifier abstraction should store the information mentioned in the Training section.",'399,'96.33789063
+'20,'Text 231 - Part of List 27,"'2. Your classifier should be able to compute the log-probability score of a post (i.e. a collection of words) given a particular label. To predict a label for a new post, it should choose the label that gives the highest log-probability score. See the Prediction section.",'400,'96.53320313
+'20,'Text 232 - Part of List 27,"'3. Read posts from a file (e.g. test_small.csv ) to use as testing data. For each post, predict a label using your classifier.",'401,'95.01953125
+'20,'Text 233,"'Some of these steps have output associated with them. See the ""output"" section below for the details.",'402,'93.89648438
+'20,'Text 234,"'The structure of your classifier application, including which procedural abstractions and/or ADTs to use for the classifier, is entirely up to you. Make sure your decisions are informed by carefully considering the classifier and top-level application described in this specification.",'403,'95.21484375
+'20,'Text 235,"'We strongly suggest you make a class to represent the classifier - the private data members for the class should keep track of the classifier parameters learned from the training data, and the public member functions should provide an interface that allows you to train the classifier and make predictions for new piazza posts.",'404,'96.04492188
+'20,'Text 236,"'You should write RMEs and appropriate comments to describe the interfaces for the abstractions you choose (ADTs, classes, functions, etc.). You should also write unit tests to verify each component works on its own.",'405,'94.43359375
+'20,'Text 237,"'You are welcome to use any part of the STL in your top-level classifier application. In particular, std: : map and std::set will be useful.",'406,'92.38281250
+'20,'Figure 18,"",'407,'29.49218750
+'20,'Text 238,"'! Warning: Use std: :map in your classifier. Our implementation of Map is not fast enough.",'408,'73.58398438
+'20,'Section header 26,"'Example",'409,'74.16992188
+'20,'Text 239,"'We've provided full example output for a small input ( train_small.csv and test_small.csv The output is in test_small.out.correct The output with debug is in test_small_debug.out.correct, here we've indicated debug output with ""(DEBUG)"". Some lines are indented by two spaces.",'410,'92.62695313
+'20,'Footer 23,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'411,'86.08398438
+'20,'Footer 24,"'20/25",'412,'46.77734375
+'21,'Header 42,"'8/23/24, 10:34 AM",'413,'70.16601563
+'21,'Header 43,"'p5-ml",'414,'51.26953125
+'21,'Text 240,"'To run this example at the command line:",'415,'46.28906250
+'21,'List 28,"",'416,'90.28320313
+'21,'Text 241 - Part of List 28,"'1 $ make main.exe",'417,'96.67968750
+'21,'Text 242 - Part of List 28,"'2 $ /main.exe train_small.csv test_small.csv",'418,'97.65625000
+'21,'Text 243 - Part of List 28,"'3 $ ./main.exe train_small.csv test_small.csv - -debug",'419,'97.70507813
+'21,'Figure 19,"",'420,'66.99218750
+'21,'List 29,"",'421,'41.57714844
+'21,'Text 244 - Part of List 29,"'i Pro-tip: Debug output differences diff - -y - -B , which shows differences side-by-side and ignores whitespace. We'll use the less pager so we can scroll through the long terminal output. Press q to quit.",'422,'94.43359375
+'21,'Text 245 - Part of List 29,"'1 $ make main.exe",'423,'90.86914063
+'21,'Text 246 - Part of List 29,"'2 $ /main. exe train_small.csv test_small.csv - debug > test_small_debug.out",'424,'81.68945313
+'21,'Text 247 - Part of List 29,"'3 $ diff -y -B test_small_debug.out test_small_debug.out.corred less # q to quit",'425,'79.83398438
+'21,'Text 248,"'Add this line at the beginning of your main function to set floating point precision:",'426,'88.62304688
+'21,'Text 249,"'cout.precision(3);",'427,'73.04687500
+'21,'Text 250,"'First, print information about the training data:",'428,'77.88085938
+'21,'List 30,"",'429,'86.03515625
+'21,'Text 251 - Part of List 30,"'(DEBUG) Line-by-line, the label and content for each training document.",'430,'93.01757813
+'21,'Text 252 - Part of List 30,"'training data:",'431,'50.19531250
+'21,'Text 253 - Part of List 30,"'label = euchre, content = can the upcard ever be the left bower label = euchre, content = when would the dealer ever prefer a card to the upcard label = euchre, content = bob played the same card twice is he cheating",'432,'62.50000000
+'21,'Text 254 - Part of List 30,"'label = calculator, content = does stack need its own big three",'433,'30.02929688
+'21,'Text 255 - Part of List 30,"'label = calculator, content = valgrind memory error not sure what it means",'434,'31.78710938
+'21,'Text 256 - Part of List 30,"'The number of training posts.",'435,'84.52148438
+'21,'Text 257 - Part of List 30,"'trained on 8 examples",'436,'85.59570313
+'21,'Text 258 - Part of List 30,"'(DEBUG) The vocabulary size (the number of unique words in all training content).",'437,'87.89062500
+'21,'Text 259 - Part of List 30,"'vocabulary size = 49",'438,'85.00976563
+'21,'Text 260 - Part of List 30,"'An extra blank line",'439,'90.13671875
+'21,'Text 261,"'If the debug option is provided, also print information about the classifier trained on the training posts. Whenever classes or words are listed, they are in alphabetic order.",'440,'87.93945313
+'21,'Footer 25,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm/",'441,'90.13671875
+'21,'Page number 19,"'21/25",'442,'66.45507813
+'22,'Header 44,"'8/23/24, 10:34 AM",'443,'85.98632813
+'22,'Header 45,"'p5-ml",'444,'64.69726563
+'22,'List 31,"",'445,'36.20605469
+'22,'Text 262 - Part of List 31,"'(DEBUG) The classes in the training data, and the number of examples for each.",'446,'92.18750000
+'22,'Text 263 - Part of List 31,"'classes: calculator, 3 examples, log-prior = -0.981 euchre, 5 examples, log-prior = -0.47",'447,'83.83789063
+'22,'Text 264 - Part of List 31,"'(DEBUG) For each label, and for each word that occurs for that label: The number of posts with that label that contained the word, and the log-likelihood of the word given the label.",'448,'91.11328125
+'22,'Text 265 - Part of List 31,"'classifier parameters: calculator assert, count = 1, log-likelihood = -1.1 calculator:big, count = 1, log-likelihood = -1.1 euchre: twice, count = 1, log-likelihood = -1.61 euchre: upcard, count = 2, log-likelihood = -0.916",'449,'70.31250000
+'22,'Text 266 - Part of List 31,"'(DEBUG) An extra blank line",'450,'94.18945313
+'22,'Text 267 - Part of List 31,"'Finally, use the classifier to predict classes for each example in the testing data. Print information about the test data as well as these predictions.",'451,'94.33593750
+'22,'Text 268 - Part of List 31,"'Line-by-line, the ""correct"" label, the predicted label and its log-probability score, and the content for each test. Insert a blank line after each for readability.",'452,'93.50585938
+'22,'Text 269 - Part of List 31,"'test data: correct = euchre, predicted = euchre, log-probability score = -13.7 content = my code segfaults when bob is the dealer",'453,'31.37207031
+'22,'Text 270 - Part of List 31,"'correct = euchre, predicted = calculator, log-probability score = -12.5 content = no rational explanation for this bug",'454,'89.16015625
+'22,'Text 271 - Part of List 31,"'correct = calculator, predicted = calculator, log-probability score = -13.6 content = countif function in stack class not working",'455,'91.35742188
+'22,'Text 272 - Part of List 31,"'The number of correct predictions and total number of test posts.",'456,'94.18945313
+'22,'Text 273 - Part of List 31,"'performance: 2 / 3 posts predicted correctly",'457,'77.78320313
+'22,'Text 274,"'The last thing printed should be a newline character.",'458,'88.96484375
+'22,'Section header 27,"'Accuracy",'459,'72.11914063
+'22,'Text 275,"'In case you're curious, here's the accuracy for the large datasets. Not too bad!",'460,'90.08789063
+'22,'Footer 26,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm/",'461,'91.40625000
+'22,'Page number 20,"'22/25",'462,'69.18945313
+'23,'Header 46,"'8/23/24, 10:34 AM",'463,'73.77929688
+'23,'Header 47,"'p5-ml",'464,'50.29296875
+'23,'Table 10,"",'465,'82.76367188
+'23,'Section header 28,"'Efficiency",'466,'73.73046875
+'23,'Text 276,"'While efficiency is not a primary goal for this project, you should aim for your code to run the largest test case above in no more than a minute. Some common causes of slowdown you should avoid:",'467,'92.72460938
+'23,'List 32,"",'468,'95.11718750
+'23,'Text 277 - Part of List 32,"'Processing a post more than once (including reading it more than once or saving all the data in a vector).",'469,'97.55859375
+'23,'Text 278 - Part of List 32,"'Iterating over a map to find something rather than using [] or find .",'470,'96.67968750
+'23,'Text 279 - Part of List 32,"'Passing strings, pairs, or containers by value.",'471,'96.09375000
+'23,'Text 280 - Part of List 32,"'Iterating by value in a range-based for loop.",'472,'96.19140625
+'23,'Text 281,"'Refer to the Project 2 perf tutorial for instructions on how to use the perf tool to identify slow functions.",'473,'94.97070313
+'23,'Section header 29,"'Submission and Grading",'474,'81.29882813
+'23,'Text 282,"'Submit these files to the autograder.",'475,'92.13867188
+'23,'List 33,"",'476,'90.33203125
+'23,'Text 283 - Part of List 33,"'BinarySearchTree.hpp",'477,'96.53320313
+'23,'Text 284 - Part of List 33,"'BinarySearchTree_tests.cpp",'478,'96.53320313
+'23,'Text 285 - Part of List 33,"'Map.hpp",'479,'96.14257813
+'23,'Text 286 - Part of List 33,"'main.cpp",'480,'95.80078125
+'23,'Text 287,"'You do not have to submit Map_tests.cpp to the autograder.",'481,'90.91796875
+'23,'Text 288,"'This project will be autograded for correctness, comprehensiveness of your test cases, and programming style. See the style checking tutorial for the criteria and how to check your style automatically on CAEN.",'482,'93.94531250
+'23,'Section header 30,"'Testing",'483,'75.48828125
+'23,'Text 289,"'Run all the unit tests and system tests. This includes the public tests we provided and the unit tests that you wrote.",'484,'93.35937500
+'23,'Text 290,"'$ make test",'485,'66.99218750
+'23,'Footer 27,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'486,'91.06445313
+'23,'Page number 21,"'23/25",'487,'56.59179688
+'24,'Header 48,"'8/23/24, 10:34 AM",'488,'94.18945313
+'24,'Header 49,"'p5-ml",'489,'73.19335938
+'24,'Figure 20,"",'490,'70.06835938
+'24,'Text 291,"'Pro-tip: Run commands in parallel with make -j .",'491,'43.21289063
+'24,'Text 292,"'$ make - j4 test",'492,'47.16796875
+'24,'Section header 31,"'Unit Test Grading",'493,'55.81054688
+'24,'Text 293,"'We will autograde your BinarySearchTree unit tests.",'494,'91.99218750
+'24,'Text 294,"'Your unit tests must use the unit test framework.",'495,'86.42578125
+'24,'Text 295,"'A test suite must complete less than 5 seconds and contain 50 or fewer TEST ) items. One test suite is one _tests.cpp file.",'496,'91.06445313
+'24,'Text 296,"'To grade your unit tests, we use a set of intentionally buggy instructor solutions. You get points for catching the bugs.",'497,'90.52734375
+'24,'List 34,"",'498,'84.42382813
+'24,'Text 297 - Part of List 34,"'1. We compile and run your unit tests with a correct solution.",'499,'92.62695313
+'24,'Text 298 - Part of List 34,"'Tests that pass are valid.",'500,'93.45703125
+'24,'Text 299 - Part of List 34,"'Tests that fail are invalid, they falsely report a bug.",'501,'96.63085938
+'24,'Text 300 - Part of List 34,"'2. We compile and run all of your valid tests against each buggy solution.",'502,'94.33593750
+'24,'Text 301 - Part of List 34,"'If any of your tests fail, you caught the bug.",'503,'95.21484375
+'24,'Text 302 - Part of List 34,"'You earn points for each bug that you catch.",'504,'96.14257813
+'24,'Text 303,"'Requirements and Restrictions",'505,'40.64941406
+'24,'Table 11,"",'506,'91.89453125
+'24,'Footer 28,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm/",'507,'90.62500000
+'24,'Page number 22,"'24/25",'508,'56.49414063
+'25,'Header 50,"'8/23/24, 10:34 AM",'509,'52.44140625
+'25,'Header 51,"'p5-ml",'510,'50.48828125
+'25,'Table 12,"",'511,'86.42578125
+'25,'Section header 32,"'Acknowledgments",'512,'56.49414063
+'25,'Text 304,"'Andrew DeOrio and James Juett wrote the original project and specification. Amir Kamil contributed to code structure, style, and implementation details. This project was developed for EECS 280, Fall 2016 at the University of Michigan.",'513,'92.04101563
+'25,'Footer 29,"'file:///home/runner/work/p5-ml/p5-ml/_site/index.htm",'514,'95.50781250
+'25,'Page number 23,"'25/25",'515,'69.33593750

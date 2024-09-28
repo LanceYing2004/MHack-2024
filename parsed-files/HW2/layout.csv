@@ -1,0 +1,544 @@
+'Page number,'Layout,'Text,'Reading Order,'Confidence score % (Layout)
+'1,'Header 1,"'9/25/24, 1:46 PM",'0,'90.72265625
+'1,'Header 2,"'p2-cv",'1,'69.18945313
+'1,'Header 3,"'p2-cv",'2,'33.10546875
+'1,'Title 1,"'EECS 280 Project 2: Computer Vision",'3,'58.98437500
+'1,'Text 1,"'Due 8:00pm EST Friday September 27th, 2024. You may work alone or with a partner (partnership guidelines).",'4,'95.84960938
+'1,'Text 2,"'Fall 2024 release.",'5,'87.54882813
+'1,'Figure 1,"",'6,'88.42773438
+'1,'Text 3,"'i IMPORTANT If you are retaking the course, please note changes this term to the underlying implementation of the Matrix ADT that affect several parts of the project. While we always suggest students retaking the course redo the entire project from scratch (as it is helpful practice), we nevertheless want to highlight these changes to the project.",'7,'97.46093750
+'1,'Section header 1,"'Introduction",'8,'93.40820313
+'1,'Text 4,"'Build an image resizing program using a seam-carving algorithm.",'9,'93.94531250
+'1,'Text 5,"'The learning goals of this project include Testing, Debugging, Pointers, Strings, Streams, IO, and Abstract Data Types in C. You'll gain practice with C-style pointers and structs.",'10,'95.45898438
+'1,'Text 6,"'When you're done, you'll have a program that uses seam carving for content-aware resizing of images. The algorithm works by finding and removing ""seams"" in the image that pass through the least important pixels. For a quick introduction, check out this video.",'11,'96.82617188
+'1,'Figure 2,"",'12,'93.26171875
+'1,'Text 7,"'Original Image: 479x382",'13,'93.89648438
+'1,'Figure 3,"",'14,'94.18945313
+'1,'Text 8,"'Resized: 300x382",'15,'92.77343750
+'1,'Figure 4,"",'16,'93.45703125
+'1,'Text 9,"'Resized: 400x250",'17,'90.57617188
+'1,'Section header 2,"'Setup",'18,'63.76953125
+'1,'Footer 1,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.htn",'19,'88.37890625
+'1,'Page number 1,"'1/28",'20,'81.15234375
+'2,'Header 4,"'9/25/24, 1:46 PM",'21,'88.52539063
+'2,'Header 5,"'p2-cv",'22,'64.94140625
+'2,'Text 10,"'Set up your visual debugger and version control, then submit to the autograder.",'23,'46.19140625
+'2,'Title 2,"'Visual debugger",'24,'77.97851563
+'2,'Text 11,"'During setup, name your project p2-cv. Use this starter files link: https://eecs280staff.github.io/p2-cv/starter-files.tar.gz",'25,'94.14062500
+'2,'Text 12,"'VS Code",'26,'95.41015625
+'2,'Text 13,"'Visual Studio",'27,'95.99609375
+'2,'Text 14,"'Xcode",'28,'93.94531250
+'2,'Text 15,"'If you created a main.cpp while following the setup tutorial, rename it to resize.cpp . Otherwise, create a new file resize.cpp . You should end up with a folder with starter files that looks like this. You may have already renamed files like Matrix.cpp.starter to Matrix.cpp",'29,'93.89648438
+'2,'Table 1,"",'30,'42.43164063
+'2,'Text 16,"'Here's a short description of each starter file.",'31,'52.24609375
+'2,'Table 2,"",'32,'70.99609375
+'2,'Footer 2,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.html",'33,'91.35742188
+'2,'Page number 2,"'2/28",'34,'81.54296875
+'3,'Header 6,"'9/25/24, 1:46 PM",'35,'55.71289063
+'3,'Text 17,"'p2-cv",'36,'38.91601563
+'3,'Table 3,"",'37,'98.19335938
+'3,'Section header 3,"'Version control",'38,'54.00390625
+'3,'Text 18,"'Set up version control using the Version control tutorial.",'39,'86.03515625
+'3,'Text 19,"'After you're done, you should have a local repository with a ""clean"" status and your local repository should be connected to a remote GitHub repository.",'40,'88.03710938
+'3,'Footer 3,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.html",'41,'87.01171875
+'3,'Page number 3,"'3/28",'42,'63.52539063
+'4,'Header 7,"'9/25/24, 1:46 PM",'43,'86.42578125
+'4,'Page number 4,"'p2-cv",'44,'66.55273438
+'4,'List 1,"",'45,'86.91406250
+'4,'Text 20 - Part of List 1,"'1 $ git status",'46,'80.37109375
+'4,'Text 21 - Part of List 1,"'2 On branch main",'47,'91.35742188
+'4,'Text 22 - Part of List 1,"'3 Your branch is up-to-date with 'origin/main'",'48,'96.04492188
+'4,'Text 23 - Part of List 1,"'4",'49,'30.07812500
+'4,'Text 24 - Part of List 1,"'5 nothing to commit, working tree clean",'50,'95.75195313
+'4,'Text 25 - Part of List 1,"'6 $ git remote -V -",'51,'81.34765625
+'4,'Text 26 - Part of List 1,"'7 origin https://github.com/awdeorio/p2-cv.git (fetch)",'52,'94.33593750
+'4,'Text 27 - Part of List 1,"'8 origin https://githubcom/awdeorio/p2-cv.git (push)",'53,'93.11523438
+'4,'Text 28,"'You should have a gitignore file (instructions).",'54,'77.24609375
+'4,'List 2,"",'55,'39.03808594
+'4,'Text 29 - Part of List 2,"'1 $ pwd",'56,'25.24414063
+'4,'Text 30 - Part of List 2,"'2 /Users/awdeorio/src/eecs280/p2-cv",'57,'35.98632813
+'4,'Text 31 - Part of List 2,"'3 $ head gitignore",'58,'32.17773438
+'4,'Text 32 - Part of List 2,"'4 # This is a sample gitignore file that's useful for C++ projects.",'59,'40.45410156
+'4,'Section header 4,"'Group registration",'60,'83.98437500
+'4,'Text 33,"'5",'61,'30.27343750
+'4,'Text 34,"'Register your partnership (or working alone) on the Autograder using the direct link in the Submission and Grading section. Then, submit the code you have.",'62,'92.08984375
+'4,'Section header 5,"'Matrix Module",'63,'85.20507813
+'4,'Text 35,"'Create a Matrix abstract data type (ADT). Write implementations in Matrix.cpp for the functions declared in Matrix.hpp .",'64,'91.25976563
+'4,'Text 36,"'Run the public Matrix tests.",'65,'73.48632813
+'4,'List 3,"",'66,'83.20312500
+'4,'Text 37 - Part of List 3,"'1 $ make Matrix_public_tests.exe",'67,'91.89453125
+'4,'Text 38 - Part of List 3,"'2 $ ./Matrix_public_tests.exe",'68,'89.99023438
+'4,'Text 39,"'Complete the EECS 280 Unit Test Framework Tutorial.",'69,'84.32617188
+'4,'Text 40,"'Write tests for Matrix in Matrix_tests.cpp using the unit test framework. You'll submit these tests to the autograder. See the Unit Test Grading section.",'70,'92.62695313
+'4,'List 4,"",'71,'77.68554688
+'4,'Text 41 - Part of List 4,"'1 $ make Matrix_tests.exe",'72,'95.26367188
+'4,'Text 42 - Part of List 4,"'2 $ ./Matrix_tests.exe",'73,'95.16601563
+'4,'Text 43,"'Submit Matrix.cpp and Matrix_tests.cpp to the Autograder using the link in the Submission and Grading section.",'74,'92.77343750
+'4,'Section header 6,"'Setup",'75,'62.89062500
+'4,'Footer 4,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.htr",'76,'73.09570313
+'4,'Footer 5,"'4/28",'77,'41.57714844
+'5,'Header 8,"'9/25/24, 1:46 PM",'78,'73.92578125
+'5,'Header 9,"'p2-cv",'79,'53.41796875
+'5,'Text 44,"'Rename these files (VS Code (macOS), VS Code (Windows), Visual Studio, Xcode, CLI):",'80,'51.46484375
+'5,'List 5,"",'81,'95.01953125
+'5,'Text 45 - Part of List 5,"'Matrix.cpp.starter -> Matrix.cpp",'82,'96.28906250
+'5,'Text 46 - Part of List 5,"'Matrix_tests.cpp.starter -> Matrix_tests.cpp",'83,'98.04687500
+'5,'Text 47,"'The Matrix tests should compile and run. Expect them to fail at this point because the Matrix.cpp starter code contains function stubs.",'84,'96.72851563
+'5,'List 6,"",'85,'94.14062500
+'5,'Text 48 - Part of List 6,"'1 $ make Matrix_public_tests.exe",'86,'97.46093750
+'5,'Text 49 - Part of List 6,"'2 $ ./Matrix_public_tests.exe",'87,'97.65625000
+'5,'Text 50 - Part of List 6,"'3 $ make Matrix_tests.exe",'88,'96.92382813
+'5,'Text 51 - Part of List 6,"'4 $ ./Matrix_tests.exe",'89,'95.41015625
+'5,'Text 52,"'Configure your IDE to debug either the public tests or your own tests.",'90,'91.01562500
+'5,'Table 4,"",'91,'92.38281250
+'5,'Section header 7,"'Interface",'92,'54.78515625
+'5,'Footer 6,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.html",'93,'92.33398438
+'5,'Page number 5,"'5/28",'94,'69.09179688
+'6,'Header 10,"'9/25/24, 1:46 PM",'95,'57.56835938
+'6,'Header 11,"'p2-cv",'96,'57.66601563
+'6,'Text 53,"'A matrix is a two-dimensional grid of elements. For this project, matrices store integer elements and we will refer to locations by row/column. For example, here's a 3x5 matrix.",'97,'93.01757813
+'6,'Text 54,"'The Matrix. hpp file defines a Matrix struct to represent matrices and specifies the interface for functions to operate on them. Dimensions of 0 are not allowed.",'98,'87.84179688
+'6,'Text 55,"'To create a Matrix, , first declare a variable and then use an initializer function.",'99,'84.86328125
+'6,'List 7,"",'100,'91.30859375
+'6,'Text 56 - Part of List 7,"'1 Matrix m; // create a Matrix object in local memory",'101,'93.40820313
+'6,'Text 57 - Part of List 7,"'2 Matrix_init(&m, 100, 100) ; // initialize it as a 100x100 matrix",'102,'96.14257813
+'6,'Text 58,"'Once a Matrix is initialized, it is considered valid. Now we can use any of the functions declared in Matrix. hpp to operate on it.",'103,'92.23632813
+'6,'List 8,"",'104,'26.29394531
+'6,'Text 59 - Part of List 8,"'1 Matrix_fill(&m, 0) ; // fill with zeros",'105,'32.98339844
+'6,'Text 60 - Part of List 8,"'2",'106,'26.22070313
+'6,'Text 61 - Part of List 8,"'3 // fill first row with ones",'107,'26.66015625
+'6,'Text 62 - Part of List 8,"'4 for (int C = O; C V Matrix_width(m) ; ++c) {",'108,'29.22363281
+'6,'Text 63 - Part of List 8,"'5 *Matrix_at(&m, O, c) = 1; // see description below 6 } 7 8 Matrix_print (&m, cout) ; // print matrix to cout",'109,'26.90429688
+'6,'Text 64,"'Access to individual elements in a Matrix is provided through a pointer to their location, which can be retrieved through a call to Matrix_at . To read or write the element, you just dereference the pointer.",'110,'93.01757813
+'6,'Text 65,"'The RMEs in Matrix. hpp give a full specification of the interface for each Matrix function.",'111,'82.17773438
+'6,'Section header 8,"'Implementation",'112,'65.47851563
+'6,'Text 66,"'The Matrix struct looks like this:",'113,'76.85546875
+'6,'Text 67,"'1 struct Matrix { 2 int width; 3 int height; 4 std: ::vector<int> data; 5 };",'114,'43.87207031
+'6,'Text 68,"'Matrix stores a 2D grid of numbers in an underlying one-dimensional vector, which in turn stores its elements in a one-dimensional array.",'115,'82.37304688
+'6,'Footer 7,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.htm",'116,'89.01367188
+'6,'Page number 6,"'6/28",'117,'62.98828125
+'7,'Header 12,"'9/25/24, 1:46 PM",'118,'88.96484375
+'7,'Header 13,"'p2-cv",'119,'66.45507813
+'7,'Table 5,"",'120,'53.51562500
+'7,'Figure 5,"",'121,'71.14257813
+'7,'Text 69,"'i Pro-tip: You will need to either create a vector with a given size, or resize an existing vector to that size. Here are some ways to do so:",'122,'85.98632813
+'7,'List 9,"",'123,'72.85156250
+'7,'Text 70 - Part of List 9,"'1 // create a vector with 100 elements, all initialized to the value O",'124,'89.69726563
+'7,'Text 71 - Part of List 9,"'2 std::vector<int> vec (100, 0) ;",'125,'65.57617188
+'7,'Text 72 - Part of List 9,"'3",'126,'53.80859375
+'7,'Text 73 - Part of List 9,"'4 // modify an existing vector to have 200 elements with value O 5 vec.assign (200, 0);",'127,'59.71679688
+'7,'Text 74 - Part of List 9,"'6",'128,'48.14453125
+'7,'Text 75 - Part of List 9,"'7 // replace an existing vector with a new one containing 50 elements, 8 // all initialized to the value O",'129,'83.30078125
+'7,'Text 76 - Part of List 9,"'9 vec = std: : vector<int> (50, 0);",'130,'67.67578125
+'7,'Text 77,"'Each of the functions in the Matrix module takes a pointer to the Matrix that is supposed to be operated on. In your implementations of these functions, you should access the width , height , and data members of that Matrix , but this is the only place you may do so. To all other code, the individual members are an implementation detail that should be hidden behind the provided interfaces for the Matrix module.",'131,'95.75195313
+'7,'Text 78,"'Your Matrix_at functions will need to perform the appropriate arithmetic to convert from a (row,column) pair to an index in the vector. This function does not require a loop, and you'll find your implementation will be very slow if you use a loop.",'132,'92.18750000
+'7,'Text 79,"'There are two versions of the Matrix_at function to support element access for both const and non-const matrices. The constness of the pointer returned corresponds to the Matrix passed in. The implementations for these will be identical.",'133,'91.40625000
+'7,'Text 80,"'Remember that you may call any of the functions in a module as part of the implementation of another, and in fact you should do this if it reduces code duplication. In particular, only the Matrix_init and Matrix_at functions should access the data member directly. All other functions should access elements by calling Matrix_at() as a helper. functions instead.",'134,'92.67578125
+'7,'Figure 6,"",'135,'30.24902344
+'7,'Text 81,"'i Pro-tip: Use assert( to check the conditions in the REQUIRES clause. If other code breaks the interface, that's a bug and you want to know right away! Here's an example.",'136,'90.96679688
+'7,'Text 82,"'1",'137,'61.32812500
+'7,'Text 83,"'// REQUIRES: mat points to a valid Matrix // O row row Matrix_height(&mat)",'138,'33.54492188
+'7,'Text 84,"'2",'139,'56.39648438
+'7,'Footer 8,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.htm",'140,'75.34179688
+'7,'Page number 7,"'7/28",'141,'53.41796875
+'8,'Header 14,"'9/25/24, 1:46 PM",'142,'50.19531250
+'8,'Page number 8,"'p2-cv",'143,'42.72460938
+'8,'Text 85,"'3 // O <= column && column < Matrix_width(&mat) 4 // EFFECTS: Returns a pointer to the element in 5 // the Matrix at the given row and column. 6 int* Matrix_at (Matrix* mat, int row, int column) { 7 assert( <= row && row V mat->height) 8 assert(0 <= column && column V mat->width); 9 // 10 }",'144,'27.66113281
+'8,'Text 86,"'Some things can't be checked, for example that a pointer points to a valid Matrix",'145,'50.48828125
+'8,'Section header 9,"'Testing",'146,'52.24609375
+'8,'Text 87,"'Test your Matrix functions to ensure that your implementations conform to specification in the RME.",'147,'82.37304688
+'8,'Text 88,"'Heed the Small Scope Hypothesis. There is no need for large Matrix structs. (Other than an as edge case for max size.) Think about what makes tests meaningfully different.",'148,'81.88476563
+'8,'Text 89,"'Respect the interfaces for the modules you are testing. Do not access member variables of the structs directly. Do not test inputs that break the REQUIRES clause for a function.",'149,'90.47851563
+'8,'Table 6,"",'150,'64.25781250
+'8,'Text 90,"'Sometimes you need to use one Matrix one function while testing another. For example, you need Matrix_at to test Matrix_fill",'151,'79.44335938
+'8,'Table 7,"",'152,'31.56738281
+'8,'Footer 9,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.html",'153,'86.57226563
+'8,'Page number 9,"'8/28",'154,'73.09570313
+'9,'Header 15,"'9/25/24, 1:46 PM",'155,'52.63671875
+'9,'Header 16,"'p2-cv",'156,'52.24609375
+'9,'Table 8,"",'157,'55.81054688
+'9,'Text 91,"'Use an ostringstream to test Matrix_print() .",'158,'54.00390625
+'9,'Table 9,"",'159,'61.13281250
+'9,'Text 92,"'In your Matrix tests, you may use the functions provided in Matrix_test_helpers.hpp . Do not use Image_test_helpers.hpp in your Matrix tests.",'160,'87.93945313
+'9,'Section header 10,"'Image Module",'161,'77.73437500
+'9,'Text 93,"'Create an Image abstract data type (ADT). Write implementations in Image.cpp for the functions declared in Image.hpp .",'162,'95.70312500
+'9,'Text 94,"'Run the public Image tests.",'163,'88.03710938
+'9,'List 10,"",'164,'89.89257813
+'9,'Text 95 - Part of List 10,"'1 $ make Image_public_tests.exe",'165,'97.31445313
+'9,'Text 96 - Part of List 10,"'2 $ /Image_public_tests.exe",'166,'97.16796875
+'9,'Text 97,"'Write tests for Image in Image_tests.cpp using the Unit Test Framework. You'll submit these tests to the autograder. See the Unit Test Grading section.",'167,'92.38281250
+'9,'Footer 10,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.htm",'168,'89.16015625
+'9,'Page number 10,"'9/28",'169,'79.83398438
+'10,'Header 17,"'9/25/24, 1:46 PM",'170,'89.50195313
+'10,'Header 18,"'p2-cv",'171,'71.48437500
+'10,'Header 19,"'1 $ make Image_tests.exe",'172,'37.67089844
+'10,'Header 20,"'2 $ ./Image_tests.exe",'173,'44.94628906
+'10,'Text 98,"'Submit Image.cpp and Image_tests.cpp to the Autograder using the link in the Submission and Grading section.",'174,'90.03906250
+'10,'Section header 11,"'Setup",'175,'65.47851563
+'10,'Text 99,"'Rename these files (VS Code (macOS), VS Code (Windows), Visual Studio, Xcode, CLI):",'176,'87.89062500
+'10,'List 11,"",'177,'96.28906250
+'10,'Text 100 - Part of List 11,"'Image.cpp.starter -> Image.cpp",'178,'96.92382813
+'10,'Text 101 - Part of List 11,"'Image_tests.cpp.starter -> Image_tests.cpp",'179,'97.55859375
+'10,'Text 102,"'The Image tests should compile and run. Expect them to fail at this point because the Image.cpp starter code contains function stubs.",'180,'96.14257813
+'10,'List 12,"",'181,'95.31250000
+'10,'Text 103 - Part of List 12,"'1 $ make Image_public_tests.exe",'182,'97.70507813
+'10,'Text 104 - Part of List 12,"'2 $ Image_public_tests.exe",'183,'96.67968750
+'10,'Text 105 - Part of List 12,"'3 $ make Image_tests.exe",'184,'97.36328125
+'10,'Text 106 - Part of List 12,"'4 $ ./Image_tests.exe",'185,'97.11914063
+'10,'Text 107,"'Write tests for Image in Image_tests.cpp using the Unit Test Framework. You'll submit these tests to the autograder. See the Unit Test Grading section.",'186,'94.62890625
+'10,'List 13,"",'187,'92.67578125
+'10,'Text 108 - Part of List 13,"'1 $ make Image_tests.exe",'188,'96.77734375
+'10,'Text 109 - Part of List 13,"'2 $ ./Image_tests.exe",'189,'95.80078125
+'10,'Text 110,"'Configure your IDE to debug either the public tests or your own tests.",'190,'90.86914063
+'10,'Table 10,"",'191,'91.35742188
+'10,'Footer 11,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.html",'192,'87.35351563
+'10,'Page number 11,"'10/28",'193,'63.96484375
+'11,'Header 21,"'9/25/24, 1:46 PM",'194,'69.43359375
+'11,'Header 22,"'p2-cv",'195,'57.76367188
+'11,'Table 11,"",'196,'70.80078125
+'11,'Section header 12,"'Interface",'197,'70.50781250
+'11,'Text 111,"'An Image is similar to a Matrix , but contains Pixel S instead of integers. Each Pixel includes three integers, which represent red, green, and blue (RGB) color components. Each component takes on an intensity value between 0 and 255. The Pixel type is considered ""Plain Old Data"" (POD), which means it doesn't have a separate interface. We just use its member variables directly. Here is the Pixel struct and some examples:",'198,'81.83593750
+'11,'Figure 7,"",'199,'78.46679688
+'11,'Text 112,"'Below is a 5x5 image and its conceptual representation as a grid of pixels.",'200,'70.01953125
+'11,'Text 113,"'Dimensions of 0 are not allowed. To create an Image , first declare a variable and then use an initializer function. There are several initializer functions, but for now we'll just use the basic one.",'201,'89.25781250
+'11,'List 14,"",'202,'82.91015625
+'11,'Text 114 - Part of List 14,"'1 Image img; // create an Image object in local memory",'203,'85.25390625
+'11,'Text 115 - Part of List 14,"'2 Image_init (&img, 5, 5) ; // initialize it as a 5x5 image",'204,'86.47460938
+'11,'Text 116,"'Once an Image is initialized, it is considered valid. Now we can use any of the functions declared in Image. hpp to operate on it.",'205,'74.07226563
+'11,'Footer 12,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.htm",'206,'87.01171875
+'11,'Page number 12,"'11/28",'207,'64.79492188
+'12,'Header 23,"'9/25/24, 1:46 PM",'208,'84.71679688
+'12,'Page number 13,"'p2-cv",'209,'53.02734375
+'12,'Key value 1,"",'210,'56.10351563
+'12,'Text 117,"'To read and write individual Pixel S in an Image , use the Image_get_pixel and Image_set_pixel functions, respectively.",'211,'86.71875000
+'12,'Text 118,"'The RMEs in Image. hpp give a full specification of the interface for each Image function.",'212,'87.89062500
+'12,'Section header 13,"'PPM Format",'213,'87.25585938
+'12,'Text 119,"'The Image module also provides functions to read and write Image S from/to the PPM image format. Here's an example of an Image and its representation in PPM.",'214,'96.53320313
+'12,'Figure 8,"",'215,'46.97265625
+'12,'Text 120,"'The PPM format begins with these elements, each separated by whitespace:",'216,'87.35351563
+'12,'List 15,"",'217,'73.19335938
+'12,'Text 121 - Part of List 15,"'P3 (Indicates it's a ""Plain PPM file"".)",'218,'94.82421875
+'12,'Text 122 - Part of List 15,"'WIDTH HEIGHT (Image width and height, separated by whitespace.)",'219,'95.65429688
+'12,'Text 123 - Part of List 15,"'255 (Max value for RGB intensities. We'll always use 255.)",'220,'93.89648438
+'12,'Footer 13,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.htm",'221,'74.56054688
+'12,'Page number 14,"'12/28",'222,'74.41406250
+'13,'Header 24,"'9/25/24, 1:46 PM",'223,'90.18554688
+'13,'Header 25,"'p2-cv",'224,'73.38867188
+'13,'Text 124,"'This is followed by the pixels in the image, listed with each row on a separate line. A pixel is written as three integers for its RGB components in that order, separated by whitespace.",'225,'98.63281250
+'13,'Text 125,"'To write an image to PPM format, use the Image_print function that takes in a std::ostream This can be used in conjunction with file I/O to write an image to a PPM file. The Image_print function must produce a PPM using whitespace in a very specific way so that we can use diff to compare your output PPM file against a correct PPM file. See the RME for the full details.",'226,'97.21679688
+'13,'Text 126,"'To create an image by reading from PPM format, use the Image_init function that takes in a std::istream This can be used in conjunction with file I/O to read an image from a PPM file. Because we may be reading in images generated from programs that don't use whitespace in the same way that we do, the Image_init function must accommodate any kind of whitespace used to separate elements of the PPM format (if you use C++ style I/O with >> , this should be no problem). Other than variance in whitespace (not all PPM files put each row on its own line, for example), you may assume any input to this function is in valid PPM format. (Some PPM files may contain ""comments"", but you do not have to account for these.)",'227,'96.82617188
+'13,'Text 127,"'See Working with PPM Files for more information on working with PPM files and programs that can be used to view or create them on various platforms.",'228,'95.26367188
+'13,'Section header 14,"'Implementation",'229,'82.91015625
+'13,'Text 128,"'The Image struct looks like this:",'230,'95.80078125
+'13,'Text 129,"'1 struct Image { 2 int width; 3 int height; 4 Matrix red_channel; 5 Matrix green_channel; 6 Matrix blue_channel; 7 };",'231,'80.12695313
+'13,'Text 130,"'The Interface for Image makes it seem like we have a grid of Pixel S, but the Image struct actually stores the information for the image in three separate Matrix structs, one for each of the RGB color channels. There are no Pixel S in the underlying representation, so your Image_get_pixel function must pack the RGB values from each color Matrix into a Pixel to be returned. Likewise, Image_set_pixel must unpack RGB values from an input Pixel and store them into each Matrix .",'232,'95.99609375
+'13,'Text 131,"'Each of the functions in the Image module takes a pointer to the Image that is supposed to be operated on. When you are writing implementations for these functions, you may be tempted to access members of the Matrix struct directly (e.g. Lmg->red_channel.width , img - >green_channel.data[x]! ). Don't do it! They aren't part of the interface for Matrix, and you should",'233,'95.99609375
+'13,'Footer 14,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.html",'234,'90.03906250
+'13,'Page number 15,"'13/28",'235,'42.62695313
+'14,'Header 26,"'9/25/24, 1:46 PM",'236,'69.77539063
+'14,'Page number 16,"'p2-cv",'237,'38.03710938
+'14,'Text 132,"'not use them from the outside. Instead, use the Matrix functions that are part of the interface (e.g. Matrix_width(&img->red_channel) , Matrix_at (&img->green_channel, r, c) ).",'238,'87.01171875
+'14,'Text 133,"'In your implementation of the Image_init functions, space for the Matrix members will have already been allocated as part of the Image . However, you still need to initialize these with a call to Matrix_init to ensure they are the right size!",'239,'95.16601563
+'14,'Text 134,"'The Image struct contains width and height members. These are technically redundant, since each of the Matrix members also keeps track of a width and height, but having them around should make the implementations for your functions easier to read.",'240,'94.48242188
+'14,'Section header 15,"'Respect the Interfaces!",'241,'89.84375000
+'14,'Text 135,"'Our goal is to use several modules that work together through well-defined interfaces, and to keep the implementations separate from those interfaces. The interfaces consist of the functions we provide in the .hpp file for the module, but NOT the member variables of the struct. The member variables are part of the implementation, not the interface!",'242,'96.87500000
+'14,'Text 136,"'This means you may access member variables directly (i.e. using or ) when you're writing code within their module, but never from the outside world! For example, let's consider the Image module. If I'm writing the implementation of a function inside the module, like Image_print , it's fine to use the member variable height directly:",'243,'97.21679688
+'14,'Text 137,"'1 void Image_print(const Image *img, std::ostream& os) { 2 3 // loop through all the rows 4 for (int r = 0; r img->height; ++r) { 5 // do something 6 } 7 8 }",'244,'70.06835938
+'14,'Text 138,"'This is fine, because we assume the person who implements the module is fully aware of all the details of how to use height correctly. However, if I'm working from the outside, then using member variables directly is very dangerous. This code won't work right:",'245,'96.19140625
+'14,'Text 139,"'1 int main { 2 // Make a 400x300 image (sort of) 3 Image img; 4 img. width = 400; 5 img. height = 300; 6 // do something with img but it doesn't work ( 7 8 }",'246,'46.97265625
+'14,'Footer 15,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.html",'247,'82.51953125
+'14,'Page number 17,"'14/28",'248,'65.38085938
+'15,'Header 27,"'9/25/24, 1:46 PM",'249,'76.26953125
+'15,'Header 28,"'p2-cv",'250,'62.50000000
+'15,'Text 140,"'The problem is that we ""forgot"" about initializing the width and height of the Matrix structs that make up each color channel in the image. Instead, we should have used the Image_init function from the outside, which takes care of everything for us.",'251,'97.65625000
+'15,'Text 141,"'Here's the big idea - we don't want the ""outside world"" to have to worry about the details of the implementation, or even to know them at all. We want to support substitutability, so that the implementation can change without breaking outside code (as long as it still conforms to the interface). Using member variables directly from the outside messes this all up. Don't do it! It could break your code and this will be tested on the autograder!",'252,'96.92382813
+'15,'Text 142,"'An exception to this rule is the Pixel struct. It's considered to be a ""Plain Old Data"" (POD) type. In this case, the interface and the implementation are the same thing. It's just an aggregate of three ints to represent an RGB pixel - nothing more, nothing less.",'253,'93.89648438
+'15,'Text 143,"'We should note there are patterns used in C-style programming that hide away the definition of a struct's members and prevent us from accidentally accessing them outside the correct module. Unfortunately, this causes complications that we don't have all the tools to deal with yet (namely dynamic memory management). We'll also see that C++ adds some built-in language mechanisms to control member accessibility. For now, you'll just have to be careful!",'254,'95.31250000
+'15,'Section header 16,"'Copying Large Structs",'255,'91.35742188
+'15,'Text 144,"'In many cases you will find it useful to copy Matrix and Image structs in your code. This is supported by the interface, so feel free to use it wherever useful. However, try to avoid making unnecessary copies, as this can slow down your code.",'256,'96.63085938
+'15,'Text 145,"'As an example, let's say you wanted to add a border to a Matrix and print it without changing the original. You could write this:",'257,'93.94531250
+'15,'List 16,"",'258,'34.96093750
+'15,'Text 146 - Part of List 16,"'1",'259,'61.23046875
+'15,'Text 147 - Part of List 16,"'2 // Assume we have a variable mat that points to a Matrix",'260,'84.17968750
+'15,'Text 148 - Part of List 16,"'3",'261,'83.54492188
+'15,'Text 149 - Part of List 16,"'// Make a copy of mat and add the border. original remains unchanged",'262,'47.75390625
+'15,'Text 150 - Part of List 16,"'4",'263,'62.45117188
+'15,'Text 151 - Part of List 16,"'5 Matrix mat_border = *mat; // need to dereference mat to copy it",'264,'48.14453125
+'15,'Text 152 - Part of List 16,"'Matrix_fill_border (&mat_border, 0),",'265,'38.91601563
+'15,'Text 153 - Part of List 16,"'7",'266,'78.46679688
+'15,'Text 154 - Part of List 16,"'8 // print the bordered version 9 Matrix_print (&mat_border, os);",'267,'32.34863281
+'15,'Text 155 - Part of List 16,"'6",'268,'42.52929688
+'15,'Text 156 - Part of List 16,"'10",'269,'32.17773438
+'15,'Section header 17,"'Testing",'270,'71.87500000
+'15,'Footer 16,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.html",'271,'86.08398438
+'15,'Page number 18,"'15/28",'272,'63.08593750
+'16,'Header 29,"'9/25/24, 1:46 PM",'273,'76.75781250
+'16,'Header 30,"'p2-cv",'274,'73.87695313
+'16,'Text 157,"'Respect the interfaces for the modules you are testing. Do not access member variables of the structs directly. Do not test inputs that break the REQUIRES clause for a function.",'275,'92.52929688
+'16,'Text 158,"'You may use stringstreams to simulate file input and/or output for your unit tests. You may also use the image files dog.ppm . , crabster ppm , and horses.ppm , but no others.",'276,'85.35156250
+'16,'Text 159,"'In your Image tests, you may use the functions provided in Image_test_helpers.hpp Do not use Matrix_test_helpers.hpp in your Image tests.",'277,'85.54687500
+'16,'Section header 18,"'Processing Module",'278,'45.43457031
+'16,'Text 160,"'The processing module contains several functions that perform image processing operations. Some of these provide an interface for content-aware resizing of images, while others correspond to individual steps in the seam carving algorithm.",'279,'96.24023438
+'16,'Text 161,"'The main interface for using content-aware resizing is through the seam_carve , seam_carve_width and seam_carve_height functions. These functions use the seam carving algorithm to shrink either an image's width or height in a context-aware fashion. The seam_carve function adjusts both width and height, but width is always done first. For this project, we only support shrinking an image, so the requested width and height will always be less than or equal to the original values.",'280,'97.31445313
+'16,'Text 162,"'Write implementations in processing. cpp for the functions declared in processing hpp .",'281,'92.91992188
+'16,'Text 163,"'Run the public processing tests.",'282,'83.83789063
+'16,'List 17,"",'283,'95.01953125
+'16,'Text 164 - Part of List 17,"'1 $ make processing_public_tests.exe",'284,'98.33984375
+'16,'Text 165 - Part of List 17,"'2 $ /processing_public_tests.exe",'285,'98.14453125
+'16,'Text 166,"'Submit processing.cpp to the Autograder using the link in the Submission and Grading section.",'286,'95.55664063
+'16,'Section header 19,"'Setup",'287,'89.55078125
+'16,'Text 167,"'Rename this file (VS Code (macOS), VS Code (Windows), Visual Studio, Xcode, CLI):",'288,'94.14062500
+'16,'Text 168,"'processing.cpp.starter -> processing.cpp",'289,'93.65234375
+'16,'Text 169,"'The Processing tests should compile and run. Expect them to fail at this point because the processing. cpp starter code contains function stubs.",'290,'94.67773438
+'16,'List 18,"",'291,'89.50195313
+'16,'Text 170 - Part of List 18,"'1 $ make processing_public_tests.ex",'292,'96.87500000
+'16,'Text 171 - Part of List 18,"'2 $ ./processing_public_tests.exe .",'293,'95.31250000
+'16,'Text 172,"'Configure your IDE to debug public tests.",'294,'76.75781250
+'16,'Footer 17,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.htm",'295,'87.74414063
+'16,'Page number 19,"'16/28",'296,'64.16015625
+'17,'Header 31,"'9/25/24, 1:46 PM",'297,'86.76757813
+'17,'Header 32,"'p2-cv",'298,'61.03515625
+'17,'Table 12,"",'299,'97.36328125
+'17,'Section header 20,"'Energy Matrix",'300,'84.32617188
+'17,'Text 173,"'compute_energy_matrix : The seam carving algorithm works by removing seams that pass through the least important pixels in an image. We use a pixel's energy as a measure of its importance.",'301,'91.94335938
+'17,'Text 174,"'To compute a pixel's energy, we look at its neighbors. We'll call them N (north), S (south), E (east), and W (west) based on their direction from the pixel in question (we'll call it X).",'302,'90.72265625
+'17,'Text 175,"'The energy of X is the sum of the squared differences between its N/S and E/W neighbors:",'303,'91.60156250
+'17,'Text 176,"'energy(X) = squared_difference(N, S) + squared_difference(W E)",'304,'71.28906250
+'17,'Text 177,"'The static function squared_difference is provided as part of the starter code. Do not change the implementation of the squared_difference function.",'305,'95.41015625
+'17,'Text 178,"'To construct the energy Matrix for the whole image, your function should do the following:",'306,'92.72460938
+'17,'List 19,"",'307,'90.28320313
+'17,'Text 179 - Part of List 19,"'1. Initialize the energy Matrix with the same size as the Image and fill it with zeros.",'308,'97.80273438
+'17,'Text 180 - Part of List 19,"'2. Compute the energy for each non-border pixel, using the formula above.",'309,'97.07031250
+'17,'Text 181 - Part of List 19,"'3. Find the maximum energy so far, and use it to fill in the border pixels.",'310,'97.11914063
+'17,'Section header 21,"'Cost Matrix",'311,'37.67089844
+'17,'Footer 18,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.htm",'312,'83.05664063
+'17,'Page number 20,"'17/28",'313,'46.09375000
+'18,'Header 33,"'9/25/24, 1:46 PM",'314,'92.38281250
+'18,'Header 34,"'p2-cv",'315,'37.30468750
+'18,'Text 182,"'compute_vertical_cost_matrix : Once the energy matrix has been computed, the next step is to find the path from top to bottom (i.e. a vertical seam) that passes through the pixels with the lowest total energy (this is the seam that we would like to remove).",'316,'95.94726563
+'18,'Text 183,"'We will begin by answering a related question - given a particular pixel, what is the minimum energy we must move through to get to that pixel via any possible path? We will refer to this as the cost of that pixel. Our goal for this stage of the algorithm will be to compute a matrix whose entries correspond to the cost of each pixel in the image.",'317,'95.89843750
+'18,'Text 184,"'Now, to get to any pixel we have to come from one of the three pixels above it.",'318,'86.18164063
+'18,'Figure 9,"",'319,'81.29882813
+'18,'Figure 10,"",'320,'57.56835938
+'18,'Text 185,"'We would want to choose the least costly from those pixels, which means the minimum cost to get to a pixel is its own energy plus the minimum cost for any pixel above it. This is a recurrence relation. For a pixel with row r and column C the cost is:",'321,'87.79296875
+'18,'Key value 2,"",'322,'37.57324219
+'18,'Text 186,"'Use the Matrix_min_value_in_row function to help with this equation. Of course, you need to be careful not to consider coming from pixels outside the bounds of the Matrix",'323,'90.72265625
+'18,'Text 187,"'We could compute costs recursively, with pixels in the first row as our base case, but this would involve a lot of repeated work since our subproblems will end up overlapping. Instead, let's take the opposite approach",'324,'95.55664063
+'18,'List 20,"",'325,'86.91406250
+'18,'Text 188 - Part of List 20,"'1. Initialize the cost Matrix with the same size as the energy Matrix",'326,'96.24023438
+'18,'Text 189 - Part of List 20,"'2. Fill in costs for the first row (index 0). The cost for these pixels is just the energy.",'327,'94.04296875
+'18,'Text 190 - Part of List 20,"'3. Loop through the rest of the pixels in the Matrix row by row, starting with the second row (index 1). Use the recurrence above to compute each cost. Because a pixel's cost only depends on other costs in an earlier row, they will have already been computed and can just be looked up in the Matrix",'328,'95.75195313
+'18,'Footer 19,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.html",'329,'90.28320313
+'18,'Page number 21,"'18/28",'330,'54.39453125
+'19,'Header 35,"'9/25/24, 1:46 PM",'331,'86.66992188
+'19,'Header 36,"'p2-cv",'332,'48.63281250
+'19,'Title 3,"'Minimal Vertical Seam",'333,'85.88867188
+'19,'Text 191,"'find_minimal_vertical_seam : The pixels in the bottom row of the image correspond to the possible endpoints for any seam, so we start with the one of those that is lowest in the cost matrix.",'334,'96.97265625
+'19,'Figure 11,"",'335,'89.45312500
+'19,'Text 192,"'First, find the minimum cost pixel in the bottom row.",'336,'48.14453125
+'19,'Text 193,"'Now, we work our way up, considering where we would have come from in the row above. In the pictures below, the blue box represents the ""pixels above"" in each step.",'337,'93.94531250
+'19,'Figure 12,"",'338,'86.47460938
+'19,'Figure 13,"",'339,'63.42773438
+'19,'Text 194,"'0",'340,'50.09765625
+'19,'Text 195,"'2",'341,'63.23242188
+'19,'Text 196,"'1",'342,'48.63281250
+'19,'Text 197,"'3",'343,'61.76757813
+'19,'Text 198,"'Don't look outside the bounds!",'344,'52.92968750
+'19,'Footer 20,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.htm",'345,'97.41210938
+'19,'Text 199,"'4",'346,'51.46484375
+'19,'Page number 22,"'19/28",'347,'91.45507813
+'20,'Header 37,"'9/25/24, 1:46 PM",'348,'47.07031250
+'20,'Text 200,"'p2-cv",'349,'99.90193939
+'20,'Figure 14,"",'350,'34.59472656
+'20,'Text 201,"'You will find the Matrix_column_of_min_value_in_rov function useful here. Each time you process a row, put the column number of the best pixel in the seam vector, working your way from the back to front. (i.e. The last element corresponds to the bottom row.)",'351,'91.84570313
+'20,'Section header 22,"'Removing a Vertical Seam",'352,'71.87500000
+'20,'Text 202,"'remove_vertical_seam : The seam vector passed into this function contains the column numbers of the pixels that should be removed in each row, in order from the top to bottom rows. To remove the seam, copy the image one row at a time, first copying the part of the row before the seam (green), skipping that pixel, and then copying the rest (orange).",'353,'92.48046875
+'20,'Figure 15,"",'354,'74.16992188
+'20,'Text 203,"'You should copy into a smaller auxiliary Image and then back into the original, because there is no way to change the width of an existing image. Do not attempt to use Image_init to ""resize"" the original - it doesn't preserve existing data in an Image .",'355,'89.11132813
+'20,'Footer 21,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.html",'356,'89.40429688
+'20,'Page number 23,"'20/28",'357,'70.55664063
+'21,'Header 38,"'9/25/24, 1:46 PM",'358,'92.77343750
+'21,'Header 39,"'p2-cv",'359,'43.67675781
+'21,'Title 4,"'Seam Carving Algorithm",'360,'42.82226563
+'21,'Text 204,"'We can apply seam carving to the width of an image, the height, or both.",'361,'93.94531250
+'21,'Section header 23,"'seam_carve_width",'362,'80.66406250
+'21,'Text 205,"'To apply seam carving to the width, remove the minimal cost seam until the image has reached the appropriate width.",'363,'95.01953125
+'21,'List 21,"",'364,'95.75195313
+'21,'Text 206 - Part of List 21,"'1. Compute the energy matrix",'365,'97.16796875
+'21,'Text 207 - Part of List 21,"'2. Compute the cost matrix",'366,'96.19140625
+'21,'Text 208 - Part of List 21,"'3. Find the minimal cost seam",'367,'96.53320313
+'21,'Text 209 - Part of List 21,"'4. Remove the minimal cost seam",'368,'97.36328125
+'21,'Section header 24,"'seam_carve_height",'369,'90.62500000
+'21,'Text 210,"'To apply seam carving to the height, just do the following:",'370,'93.01757813
+'21,'List 22,"",'371,'92.72460938
+'21,'Text 211 - Part of List 22,"'1. Rotate the image left by 90 degrees",'372,'97.26562500
+'21,'Text 212 - Part of List 22,"'2. Apply seam_carve_width",'373,'95.60546875
+'21,'Text 213 - Part of List 22,"'3. Rotate the image right by 90 degrees",'374,'97.60742188
+'21,'Section header 25,"'seam_carve",'375,'89.40429688
+'21,'Text 214,"'To adjust both dimensions:",'376,'92.62695313
+'21,'List 23,"",'377,'86.52343750
+'21,'Text 215 - Part of List 23,"'1. Apply seam_carve_width",'378,'97.11914063
+'21,'Text 216 - Part of List 23,"'2. Apply seam_carve_height",'379,'97.16796875
+'21,'Section header 26,"'Testing",'380,'92.77343750
+'21,'Text 217,"'We have provided the processing_public_tests.cpp file that contains a test suite for the seam carving algorithm that runs each of the functions in the processing module and compares the output to the "" _correct "" files included with the project.",'381,'95.80078125
+'21,'Text 218,"'You should write your own tests for the processing module, but you do not need to turn them in. You may do this either by creating a copy of processing_public_tests.cpp and building onto it, or writing more tests from scratch. Pay attention to edge cases.",'382,'93.06640625
+'21,'Text 219,"'Use the Makefile to compile the test with this command:",'383,'87.74414063
+'21,'Text 220,"'$ make processing_public_tests.exe",'384,'41.87011719
+'21,'Footer 22,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.html",'385,'89.45312500
+'21,'Page number 24,"'21/28",'386,'60.40039063
+'22,'Header 40,"'9/25/24, 1:46 PM",'387,'41.87011719
+'22,'Header 41,"'p2-cv",'388,'41.40625000
+'22,'Text 221,"'Then you can run the tests for the dog , crabster , and horses images as follows:",'389,'81.54296875
+'22,'Text 222,"'$ /processing_public_tests.exe",'390,'56.59179688
+'22,'Text 223,"'You can also run the tests on just a single image:",'391,'89.50195313
+'22,'List 24,"",'392,'84.96093750
+'22,'Text 224 - Part of List 24,"'1 $ /processing_public_tests.ex test1_dog",'393,'96.09375000
+'22,'Text 225 - Part of List 24,"'2 $ ./processing_public_tests.exe test2_crabster",'394,'95.89843750
+'22,'Text 226 - Part of List 24,"'3 $ /processing_public_tests.exe test3_horses",'395,'95.45898438
+'22,'Text 227,"'When the test program runs, it will also write out image files containing the results from your functions before asserting that they are correct. You may find it useful to look at the results from your own code and visually compare them to the provided correct outputs when debugging the algorithm.",'396,'94.58007813
+'22,'Text 228,"'The seam carving tests work sequentially and stop at the first deviation from correct behavior so that you can identify the point at which your code is incorrect.",'397,'90.47851563
+'22,'Section header 27,"'Resize Program",'398,'83.05664063
+'22,'Text 229,"'The main resize program supports content-aware resizing of images via a command line interface.",'399,'93.35937500
+'22,'Text 230,"'Create a resize. cpp file and write your implementations of the driver program there.",'400,'72.85156250
+'22,'Text 231,"'Compile and run the program. The interface section explains each command line argument.",'401,'91.35742188
+'22,'Text 232,"'$ make resize.exe $ ./resize.exe horses.ppm horses_400x250. ppm 400 250",'402,'58.88671875
+'22,'Section header 28,"'Setup",'403,'78.71093750
+'22,'Text 233,"'If you created a main.cpp while following the setup tutorial, rename it to resize.cpp . Otherwise, create a new file resize.cpp (VS Code (macOS), VS Code (Windows), Visual Studio, Xcode, CLI).",'404,'93.26171875
+'22,'Text 234,"'Add ""hello world"" code if you haven't already.",'405,'77.39257813
+'22,'Text 235,"'1 #include <iostream> 2 using namespace std;",'406,'41.57714844
+'22,'Text 236,"'int main( ( ) {",'407,'41.21093750
+'22,'Text 237,"'3",'408,'54.78515625
+'22,'Text 238,"'4",'409,'55.07812500
+'22,'Text 239,"'cout << ""Hello World!\n"";",'410,'61.32812500
+'22,'Text 240,"'5",'411,'68.50585938
+'22,'Text 241,"'6 }",'412,'53.22462845
+'22,'Text 242,"'The resize program should compile and run.",'413,'81.88476563
+'22,'Text 243,"'1 $ make resize.exe",'414,'86.71875000
+'22,'Footer 23,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.html",'415,'64.16015625
+'22,'Page number 25,"'22/28",'416,'57.27539063
+'23,'Header 42,"'9/25/24, 1:46 PM",'417,'93.70117188
+'23,'Page number 26,"'p2-cv",'418,'45.99609375
+'23,'Header 43,"'2 $ ./resize.exe",'419,'45.89843750
+'23,'Header 44,"'3 Hello World!",'420,'48.63281250
+'23,'Text 244,"'Configure your IDE to debug the resize program.",'421,'85.20507813
+'23,'Table 13,"",'422,'94.77539063
+'23,'Text 245,"'Configure command line arguments (VS Code (macOS), VS Code (Windows), Xcode, Visual Studio). We recommend starting with the smallest input, dog.ppm dog_4x5.out.ppm 45.",'423,'94.38476563
+'23,'Text 246,"'To compile, run, and test the smallest input at the command line:",'424,'93.94531250
+'23,'List 25,"",'425,'95.60546875
+'23,'Text 247 - Part of List 25,"'1 $ make resize.exe",'426,'96.87500000
+'23,'Text 248 - Part of List 25,"'2 $ ./resize.exe dog. ppm dog_4x5.out.ppm 45",'427,'97.99804688
+'23,'Text 249 - Part of List 25,"'3 $ diff dog_4x5.out.ppm dog_4x5.correct.ppm",'428,'98.29101563
+'23,'Section header 29,"'Interface",'429,'87.64648438
+'23,'Text 250,"'To resize the file horses.ppm to be 400x250 pixels and store the result in the file horses_400x250. ppm , we would use the following command:",'430,'95.89843750
+'23,'Text 251,"'./resize.exe horses.ppm horses_400x250.ppm 400 250",'431,'86.81640625
+'23,'Text 252,"'In particular, here's what each of those means:",'432,'89.30664063
+'23,'Table 14,"",'433,'75.83007813
+'23,'Footer 24,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.htr",'434,'87.45117188
+'23,'Page number 27,"'23/28",'435,'41.87011719
+'24,'Header 45,"'9/25/24, 1:46 PM",'436,'41.96777344
+'24,'Header 46,"'p2-cv",'437,'38.50097656
+'24,'Table 15,"",'438,'95.50781250
+'24,'Text 253,"'The program is invoked with three or four arguments. If no height argument is supplied, the original height is kept (i.e. only the width is resized). If your program takes about 30 seconds for large images, that's ok. There's a lot of computation involved.",'439,'91.60156250
+'24,'Section header 30,"'Error Checking",'440,'80.07812500
+'24,'Text 254,"'The program checks that the command line arguments obey the following rules:",'441,'91.06445313
+'24,'List 26,"",'442,'96.48437500
+'24,'Text 255 - Part of List 26,"'There are 4 or 5 arguments, including the executable name itself (i.e. argv[0] ).",'443,'97.26562500
+'24,'Text 256 - Part of List 26,"'The desired width is greater than 0 and less than or equal to the original width of the input image.",'444,'97.41210938
+'24,'Text 257 - Part of List 26,"'The desired height is greater than 0 and less than or equal to the original height of the input image.",'445,'96.63085938
+'24,'Text 258,"'If any of these are violated, use the following lines of code (literally) to print an error message.",'446,'92.52929688
+'24,'List 27,"",'447,'83.64257813
+'24,'Text 259 - Part of List 27,"'1 cout << ""Usage: resize. exe IN_FILENAME OUT_FILENAME WIDTH [HEIGHT]\n""",'448,'93.21289063
+'24,'Text 260 - Part of List 27,"'2 << ""WIDTH and HEIGHT must be less than or equal to original"" << endl;",'449,'62.25585938
+'24,'Text 261,"'Your program should then exit with a non-zero return value from main . Do not use the exit function in the standard library, as it does not clean up local objects.",'450,'91.79687500
+'24,'Text 262,"'If the input or output files cannot be opened, use the following lines of code (literally, except change the variable filename to whatever variable you have containing the name of the problematic file) to print an error message, and then return a non-zero value from main .",'451,'94.62890625
+'24,'Text 263,"'cout << ""Error opening file: "" << filename << endl;",'452,'55.66406250
+'24,'Figure 16,"",'453,'29.85839844
+'24,'Text 264,"'i You do not need to do any error checking for command line arguments or file I/O other than what is described in this section. However, you must use precisely the error messages given here in order to receive credit.",'454,'90.13671875
+'24,'Section header 31,"'Implementation",'455,'45.60546875
+'24,'Footer 25,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.html",'456,'83.93554688
+'24,'Page number 28,"'24/28",'457,'51.75781250
+'25,'Header 47,"'9/25/24, 1:46 PM",'458,'89.50195313
+'25,'Header 48,"'p2-cv",'459,'70.06835938
+'25,'Text 265,"'Your main function should not contain much code. It should just process the command line arguments, check for errors, and then call the appropriate functions from the other modules to perform the desired task.",'460,'63.33007813
+'25,'Section header 32,"'Optional: Reading and Writing JPEG Files",'461,'40.35644531
+'25,'Text 266,"'Your program must handle input and output files in the PPM format, but you may optionally also implement support for files in the JPEG format. To do so, follow these steps:",'462,'93.84765625
+'25,'List 28,"",'463,'72.16796875
+'25,'Text 267 - Part of List 28,"'1. Install the libjpeg or libjpeg-turbo library. On MacOS, you can run the following:",'464,'96.28906250
+'25,'Text 268 - Part of List 28,"'$ brew install jpeg-turbo",'465,'96.53320313
+'25,'Text 269 - Part of List 28,"'On WSL or Linux, run the following:",'466,'96.58203125
+'25,'Text 270 - Part of List 28,"'$ sudo apt install libjpeg-turbo8-dev",'467,'96.87500000
+'25,'Text 271 - Part of List 28,"'2. Edit the Makefile and set USE_LIBJPEG to true :",'468,'95.94726563
+'25,'Text 272 - Part of List 28,"'USE_LIBJPEG ?= true",'469,'94.48242188
+'25,'Text 273 - Part of List 28,"'On MacOS, you will also need to set LIBJPEG_PATH Run the following in the terminal:",'470,'95.89843750
+'25,'Text 274 - Part of List 28,"'$ brew info jpeg-turbo",'471,'94.97070313
+'25,'Text 275 - Part of List 28,"'You should see output like the following:",'472,'93.55468750
+'25,'Text 276 - Part of List 28,"'jpeg-turbo: stable 3.0.2 (bottled), HEAD JPEG image codec that aids compression and decompression htps://www.libjpeg-turbo.org/ /opt/homebrew/Cellar/jpeg-turbo/3.0.2 (44 files, 3.4MB) *",'473,'88.96484375
+'25,'Text 277 - Part of List 28,"'Set LIBJPEG_PATH to the path you see in the output, e.g.",'474,'93.70117188
+'25,'Text 278 - Part of List 28,"'LIBJPEG_PATH ?= /opt/homebrew/Cellar/jpeg-turbo/3.0.2",'475,'88.42773438
+'25,'Text 279 - Part of List 28,"'3. In resize.cpp , add the following #include . Do not add it in any other files.",'476,'94.53125000
+'25,'Text 280 - Part of List 28,"'#include ""jpeg.hpp'",'477,'58.98437500
+'25,'Text 281 - Part of List 28,"'You can then make use of the following functions defined in jpeg.hpp :",'478,'87.25585938
+'25,'Text 282 - Part of List 28,"'has_jpeg_extension() determines whether a file name ends with jpg or jpeg , ignoring capitalization - use this to determine whether the files specified at the command line are JPEG files",'479,'92.57812500
+'25,'Footer 26,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.html",'480,'88.81835938
+'25,'Page number 29,"'25/28",'481,'63.08593750
+'26,'Header 49,"'9/25/24, 1:46 PM",'482,'84.81445313
+'26,'Header 50,"'p2-cv",'483,'52.73437500
+'26,'List 29,"",'484,'29.73632813
+'26,'Text 283 - Part of List 29,"'read_jpeg() reads a JPEG image from a file into an Image object",'485,'94.92187500
+'26,'Text 284 - Part of List 29,"'write_jpeg() writes an image from an Image object into a JPEG file",'486,'97.41210938
+'26,'Text 285 - Part of List 29,"'See the full documentation of each function in jpeg. hpp .",'487,'95.01953125
+'26,'Text 286 - Part of List 29,"'4. Once you are sure that your program is working, you may wish to compile with optimization enabled to make it run significantly faster:",'488,'96.24023438
+'26,'Text 287 - Part of List 29,"'1 $ make clean",'489,'96.97265625
+'26,'Text 288 - Part of List 29,"'2 $ make resize.exe CXXFLAGS="" - - std=c++17 -03""",'490,'97.21679688
+'26,'Text 289,"'Even with optimizations enabled, seam carving is quite expensive. We recommend using input images that are no larger than 1000x1000 pixels.",'491,'92.52929688
+'26,'Section header 33,"'Submission and Grading",'492,'83.00781250
+'26,'Text 290,"'Submit to the autograder using this direct autograder link: https://autograder.io/web/project/2669.",'493,'95.01953125
+'26,'List 30,"",'494,'88.08593750
+'26,'Text 291 - Part of List 30,"'Matrix.cpp",'495,'96.58203125
+'26,'Text 292 - Part of List 30,"'Matrix_tests.cpp",'496,'96.24023438
+'26,'Text 293 - Part of List 30,"'Image.cpp",'497,'96.19140625
+'26,'Text 294 - Part of List 30,"'Image_tests.cpp",'498,'96.67968750
+'26,'Text 295 - Part of List 30,"'processing.cpp",'499,'95.89843750
+'26,'Text 296 - Part of List 30,"'resize.cpp",'500,'95.36132813
+'26,'Text 297,"'This project will be autograded for correctness, comprehensiveness of your test cases, and programming style. See the style checking tutorial for the criteria and how to check your style automatically on CAEN.",'501,'94.72656250
+'26,'Section header 34,"'Testing",'502,'82.51953125
+'26,'Text 298,"'Run all the unit tests and system tests. This includes the public tests we provided and the unit tests that you wrote.",'503,'92.91992188
+'26,'Text 299,"'$ make test",'504,'81.39648438
+'26,'Figure 17,"",'505,'55.81054688
+'26,'List 31,"",'506,'33.64257813
+'26,'Text 300 - Part of List 31,"'Pro-tip: Run commands in parallel with make -j .",'507,'85.49804688
+'26,'Text 301 - Part of List 31,"'$ make - j4 test",'508,'81.29882813
+'26,'Footer 27,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.htm",'509,'89.35546875
+'26,'Page number 30,"'26/28",'510,'67.23632813
+'27,'Header 51,"'9/25/24, 1:46 PM",'511,'93.16406250
+'27,'Page number 31,"'p2-cv",'512,'67.38281250
+'27,'Section header 35,"'Unit Test Grading",'513,'62.15820313
+'27,'Text 302,"'We will autograde your Matrix and Image unit tests.",'514,'95.80078125
+'27,'Text 303,"'Your unit tests must use the unit test framework.",'515,'89.94140625
+'27,'Text 304,"'A test suite must complete less than 5 seconds and contain 50 or fewer TEST ( ) items. One test suite is one _test cpp file.",'516,'88.72070313
+'27,'Text 305,"'To grade your unit tests, we use a set of intentionally buggy instructor solutions. You get points for catching the bugs.",'517,'87.64648438
+'27,'List 32,"",'518,'81.83593750
+'27,'Text 306 - Part of List 32,"'1. We compile and run your unit tests with a correct solution.",'519,'91.60156250
+'27,'Text 307 - Part of List 32,"'Tests that pass are valid.",'520,'92.48046875
+'27,'Text 308 - Part of List 32,"'Tests that fail are invalid, they falsely report a bug.",'521,'96.53320313
+'27,'Text 309 - Part of List 32,"'2. We compile and run all of your valid tests against each buggy solution.",'522,'93.79882813
+'27,'Text 310 - Part of List 32,"'If any of your tests fail, you caught the bug.",'523,'95.26367188
+'27,'Text 311 - Part of List 32,"'You earn points for each bug that you catch.",'524,'96.58203125
+'27,'Section header 36,"'Requirements and Restrictions",'525,'88.37890625
+'27,'Text 312,"'It is our goal for you to gain practice with good C-style object-based programming and proper use of pointers and structs. Here are some (mandatory) guidelines.",'526,'95.94726563
+'27,'Table 16,"",'527,'93.01757813
+'27,'Footer 28,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.htm",'528,'91.30859375
+'27,'Page number 32,"'27/28",'529,'61.42578125
+'28,'Header 52,"'9/25/24, 1:46 PM",'530,'54.29687500
+'28,'Header 53,"'p2-cv",'531,'52.92968750
+'28,'Table 17,"",'532,'67.48046875
+'28,'Section header 37,"'Diagnosing Slow Code",'533,'69.53125000
+'28,'Text 313,"'If your code runs too slowly (especially on larger images like the ""horses"" example), a tool called perf can analyze which parts of your code take the most time. See the Perf Tutorial for details.",'534,'87.89062500
+'28,'Section header 38,"'Undefined Behavior",'535,'79.49218750
+'28,'Text 314,"'If your code produces different results on different machine (e.g. your computer VS. the autograder), the likely source is undefined behavior. Refer to the Sanitizers Tutorial for how to use the Address Sanitizer (ASAN) to check for undefined behavior.",'536,'93.99414063
+'28,'Section header 39,"'Reach Goals",'537,'76.61132813
+'28,'Text 315,"'Optionally check out the project reach goals. Reach goals are entirely optional.",'538,'90.57617188
+'28,'Section header 40,"'Acknowledgments",'539,'80.41992188
+'28,'Text 316,"'This project was written by James Juett, Winter 2016 at the University of Michigan. It was inspired by Josh Hug's ""Nifty Assignment"" at SIGCSE 2015.",'540,'90.42968750
+'28,'Footer 29,"'file:///home/runner/work/p2-cv/p2-cv/_site/index.htm",'541,'92.96875000
+'28,'Page number 33,"'28/28",'542,'47.75390625
