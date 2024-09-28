@@ -1,0 +1,35 @@
+{
+  "name": "wolverine-code-companion",
+  "displayName": "Wolverine Code Companion",
+  "description": "Wolverine Code Companion is a friendly coding assistant designed for University of Michigan students. It simplifies coding concepts and provides hands-on support for homework, making it easier to learn and apply programming skills. Whether you're tackling your first programming assignment or seeking help with advanced topics, Wolverine Code Companion is here to guide you through the challenges of coding, offering real-time assistance and resources tailored to your coursework.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+     
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "extension.analyzeCode",
+      "title": "Analyze Code with Wolverine"
+    }]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.93.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "eslint": "^9.9.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
