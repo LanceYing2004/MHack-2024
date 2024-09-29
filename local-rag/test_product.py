@@ -8,6 +8,7 @@ import torch
 import ollama
 from openai import OpenAI
 import argparse
+from tqdm import tqdm
 
 # ANSI escape codes for colors
 PINK = '\033[95m'
@@ -399,9 +400,11 @@ def process_text_files(user_input):
                 vault_content = vault_file.readlines()
 
         vault_embeddings = []
-        for content in vault_content:
+        # Use tqdm to display a progress bar for processing vault_content
+        for content in tqdm(vault_content, desc="Processing vault content", unit="line"):
             response = ollama.embeddings(model='mxbai-embed-large', prompt=content)
             vault_embeddings.append(response["embedding"])
+            
 
         vault_embeddings_tensor = torch.tensor(vault_embeddings)
         print("Embeddings for each line in the vault:")
