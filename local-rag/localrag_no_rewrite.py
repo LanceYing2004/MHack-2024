@@ -73,7 +73,7 @@ def ollama_chat(user_input, system_message, vault_embeddings, vault_content, oll
     # Return the content of the response from the model
     return response.choices[0].message.content
 
-def process_text_files(user_input):
+def process_text_files(user_input, include_code):
     text_parse_directory = os.path.join("local-rag", "text_parse")
     temp_file_path = os.path.join("local-rag", "temp.txt")
 
@@ -157,11 +157,13 @@ def process_text_files(user_input):
     
      # Conversation loop
     conversation_history = []
-    system_message = "You are a helpful assistant that is an expert at extracting the most useful information from a given text"
+    system_message = "You are a helpful assistant that is an expert at extracting the most\
+        useful information from a given text. If the user has any relevant code it is given right now: " \
+            + include_code if include_code else "No code provided."
 
     response = ollama_chat(user_input, system_message, vault_embeddings_tensor, vault_content, args.model, conversation_history)
     
-    return response
+    return response, vault_embeddings_tensor
 
     
 
@@ -192,5 +194,6 @@ client = OpenAI(
 )
 
 if __name__ == "__main__":
-    print(torch.cuda.is_available())
-    print(process_text_files("tell me about iterators"))
+    print(process_text_files("tell me about iterators", ""))
+
+
