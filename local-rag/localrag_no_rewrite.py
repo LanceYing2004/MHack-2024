@@ -139,6 +139,13 @@ def process_text_files(user_input):
             vault_embeddings_tensor = torch.load(tensor_file_path)
             print("Loaded Vault Embedding Tensor:")
             print(vault_embeddings_tensor)
+
+            vault_content = []
+            
+            if os.path.exists(temp_file_path):
+                with open(temp_file_path, "r", encoding='utf-8') as vault_file:
+                    vault_content = vault_file.readlines()
+
         else:
             print(f"No tensor file found for '{text_files}'.")
 
@@ -180,6 +187,7 @@ client = OpenAI(
     api_key='llama3'
 )
 
-# result = process_text_files()
+if __name__ == "__main__":
+    print(process_text_files("tell me about iterators"))
 
 
