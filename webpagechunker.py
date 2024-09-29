@@ -32,9 +32,9 @@ def extract_sections(soup):
 sections = extract_sections(soup)
 
 # Print the sections
-for section in sections:
-    print(f"Header: {section['header']}")
-    print(f"Content: {section['content'][:100]}...")  # Preview the content
+# for section in sections:
+#     print(f"Header: {section['header']}")
+#     print(f"Content: {section['content'][:100]}...")  # Preview the content
 
 def merge_small_sections(sections, min_length=500):
     merged_sections = []
@@ -59,6 +59,7 @@ def merge_small_sections(sections, min_length=500):
 merged_sections = merge_small_sections(sections, min_length=500)
 
 # Preview the merged sections
-for section in merged_sections:
-    print(f"Header: {section['header']}")
-    print(f"Content: {section['content'][:100]}...")  # Preview the content
+with open('discordapi.txt', 'w') as file:
+    for section in merged_sections:
+        file.write(f"Header: {section['header']}\n")
+        file.write(f"Content: {section['content']}\n")
