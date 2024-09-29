@@ -123,39 +123,43 @@ client = OpenAI(
     api_key='llama3'
 )
 
-# Load the vault content
-print(NEON_GREEN + "Loading vault content..." + RESET_COLOR)
-vault_content = []
-if os.path.exists("vault.txt"):
-    with open("vault.txt", "r", encoding='utf-8') as vault_file:
-        vault_content = vault_file.readlines()
+def process_user_call(user_input):
+    # Load the vault content
+    print(NEON_GREEN + "Loading vault content..." + RESET_COLOR)
+    vault_content = []
+    if os.path.exists("vault.txt"):
+        with open("vault.txt", "r", encoding='utf-8') as vault_file:
+            vault_content = vault_file.readlines()
 
-print(NEON_GREEN + "Generating embeddings for the vault content..." + RESET_COLOR)
-vault_embeddings = []
-# Adding tqdm to show the progress bar
-for content in tqdm(vault_content, desc="Progress", ncols=80):
-    start_time = time.time()  # Track start time for each iteration
+    print(NEON_GREEN + "Generating embeddings for the vault content..." + RESET_COLOR)
+    vault_embeddings = []
+    # Adding tqdm to show the progress bar
+    for content in tqdm(vault_content, desc="Progress", ncols=80):
+        start_time = time.time()  # Track start time for each iteration
 
-    response = ollama.embeddings(model='mxbai-embed-large', prompt=content)
-    vault_embeddings.append(response["embedding"])
+        response = ollama.embeddings(model='mxbai-embed-large', prompt=content)
+        vault_embeddings.append(response["embedding"])
 
-    elapsed_time = time.time() - start_time  # Calculate elapsed time for each iteration
+        elapsed_time = time.time() - start_time  # Calculate elapsed time for each iteration
 
-# Convert to tensor and print embeddings
-print("Converting embeddings to tensor...")
-vault_embeddings_tensor = torch.tensor(vault_embeddings) 
-print("Embeddings for each line in the vault:")
-print(vault_embeddings_tensor)
+    # Convert to tensor and print embeddings
+    print("Converting embeddings to tensor...")
+    vault_embeddings_tensor = torch.tensor(vault_embeddings) 
+    print("Embeddings for each line in the vault:")
+    print(vault_embeddings_tensor)
 
-# Conversation loop
-print("Starting conversation loop...")
-conversation_history = []
-system_message = "You are a helpful assistant that is an expert at extracting the most useful information from a given text. Also bring in extra relevant infromation to the user query from outside the given context."
+    # Conversation loop
+    print("Starting conversation loop...")
+    conversation_history = []
+    system_message = "You are a helpful assistant that is an expert at extracting the most useful information from a given text. Also bring in extra relevant infromation to the user query from outside the given context."
 
-while True:
-    user_input = input(YELLOW + "Ask a query about your documents (or type 'quit' to exit): " + RESET_COLOR)
-    if user_input.lower() == 'quit':
-        break
-    
-    response = ollama_chat(user_input, system_message, vault_embeddings_tensor, vault_content, args.model, conversation_history)
-    print(NEON_GREEN + "Response: \n\n" + response + RESET_COLOR)
+    while True:
+        user_input = input(YELLOW + "Ask a query about your documents (or type 'quit' to exit): " + RESET_COLOR)
+        if user_input.lower() == 'quit':
+            break
+
+        response = ollama_chat(user_input, system_message, vault_embeddings_tensor, vault_content, args.model, conversation_history)
+        print(NEON_GREEN + "Response: \n\n" + response + RESET_COLOR)
+
+# Call the function with user input
+process_user_call("What is the capital of France?")
