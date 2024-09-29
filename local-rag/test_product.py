@@ -1,6 +1,6 @@
 import os
 import tkinter as tk
-from tkinter import filedialog
+from tkinter import filedialog, messagebox
 import PyPDF2
 import re
 import json
@@ -228,6 +228,108 @@ def upload_jsonfile():
             input_value = input("Enter your question:")
             process_text_files(input_value)
 
+def summarize():
+    summary_window = tk.Toplevel(root)
+    summary_window.title("Text Summarizer")
+    summary_window.geometry("400x200")
+
+    # Create a label for the window
+    label = tk.Label(summary_window, text="Choose an option to summarize text:")
+    label.pack(pady=10)
+
+    # Create two buttons: one for uploading a .txt file, and one for pasting text directly
+    upload_button = tk.Button(summary_window, text="Upload from .txt File", command=summarize_from_file)
+    upload_button.pack(pady=5)
+
+    paste_button = tk.Button(summary_window, text="Paste your text", command=lambda: open_paste_window(summary_window))
+    paste_button.pack(pady=5)
+    
+# Function to upload a .txt file and summarize
+def summarize_from_file():
+    file_path = filedialog.askopenfilename(filetypes=[("Text Files", "*.txt")])
+    if file_path:
+        # Define the base directory where the file will be saved
+        base_directory = os.path.join("local-rag", "text_sum")
+        
+        file_name = os.path.basename(file_path)
+
+        # Create the directory if it doesn't exist
+        if not os.path.exists(base_directory):
+            os.makedirs(base_directory)
+            print(f"Directory '{base_directory}' created.")
+        
+        summary_content = []
+        if os.path.exists(file_name):
+            with open(file_name, "r", encoding='utf-8') as sum_file:
+                summary_content = sum_file.readlines()
+        
+        summary_embeddings = []
+        for content in summary_content:
+            response = ollama.embeddings(model='mxbai-embed-large', prompt=content)
+            summary_embeddings.append(response["embedding"])
+
+        summary_embeddings_tensor = torch.tensor(summary_embeddings)
+        print("Embeddings for each line in the vault:")
+        print(summary_embeddings_tensor)
+
+        conversation_history = []
+        system_message = "You are a helpful assistant that is an expert at summarizing the text from a given document"
+        user_input = "Summarize this paragraph"
+
+        response = ollama_chat(user_input, system_message, summary_embeddings_tensor, summary_content, args.model, conversation_history)
+
+        messagebox.showinfo("Summary", response)  # Replace with actual summarizing logic
+    else:
+        messagebox.showerror("Error", "No file selected!")
+
+# Function to open a window for pasting text and summarizing
+def open_paste_window(parent_window):
+    # Create a new window for pasting text
+    paste_window = tk.Toplevel(parent_window)
+    paste_window.title("Paste Your Text")
+    paste_window.geometry("400x300")
+
+    # Create a label and text box for the pasted text
+    label = tk.Label(paste_window, text="Paste your text below:")
+    label.pack(pady=5)
+
+    input_textbox = tk.Text(paste_window, height=8, width=40)
+    input_textbox.pack(pady=5)
+
+    # Function to handle the "Submit" button click
+    def submit_text():
+        pasted_text = input_textbox.get("1.0", tk.END).strip()
+        if pasted_text:
+            
+            
+            system_message = "You are a helpful assistant that is an expert at summarizing the text from a given document"
+            user_input = "Summarize this paragraph:"
+            new_value = user_input + pasted_text
+            messages = [
+                (
+                    "system",
+                    system_message,
+                ),
+                ("human", new_value),
+            ]        
+            response = client.chat.completions.create(model=args.model, messages=messages)
+
+            response_value = response.choices[0].message.content
+
+
+            messagebox.showinfo("Summary", response_value)  # Replace with actual summarizing logic
+            paste_window.destroy()  # Close the window
+        else:
+            messagebox.showerror("Error", "No text entered!")
+
+    # Add Submit and Cancel buttons
+    submit_button = tk.Button(paste_window, text="Submit", command=submit_text)
+    submit_button.pack(side=tk.LEFT, padx=10, pady=10)
+
+    cancel_button = tk.Button(paste_window, text="Cancel", command=paste_window.destroy)
+    cancel_button.pack(side=tk.RIGHT, padx=10, pady=10)
+
+
 # Function to get relevant context from the vault based on user input
 def get_relevant_context(rewritten_input, vault_embeddings, vault_content, top_k=3):
     if vault_embeddings.nelement() == 0:
@@ -347,6 +449,10 @@ txt_button.pack(pady=15)
 
 # Create a button to open the file dialog for JSON file
 json_button = tk.Button(root, text="Upload JSON File", command=upload_jsonfile)
+json_button.pack(pady=15)
+
+# Create a button to open the summerizer
+json_button = tk.Button(root, text="Summarize This!", command=summarize)
 json_button.pack(pady=15)
 
 # Configuration for the Ollama API client
