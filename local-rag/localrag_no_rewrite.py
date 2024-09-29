@@ -1,8 +1,12 @@
 import torch
+from torch.cuda.amp import autocast
 import ollama
 import os
 from openai import OpenAI
 import argparse
+
+device = 'xpu'
+dtype = torch.float32
 
 # ANSI escape codes for colors
 PINK = '\033[95m'
@@ -57,11 +61,11 @@ def ollama_chat(user_input, system_message, vault_embeddings, vault_content, oll
         *conversation_history
     ]
     
-    # Send the completion request to the Ollama model
-    response = client.chat.completions.create(
-        model=ollama_model,
-        messages=messages
-    )
+    with autocast():
+        response = client.chat.completions.create(
+            model=ollama_model,
+            messages=messages
+        )
     
     # Append the model's response to the conversation history
     conversation_history.append({"role": "assistant", "content": response.choices[0].message.content})
@@ -118,7 +122,7 @@ def process_text_files(user_input):
             vault_embeddings.append(response["embedding"])
 
         # Convert to tensor and print embeddings
-        vault_embeddings_tensor = torch.tensor(vault_embeddings) 
+        vault_embeddings_tensor = torch.tensor(vault_embeddings).to(device)
         print("Embeddings for each line in the vault:")
         print(vault_embeddings_tensor)
         
@@ -188,6 +192,5 @@ client = OpenAI(
 )
 
 if __name__ == "__main__":
+    print(torch.cuda.is_available())
     print(process_text_files("tell me about iterators"))
-
-
