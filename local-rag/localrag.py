@@ -4,6 +4,9 @@ import os
 from openai import OpenAI
 import argparse
 import json
+from tqdm import tqdm
+import time
+
 
 # ANSI escape codes for colors
 PINK = '\033[95m'
@@ -127,12 +130,16 @@ if os.path.exists("vault.txt"):
     with open("vault.txt", "r", encoding='utf-8') as vault_file:
         vault_content = vault_file.readlines()
 
-# Generate embeddings for the vault content using Ollama
 print(NEON_GREEN + "Generating embeddings for the vault content..." + RESET_COLOR)
 vault_embeddings = []
-for content in vault_content:
+# Adding tqdm to show the progress bar
+for content in tqdm(vault_content, desc="Progress", ncols=80):
+    start_time = time.time()  # Track start time for each iteration
+
     response = ollama.embeddings(model='mxbai-embed-large', prompt=content)
     vault_embeddings.append(response["embedding"])
+
+    elapsed_time = time.time() - start_time  # Calculate elapsed time for each iteration
 
 # Convert to tensor and print embeddings
 print("Converting embeddings to tensor...")
