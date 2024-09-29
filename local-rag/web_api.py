@@ -9,14 +9,15 @@ app = Flask(__name__)
 def api():
     data = request.json
     user_input = data.get('input')
+    user_code = data.get('code')
 
     if not user_input:
         return jsonify({"error": "No input provided"}), 400
 
     # Call the process_user_call function from ollama_processor
     try:
-        response = process_text_files(user_input)
-        return jsonify({"response": response})
+        response = process_text_files(user_input, user_code)
+        return jsonify({"response": response[0], "embeddings": response[1]}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
