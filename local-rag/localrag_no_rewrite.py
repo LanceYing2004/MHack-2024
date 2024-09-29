@@ -35,7 +35,7 @@ def get_relevant_context(rewritten_input, vault_embeddings, vault_content, top_k
 # Function to interact with the Ollama model
 def ollama_chat(user_input, system_message, vault_embeddings, vault_content, ollama_model, conversation_history):
     # Get relevant context from the vault
-    relevant_context = get_relevant_context(user_input, vault_embeddings_tensor, vault_content, top_k=3)
+    relevant_context = get_relevant_context(user_input, vault_embeddings, vault_content, top_k=3)
     if relevant_context:
         # Convert list to a single string with newlines between items
         context_str = "\n".join(relevant_context)
@@ -69,6 +69,111 @@ def ollama_chat(user_input, system_message, vault_embeddings, vault_content, oll
     # Return the content of the response from the model
     return response.choices[0].message.content
 
+def process_text_files():
+    text_parse_directory = os.path.join("local-rag", "text_parse")
+    temp_file_path = os.path.join("local-rag", "temp.txt")
+
+    # Check if text_parse directory exists
+    if not os.path.exists(text_parse_directory):
+        print(f"Directory '{text_parse_directory}' does not exist.")
+        return False
+
+    # Check if temp.txt exists
+    if not os.path.exists(temp_file_path):
+        print("temp.txt does not exist.")
+        return False
+    
+    # Read the first line of temp.txt
+    with open(temp_file_path, 'r', encoding='utf-8') as temp_file:
+        first_line = temp_file.readline().strip()
+
+    # Get all text files in the text_parse directory
+    text_files = [f for f in os.listdir(text_parse_directory) if f.endswith('.txt')]
+    
+    # Check if the first line matches any of the text files
+    if f"{first_line}" not in text_files:
+        print(f"No matching file found for '{first_line}.txt' in text_parse directory.")
+        return False
+
+    # Proceed to check for the NOT FINISHED flag
+    file_path = os.path.join(text_parse_directory, f"{first_line}")
+    with open(file_path, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+
+
+    # Check if there are any lines after NOT FINISHED
+    if lines[-2].strip() == "====================NOT FINISHED====================":
+        print(f"'{first_line}' contains the 'NOT FINISHED' flag. Computing embeddings.")
+
+        vault_content = []
+        if os.path.exists(temp_file_path):
+            with open(temp_file_path, "r", encoding='utf-8') as vault_file:
+                vault_content = vault_file.readlines()
+
+
+        # Generate embeddings for the vault content using Ollama
+        vault_embeddings = []
+        for content in vault_content:
+            response = ollama.embeddings(model='mxbai-embed-large', prompt=content)
+            vault_embeddings.append(response["embedding"])
+
+        # Convert to tensor and print embeddings
+        vault_embeddings_tensor = torch.tensor(vault_embeddings) 
+        print("Embeddings for each line in the vault:")
+        print(vault_embeddings_tensor)
+        
+        # Save the tensor result to a file or variable as needed
+        with open(os.path.join(text_parse_directory, f"{first_line}_embedding.pt"), "wb") as tensor_file:
+            torch.save(vault_embeddings_tensor, tensor_file)
+
+        # Remove the NOT FINISHED line from the original file
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.writelines(lines[:-1])  # Write back all lines except the NOT FINISHED line
+
+    else:
+        print(f"'{first_line}' does not contain the 'NOT FINISHED' flag or is already complete. Loading tensor if it exists.")
+
+        # Try to load the tensor from the corresponding file
+        tensor_file_path = os.path.join(text_parse_directory, f"{first_line}_embedding.pt")
+        if os.path.exists(tensor_file_path):
+            vault_embeddings_tensor = torch.load(tensor_file_path)
+            print("Loaded Vault Embedding Tensor:")
+            print(vault_embeddings_tensor)
+        else:
+            print(f"No tensor file found for '{text_files}'.")
+
+    
+    
+     # Conversation loop
+    conversation_history = []
+    system_message = "You are a helpful assistant that is an expert at extracting the most useful information from a given text"
+
+    while True:
+        user_input = input(YELLOW + "Ask a question about your documents (or type 'quit' to exit): " + RESET_COLOR)
+        if user_input.lower() == 'quit':
+            break
+
+        response = ollama_chat(user_input, system_message, vault_embeddings_tensor, vault_content, args.model, conversation_history)
+        print(NEON_GREEN + "Response: \n\n" + response + RESET_COLOR)
+    
+    
+    return True
+
+
+    # # Read each file in the text_parse directory and check for the NOT FINISHED flag
+    # for txt_file in text_files:
+    #     file_path = os.path.join(text_parse_directory, txt_file)
+    #     with open(file_path, 'r', encoding='utf-8') as f:
+    #         lines = f.readlines()
+    #         # Check if the last line contains the "NOT FINISHED" flag
+    #         if lines and lines[-1].strip() == "==========NOT FINISHED==========":
+    #             print(f"'{txt_file}' contains the 'NOT FINISHED' flag. Proceeding to next step.")
+    #             # Append the content of this file to the vault
+    #             with open(temp_file_path, 'a', encoding='utf-8') as vault_file:
+    #                 vault_file.write('\n'.join(lines[:-1]) + '\n')  # Append content without the last flag line
+    #         else:
+    #             print(f"'{txt_file}' does not contain the 'NOT FINISHED' flag. Skipping.")
+
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description="Ollama Chat")
 parser.add_argument("--model", default="llama3", help="Ollama model to use (default: llama3)")
@@ -80,31 +185,6 @@ client = OpenAI(
     api_key='llama3'
 )
 
-# Load the vault content
-vault_content = []
-if os.path.exists("vault.txt"):
-    with open("vault.txt", "r", encoding='utf-8') as vault_file:
-        vault_content = vault_file.readlines()
+result = process_text_files()
 
-# Generate embeddings for the vault content using Ollama
-vault_embeddings = []
-for content in vault_content:
-    response = ollama.embeddings(model='mxbai-embed-large', prompt=content)
-    vault_embeddings.append(response["embedding"])
 
-# Convert to tensor and print embeddings
-vault_embeddings_tensor = torch.tensor(vault_embeddings) 
-print("Embeddings for each line in the vault:")
-print(vault_embeddings_tensor)
-
-# Conversation loop
-conversation_history = []
-system_message = "You are a helpful assistant that is an expert at extracting the most useful information from a given text"
-
-while True:
-    user_input = input(YELLOW + "Ask a question about your documents (or type 'quit' to exit): " + RESET_COLOR)
-    if user_input.lower() == 'quit':
-        break
-
-    response = ollama_chat(user_input, system_message, vault_embeddings_tensor, vault_content, args.model, conversation_history)
-    print(NEON_GREEN + "Response: \n\n" + response + RESET_COLOR)

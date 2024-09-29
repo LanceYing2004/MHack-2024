@@ -11,8 +11,10 @@ def get_ollama_response(prompt):
     headers = {'Content-Type': 'application/json'}
     body = {
         "model": "llama3",
-        "prompt": prompt
+        "prompt": prompt,
+        "stream" : False
     }
+    # curl -X POST http://localhost:11434/api/generate -H "Content-Type: application/json" -d "{ \"model\": \"llama3\", \"prompt\": \"Why is the sky blue?\", \"stream\": false }"
 
     # Make the request to the Ollama API
     response = requests.post(url, headers=headers, json=body)
