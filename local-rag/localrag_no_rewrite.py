@@ -69,7 +69,7 @@ def ollama_chat(user_input, system_message, vault_embeddings, vault_content, oll
     # Return the content of the response from the model
     return response.choices[0].message.content
 
-def process_text_files():
+def process_text_files(user_input):
     text_parse_directory = os.path.join("local-rag", "text_parse")
     temp_file_path = os.path.join("local-rag", "temp.txt")
 
@@ -148,16 +148,11 @@ def process_text_files():
     conversation_history = []
     system_message = "You are a helpful assistant that is an expert at extracting the most useful information from a given text"
 
-    while True:
-        user_input = input(YELLOW + "Ask a question about your documents (or type 'quit' to exit): " + RESET_COLOR)
-        if user_input.lower() == 'quit':
-            break
+    response = ollama_chat(user_input, system_message, vault_embeddings_tensor, vault_content, args.model, conversation_history)
+    
+    return response
 
-        response = ollama_chat(user_input, system_message, vault_embeddings_tensor, vault_content, args.model, conversation_history)
-        print(NEON_GREEN + "Response: \n\n" + response + RESET_COLOR)
     
-    
-    return True
 
 
     # # Read each file in the text_parse directory and check for the NOT FINISHED flag
@@ -185,6 +180,6 @@ client = OpenAI(
     api_key='llama3'
 )
 
-result = process_text_files()
+# result = process_text_files()
 
 

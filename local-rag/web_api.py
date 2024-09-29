@@ -1,9 +1,7 @@
 from flask import Flask, request, jsonify
 import requests
-from localrag import process_user_call
+from localrag_no_rewrite import process_text_files
 
-
- 
 
 app = Flask(__name__)
 
@@ -17,7 +15,7 @@ def api():
 
     # Call the process_user_call function from ollama_processor
     try:
-        response = process_user_call(user_input)
+        response = process_text_files(user_input)
         return jsonify({"response": response})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -25,10 +23,6 @@ def api():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
-
-
-
-
 
 
 # python -m web_api run --host=0.0.0.0 --port=5000
